@@ -15,6 +15,11 @@
                 <a class="nav-link {{ active_class(Active::checkUriPattern('admin/labels')) }}" href="{{ route('admin.labels.index') }}"><i class="icon-speedometer"></i> {{ __('menus.backend.sidebar.labels') }}</a>
             </li>
 
+            {{--文章管理--}}
+            <li class="nav-item">
+                <a class="nav-link {{ active_class(Active::checkUriPattern('admin/articles')) }}" href="{{ route('admin.articles.index') }}"><i class="icon-speedometer"></i> 文章</a>
+            </li>
+
             <li class="nav-title">
                 {{ __('menus.backend.sidebar.system') }}
             </li>

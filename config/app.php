@@ -173,7 +173,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\ObserverServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Clockwork\Support\Laravel\ClockworkServiceProvider::class
+        Clockwork\Support\Laravel\ClockworkServiceProvider::class,
+        Overtrue\LaravelUEditor\UEditorServiceProvider::class,
     ],
 
     /*

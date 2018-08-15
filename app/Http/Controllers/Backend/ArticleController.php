@@ -120,4 +120,17 @@ class ArticleController extends Controller
 
         return redirect()->route('admin.articles.index')->withFlashSuccess('删除文章成功');
     }
+
+    public function uploadBanner(Request $request)
+    {
+        if ($request->hasFile('banner')) {
+            $file = $request->banner;
+            //提取上传后的临时存放地址
+            //拼装新的文件名
+            $extension = $file->getClientOriginalExtension();
+
+        }
+
+        return response()->json(['StatusCode' => 400, 'ResultData' => '请上传缩略图']);
+    }
 }

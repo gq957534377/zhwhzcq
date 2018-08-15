@@ -30,6 +30,7 @@
                                 <th>标题</th>
                                 <th>来源</th>
                                 <th>缩略图</th>
+                                <th>简述</th>
                                 <th>编辑</th>
                                 <th>排序</th>
                                 <th>创建时间</th>
@@ -43,7 +44,7 @@
                                     <td>{{ $article->title}}</td>
                                     <td>{{ $article->source}}</td>
                                     <td>{{ $article->banner}}</td>
-                                    <td title="{{$article->brief}}">{{str_limit($article->brief,'...',10)}}</td>
+                                    <td title="{{$article->brief}}">{{str_limit($article->brief,10,'...')}}</td>
                                     <td>{{ $article->author}}</td>
                                     <td>{{ $article->sort}}</td>
                                     <td>{{ $article->created_at}}</td>

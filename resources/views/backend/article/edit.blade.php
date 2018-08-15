@@ -1,13 +1,13 @@
 @extends ('backend.layouts.app')
 
-@section ('title', __('labels.backend.access.labels.management') . ' | ' . __('labels.backend.access.labels.edit'))
+@section ('title',  '文章管理 | 编辑文章')
 
 @section('breadcrumb-links')
-    @include('backend.label.includes.breadcrumb-links')
+    @include('backend.articles.includes.breadcrumb-links')
 @endsection
 
 @section('content')
-{{ html()->modelForm($label, 'PATCH', route('admin.labels.update', $label->id))->class('form-horizontal')->open() }}
+{{ html()->modelForm($label, 'PATCH', route('admin.articles.update', $label->id))->class('form-horizontal')->open() }}
     <div class="card">
         <div class="card-body">
             <div class="row">
