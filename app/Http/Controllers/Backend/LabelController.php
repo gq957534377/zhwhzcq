@@ -25,6 +25,7 @@ class LabelController extends Controller
         }
 
         $result = $query
+            ->with('parentLabel')
             ->orderBy('updated_at', 'desc')
             ->orderBy('stage', 'asc')
             ->paginate(15);

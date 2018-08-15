@@ -77,7 +77,7 @@
             <div class="card-footer clearfix">
                 <div class="row">
                     <div class="col">
-                        {{ form_cancel(route('admin.auth.user.index'), __('buttons.general.cancel')) }}
+                        {{ form_cancel(route('admin.labels.index'), __('buttons.general.cancel')) }}
                     </div><!--col-->
 
                     <div class="col text-right">

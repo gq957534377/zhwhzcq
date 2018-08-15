@@ -60,4 +60,9 @@ class Label extends Model
     {
         return $this->nav_show == 1 ? '<span style="color: red;">展示</span>' : '不展示';
     }
+
+    public function childLabels()
+    {
+        return $this->hasMany(Label::class, 'parent_id', 'id');
+    }
 }
