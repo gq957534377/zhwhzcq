@@ -1,0 +1,106 @@
+/* 面包屑 */
+.f-l { float: left; _display: inline;}
+.f-r { float: right; _display: inline;}
+.clear { clear: both;}
+.pos-r { position: relative;}
+.pos-a { position: absolute;}
+.b { font-weight: bold;}
+.hide,.hidden { display: none;}
+.ov { overflow: hidden; _zoom: 1;}
+.tc { text-align: center;}
+.dashed { border-bottom: 1px dashed #cccccc;}
+.bd-gray { border: 1px solid #D6D6D6;}
+.fz12 { font-size: 12px;}
+.fz14 { font-size: 14px;}
+.ti2 { text-indent: 2em;}
+.Opacity { opacity: .5; filter: alpha(opacity=50);}
+#Banner ._output { width: 960px; margin: 0 auto; margin-top: 9px;}
+.backtotop .erweima {display:none;}
+/* 布局 */
+.column {width: 1200px; margin:10px auto; overflow: hidden;display:block; clear:both;background:#fff}
+.column .column-aside { width: 320px; float: left; _display: inline; padding-left:20px;}
+.column .column-main { width: 840px; float: right; _display: inline; border-left:1px solid #ddd;}
+/* 人物简介 */
+.profile { }
+.profile .inner { background-color: #ffffff; padding: 30px;}
+.profile .h2 { text-align: center; margin: 15px 0;}
+.profile .h2 a { font-size: 14px; font-weight: bold; color: #333333;}
+.profile .summary { color: #333; line-height: 18px; margin: 13px 0 3px;}
+.num-box { overflow: hidden; _zoom: 1; margin-top:20px;}
+.profile .photo { display: block; text-align: center;}
+.profile .hd{ text-align:center; padding-top:20px;}
+.rec-column .hd{ text-align:center; padding-top:20px;}
+.article, .moods { border: 1px solid #ddd; float: left; line-height:35px; text-align: center; width: 125px; }
+.article p,.moods p { color: #333333;}
+.article .b,.moods .b { font-size: 14px;}
+.article{border-right:0px;}
+.dingyue { display: block;height: 30px;overflow: hidden;}
+.dingyue a,.dingyue b,.dingyue em {width:119px; height: 30px;margin: 5px auto 20px auto; background: url(../images/personal-column-ico.png) no-repeat;text-indent:-99999px; overflow: hidden;display: block;}
+.dingyue em { display:none;}
+.dingyue span em.yes { background-position:0px -30px; display: block;}
+.dingyue.ok em.dycg{ background-position:0px -60px; display: block;}
+/* 推荐专栏 */
+.rec-column { margin-top: 10px;}
+.rec-column .m-main { margin:20px 10px 40px 30px; overflow:hidden}
+.rec-column li { margin-top: 13px; float:left; text-align:center; width:77px; padding:0 7px; }
+.rec-column li p { font-weight: bold; font-size: 12px;}
+.rec-column li:hover { color: #c00;}
+.rec-column li img{ width:77px;height:77px}
+/* 关注我们 */
+.div2{width:320px;display:block;overflow:hidden;top:60px;float:left;z-index:0;background:#fff;position:fixed;_position:absolute}
+.div3{display:none;}
+.div2 .div3{display:block; margin-top:0px; height:300px;padding-top:0px;overflow:hidden;}
+.follow{ margin-top:30px; height:300px; text-align:center;   overflow: hidden;}
+.follow .followcon {margin-top:5px;}
+.follow .followcon p img{ margin: 0 16px;border: 1px solid #ddd; }
+.follow .followcon span{ display: block; margin: 25px 0; text-align: center; font-size: 16px; color: #4c4c4c;}
+.adimg{width:320px;display:block;overflow:hidden; }
+/* 右边栏 */
+.crumb-box { padding: 14px 0 13px 18px; overflow: hidden; _zoom: 1;}
+.crumb-box .crumb em { padding: 0 4px; font-family: SimSun;}
+.crumb-box .crumb a:hover { color: #cc0000;}
+.crumb-box .crumb span { color: #444444;}
+.ap_r_l{ float:left; width:60%}
+.ap_r_r{ float:right; width:40%}
+.ap_r_r img {height:166px;width:250px; float:right}
+/* 文章列表 */
+.column-main .inner { overflow: hidden; _zoom: 1;}
+.blog-list { margin: 0px 10px 20px 10px;}
+.blog-list .dashed { padding: 16px 10px; overflow:hidden}
+.blog-list .title-bar { color: #666666; margin-bottom:15px;}
+.blog-list .h3 { font-size: 18px; font-weight: bold; color: #555;}
+.blog-list .h3:hover { color:#00AA98;}
+.blog-list .date,.blog-list .hit,.blog-list .comment-num { padding-left: 30px;}
+.comment-num { background:url(../images/guandian.gif) no-repeat left center; height:25px; }
+.date{ background:url(../images/time.gif) no-repeat left center; height:25px; margin-left:30px;}
+.blog-list a.num { color: #003;font-size:16px; }
+.blog-list a.num:hover {  color:#00AA98;}
+.blog-list .summary { color: #666; font-size: 14px; line-height: 28px;}
+.blog-list li:hover{background:#f8f8f8}
+.ListLoading,.IndexLoading a{width:100%;height:26px;line-height:26px;text-align:center;padding:5px 0px;margin:20px 0px 10px;display:block; font-size:18px;}
+/*公众号列表*/
+.column { border: 1px #d6d6d6 solid; margin:20px auto;}
+.hao-main { padding: 0 25px 35px;}
+.hao-main .inner { padding-top: 12px;}
+.mod-grid { width: auto;}
+.mod-grid .dotted-head { overflow: hidden; _zoom: 1; }
+.mod-grid .dashed-head { height: 40px; border-bottom: 1px dashed #cccccc;}
+.mod-grid .dashed-head .title .words { color: #000000; font-size: 16px; font-weight: bold; line-height: 40px;}
+.mod-grid .dashed-head .link { float: right; _display: inline; margin-right: 10px; font-size:10px; color: #999;}
+.tab-head {  width:100%;background:#f6f6f6; color: #333; height: 40px; display:block;float: left;}
+.tab-head li { float: left;}
+.tab-head li a{ float: left;color: #333; line-height:39px; height:39px; text-align: center; width:42px; border-left: 1px solid #ddd; border-bottom: 1px solid #ddd;}
+.tab-head li a:hover{background:#00AA98;color: #fff;border-left: 1px solid #00AA98; border-bottom: 1px solid #00AA98;}
+.tab-head li a.tabactive { background: #FFF; width:82px; border:0px;border-bottom: 1px solid #fff;color: #333;}
+.leter-search,.leter-txt { overflow: hidden; _zoom: 1; padding-top: 6px;}
+.leter-search ul,.leter-txt ul { width:1200px; margin-left: -18px; overflow: hidden; _zoom: 1;}
+.leter-search ul li,.leter-txt ul li { padding: 3px 0; margin: 9px 0 5px 22px; float: left;}
+.leter-txt ul li a{ width:90px;line-height:25px; height:25px;font-size:14px; display:block;text-align:center; white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.h-pic { width:198px; height:64px; padding:8px 5px; overflow: hidden; _zoom: 1; border: 1px solid #eee;}
+.h-pic:hover{background:#ffe}
+.h-pic .thumb { float: left; _display: inline; margin-right: 9px;}
+.h-pic .title { font-size: 14px;}
+.h-pic .summary { line-height: 18px; height: 36px; overflow: hidden; _zoom: 1; margin-top: 4px; font-size: 12px;}
+.h-pic .title { font-weight: bold; margin-top: 3px; display: block;}
+.h-pic .title:hover,.h-pic:hover .title { color:#00AA98;}
+.h-pic img{ margin-top: 3px;width:60px; height: 60px}

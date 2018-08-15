@@ -30,7 +30,7 @@ return [
         'general' => [
             'all_rights_reserved' => 'Tutti i diritti riservati.',
             'are_you_sure'        => 'Sei sicuro?',
-            'boilerplate_link'    => 'Laravel 5 Boilerplate',
+            'boilerplate_link'    => '中华文化走出去',
             'continue'            => 'Continua',
             'member_since'        => 'Membro dal',
             'minutes'             => ' minutes',
@@ -62,7 +62,7 @@ return [
             'results'    => 'Search Results for :query',
         ],
 
-        'welcome' => '<p>Quello che vedi è il tema CoreUI sviluppato da <a href="https://coreui.io/" target="_blank">creativeLabs</a>.
+        'welcome' => '<p>Quello che vedi è il tema gq1994 sviluppato da <a href="https://coreui.io/" target="_blank">creativeLabs</a>.
     Si tratta di una versione ridotta al minimo che include solo gli stili e gli script necessari per il funzionamento.
     Scarica la versione completa per aggiungere componenti alla dashboard.</p>
 <p>Tutte le funzioni che vedi sono simulate, ad eccezione della <strong>Gestione utenti</strong> sulla sinistra.

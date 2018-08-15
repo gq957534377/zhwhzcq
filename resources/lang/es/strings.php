@@ -32,7 +32,7 @@ return [
         'general' => [
             'all_rights_reserved' => 'Todos los derechos reservados.',
             'are_you_sure'        => 'Está seguro?',
-            'boilerplate_link'    => 'Laravel 5 Boilerplate',
+            'boilerplate_link'    => '中华文化走出去',
             'continue'            => 'Continuar',
             'member_since'        => 'Miembro desde',
             'minutes'             => ' minutos',
@@ -64,7 +64,7 @@ return [
             'results'    => 'Resultados de la busqueda para :query',
         ],
 
-        'welcome' => '<p>Este es el tema CoreUI por <a href="https://coreui.io/" target="_blank">creativeLabs</a>. Esta versión no está completa, descargue la versión completa para añadir mas componentes.</p>
+        'welcome' => '<p>Este es el tema gq1994 por <a href="https://coreui.io/" target="_blank">creativeLabs</a>. Esta versión no está completa, descargue la versión completa para añadir mas componentes.</p>
 <p>Toda la funcionalidad es de prueba, a excepción de la <strong>Administración de acceso</strong> a la izquierda. Esta plantilla viene pre-configurada y funcional para total gestión de usuarios/roles/permisos.</p>
 <p>Tenga presente que esta plantilla sigue estando en desarrollo y puede contener errores. Hare lo que este en mis manos para corregirlos.</p>
 <p>Espero que disfrute y aprecie el trabajo depositado en este proyecto. Por favor, visite <a href="https://github.com/rappasoft/laravel-5-boilerplate" target="_blank">GitHub</a> para mas información o reportar error <a href="https://github.com/rappasoft/Laravel-5-Boilerplate/issues" target="_blank">aquí</a>.</p>

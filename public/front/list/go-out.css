@@ -1,0 +1,1002 @@
+.center{
+    width: 1200px;
+    margin: 0px auto;
+    height: auto;
+    overflow: hidden;
+}
+
+.one-road{
+    width: 100%;
+    height: 670px;
+    border-top: 2px solid #cccccc;
+    position: relative;
+}
+.road-p{
+    font-family: "华文行楷";
+    font-size: 28px;
+    font-weight: bolder;
+    text-align: center;
+    line-height: 45px;
+    width: 140px;
+    height: 40px;
+    background: #06348b;
+    color: white;
+    position: absolute;
+    top: -2px;
+    letter-spacing: 3px;
+}
+.road-ul{
+    width: 400px;
+    height: 38px;
+    margin-left: 140px;
+}
+.road-ul li{
+    float: left;
+    width: auto;
+    height: 100%;
+    padding: 0 0 0 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 24px;
+}
+.road-show{
+    color: #06348b;
+}
+.one-road-1{
+    width: 588px;
+    height: 544px;
+    margin-left: 2px;
+    margin-top: 40px;
+    box-shadow: 2px 2px 2px 2px #eee;
+    float: left;
+    position: relative;
+}
+.one-road-1 img{
+    display: inline-block;
+    width: 100%;
+    height: 330px;
+}
+.one-road-1-span{
+    padding: 6px 4px;
+    background: #194ba1;
+    color: white;
+    position: absolute;
+    top: 296px;
+    right: 10px;
+}
+.road-word{
+    width: 550px;
+    height: 190px;
+    margin: 10px auto;
+}
+.road-word-title{
+    width: 100%;
+    line-height: 34px;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #333333;
+}
+.road-content{
+    width: 100%;
+    margin-top: 6px;
+    line-height: 20px;
+    color: #747474;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+.road-empty{
+    width: 18px;
+    height: 100%;
+    float: left;
+}
+/*==================中华之美===================*/
+.Chinese-beautiful{
+    width: 100%;
+    height: 690px;
+    border-top: 2px solid #cccccc;
+    position: relative;
+}
+.main .left .Chinese-beautiful .Chinese-p{
+
+    font-family: "宋体";
+    font-size: 28px;
+    font-weight: bolder;
+    text-align: center;
+    line-height: 45px;
+    width: 140px;
+    height: 40px;
+    background: #fe908f;
+    color: white;
+    position: absolute;
+    top: -2px;
+    letter-spacing: 3px;
+}
+.Chinese-ul{
+     /*width: 800px;*/
+     height: 38px;
+     margin-left: 160px;
+     float: left;
+     position: absolute;
+     top: 0px;
+ }
+.Chinese-ul li{
+    width: auto;
+    padding: 0 20px;
+    float: left;
+    line-height: 40px;
+    font-size: 20px;
+}
+.Chinese-show{
+    color: #06348b;
+}
+.Chinese-more{
+    position: absolute;
+    right: 0;
+    font-size: 14px;
+.Chinese-ul{
+    /*width: 800px;*/
+    height: 38px;
+    margin-left: 160px;
+    float: left;
+    position: absolute;
+    top: 0px;
+}
+.Chinese-ul li{
+    width: auto;
+    padding: 0 20px;
+    float: left;
+    line-height: 40px;
+    font-size: 20px;
+}
+.Chinese-show{
+    color: #06348b;
+}
+.Chinese-more{
+    position: absolute;
+    right: 0;
+    font-size: 14px;
+    color: #666666;
+    top: 16px;
+}
+.Chinese-top{
+    width: 100%;
+    height: 360px;
+    margin-top: 70px;
+}
+
+.Chinese-top{
+    width: 100%;
+    height: 290px;
+    margin-top: 70px;
+}
+.Chinese-top-1{
+    width: 386px;
+    height: 286px;
+    margin-right: 20px;
+    position: relative;
+    float: left;
+}
+.Chinese-top-1 img{
+    width: 100%;
+    height: 100%;
+}
+.Chinese-top-1 span{
+    width: 50px;
+    height: 26px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #194ba1;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    line-height: 26px;
+}
+
+.Chinese-top-2{
+    width: 386px;
+    height: 286px;
+    position: relative;
+    float: left;
+}
+.Chinese-top-2 img{
+    width: 100%;
+    height: 100%;
+}
+.Chinese-top-2 span {
+    width: 50px;
+    height: 26px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #194ba1;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    line-height: 26px;
+}
+
+
+
+.Chinese-left{
+    float: left;
+    width: 920px;
+    height: 360px;
+    box-shadow: 2px 2px 2px 2px #eee;
+}
+.Chinese-left img{
+    width: 640px;
+    height: 100%;
+}
+.Chinese-left-word{
+    width: 240px;
+    height: 310px;
+    float: right;
+    margin-right: 20px;
+    margin-top: 34px;
+}
+.left-word-p{
+    font-size: 20px;
+    color: #333333;
+    font-weight: bolder;
+    line-height: 30px;
+    text-align: left;
+}
+.left-word-content{
+    margin-top: 20px;
+    line-height: 22px;
+    font-size: 14px;
+    color: #666666;
+    letter-spacing: 2px;
+}
+.Chinese-right{
+    width: 270px;
+    height: 100%;
+    float: right;
+}
+.Chinese-right-1{
+    float: right;
+    width: 210px;
+    height: 100px;
+    border: 1px solid #dddddd;
+    font-size: 16px;
+    color: #333333;
+    line-height: 26px;
+    padding: 20px;
+    letter-spacing: 2px;
+}
+.Chinese-empty{
+    width: 100%;
+    height: 28px;
+    float: right;
+}
+.Chinese-bg{
+    float: right;
+    width: 232px;
+    height: 100px;
+    /*border: 1px solid #dddddd;*/
+    font-size: 16px;
+    color: white;
+    line-height: 26px;
+    padding: 20px 20px 20px 40px;
+    letter-spacing: 2px;
+    background: url("../img/Chinese-bg.png") no-repeat;
+}
+.Chinese-bottom{
+    width: 100%;
+    height: 260px;
+    margin-top: 30px;
+}
+.Chinese-bottom li{
+    width: 284px;
+    height: 100%;
+    float: left;
+    box-shadow: 2px 2px 2px 2px #eee;
+    margin-left: 1px;
+    position: relative;
+}
+.Chinese-bottom li img{
+    width: 100%;
+    height: 160px;
+}
+.Chinese-bottom li p{
+    padding: 10px;
+    line-height: 26px;
+    font-size: 18px;
+}
+.Chinese-bottom li span{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 10px;
+    color: #5a5a5a;
+}
+.Chinese-bottom .li-empty{
+    float: left;
+    height: 100%;
+    width: 18px;
+}
+/*====================华人华侨     汉语推广=============*/
+/*.Chinese-two{*/
+    /*width: 100%;*/
+    /*height: 574px;*/
+/*}*/
+/*.overseas-Chinese{*/
+    /*float: left;*/
+    /*width: 580px;*/
+    /*height: 100%;*/
+    /*border-top: 2px solid #cccccc;*/
+    /*position: relative;*/
+/*}*/
+/*.overseas-Chinese-word{*/
+    /*width: 580px;*/
+    /*height: 520px;*/
+    /*margin-top: 70px;*/
+    /*position: relative;*/
+/*}*/
+/*.overseas-Chinese-word img{*/
+    /*width: 100%;*/
+    /*height: 326px;*/
+/*}*/
+/*.overseas-p{*/
+    /*width: 100%;*/
+    /*height: 48px;*/
+    /*text-indent: 20px;*/
+    /*line-height: 48px;*/
+    /*color: white;*/
+    /*background: rgba(0,0,0,0.2);*/
+    /*font-size: 22px;*/
+    /*font-weight: bolder;*/
+    /*letter-spacing: 1px;*/
+    /*position: absolute;*/
+    /*top: 278px;*/
+/*}*/
+/*.overseas-ul{*/
+    /*width: 100%;*/
+    /*height: auto;*/
+    /*margin-top: 10px;*/
+/*}*/
+/*.overseas-ul li{*/
+    /*width: 100%;*/
+    /*line-height: 40px;*/
+/*}*/
+/*.overseas-ul li span{*/
+    /*display: inline-block;*/
+    /*margin-right: 10px;*/
+    /*width: 8px;*/
+    /*height: 8px;*/
+    /*border: 1px solid #8fa3cb;*/
+
+/*}*/
+/*.overseas-ul-span{*/
+    /*background: #8fa3cb;*/
+/*}*/
+/*.overseas-more{*/
+    /*font-size: 14px;*/
+    /*color: #666666;*/
+    /*position: absolute;*/
+    /*right: 0;*/
+    /*top: 10px;*/
+/*}*/
+
+
+/*.Chinese-popularization{*/
+    /*float: right;*/
+    /*width: 580px;*/
+    /*height: 100%;*/
+    /*border-top: 2px solid #cccccc;*/
+    /*position: relative;*/
+/*}*/
+/*.popularization-more{*/
+    /*font-size: 14px;*/
+    /*color: #666666;*/
+    /*position: absolute;*/
+    /*right: 0;*/
+    /*top: 10px;*/
+/*}*/
+/*!*=============图书影视================*!*/
+/*.books{*/
+    /*width: 100%;*/
+    /*height: 852px;*/
+    /*border-top: 2px solid #cccccc;*/
+    /*position: relative;*/
+/*}*/
+/*.books-left{*/
+    /*width: 764px;*/
+    /*height: 780px;*/
+    /*float: left;*/
+    /*margin-top: 70px;*/
+/*}*/
+/*.books-left-top{*/
+    /*width: 100%;*/
+    /*height: 420px;*/
+/*}*/
+/*.books-left-top img{*/
+    /*width: 310px;*/
+    /*height: 100%;*/
+    /*float: left;*/
+/*}*/
+/*.books-left-top-word{*/
+    /*width: 436px;*/
+    /*height: 100%;*/
+    /*float: right;*/
+/*}*/
+/*.books-left-top-word-1{*/
+    /*width: 100%;*/
+    /*height: 168px;*/
+/*}*/
+/*.books-left-top-word-1 p{*/
+    /*font-size: 20px;*/
+    /*color: #333333;*/
+    /*font-weight: bolder;*/
+    /*line-height: 40px;*/
+/*}*/
+/*.books-left-top-word-1 div{*/
+    /*width: 100%;*/
+    /*height: 114px;*/
+    /*line-height: 24px;*/
+    /*color: #666666;*/
+/*}*/
+/*.books-left-top-word-2{*/
+    /*width: 100%;*/
+    /*height: 254px;*/
+/*}*/
+/*.books-left-top-word-2 img{*/
+    /*float: left;*/
+    /*width: 180px;*/
+    /*height: 254px;*/
+/*}*/
+/*.books-left-top-word-2 div{*/
+    /*width: 220px;*/
+    /*height: 100%;*/
+    /*float: right;*/
+/*}*/
+/*.books-left-top-word-2 div p{*/
+    /*width: 100%;*/
+    /*height: 40px;*/
+    /*line-height: 40px;*/
+    /*margin-top: 18px;*/
+    /*font-size: 20px;*/
+    /*font-weight: bolder;*/
+/*}*/
+/*.books-left-top-word-2 div div{*/
+    /*line-height: 24px;*/
+    /*color: #666666;*/
+    /*margin-top: 10px;*/
+/*}*/
+/*.Latest-information{*/
+    /*width: 724px;*/
+    /*height: 274px;*/
+    /*margin-top: 38px;*/
+    /*padding-left: 40px;*/
+    /*box-shadow: 2px 2px 2px 2px #eee;*/
+/*}*/
+/*.information-p{*/
+    /*width: 120px;*/
+    /*height: 52px;*/
+    /*line-height: 52px;*/
+    /*border-bottom: 2px solid #06348b;*/
+    /*text-align: center;*/
+    /*font-size: 16px;*/
+    /*font-weight: bolder;*/
+    /*letter-spacing: 2px;*/
+/*}*/
+/*.books-right{*/
+    /*width: 400px;*/
+    /*height: 780px;*/
+    /*margin-top: 70px;*/
+    /*float: right;*/
+/*}*/
+/*.books-right-1{*/
+    /*width: 400px;*/
+    /*height: 226px;*/
+    /*position: relative;*/
+/*}*/
+/*.books-right-1 img{*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+/*}*/
+/*.books-right-1-word{*/
+    /*width: 100%;*/
+    /*height: 60px;*/
+    /*line-height: 60px;*/
+    /*text-align: center;*/
+    /*color: white;*/
+    /*font-size: 16px;*/
+    /*position: absolute;*/
+    /*bottom: 0;*/
+/*}*/
+/*.books-right-1 .play{*/
+    /*display: inline-block;*/
+    /*width: 42px;*/
+    /*height: 42px;*/
+    /*position: absolute;*/
+    /*top: 92px;*/
+    /*left: 180px;*/
+/*}*/
+/*.books-empty{*/
+    /*width: 100%;*/
+    /*height: 28px;*/
+/*}*/
+/*!*=============丝路客厅===================*!*/
+/*.living-room{*/
+    /*width: 100%;*/
+    /*height: 644px;*/
+    /*position: relative;*/
+/*}*/
+/*.living-left{*/
+    /*width: 764px;*/
+    /*height: 100%;*/
+    /*border-top: 2px solid #cccccc;*/
+    /*position: relative;*/
+    /*float: left;*/
+/*}*/
+/*.living-left-1{*/
+    /*width: 100%;*/
+    /*height: 272px;*/
+    /*margin-top: 70px;*/
+    /*box-shadow: 2px 2px 2px 2px #eee;*/
+/*}*/
+/*.living-left-1 img{*/
+    /*float: left;*/
+    /*width: 480px;*/
+    /*height: 100%;*/
+/*}*/
+/*.living-left-1-word{*/
+    /*width: 220px;*/
+    /*height: 240px;*/
+    /*float: right;*/
+    /*margin-right: 30px;*/
+    /*margin-top: 20px;*/
+/*}*/
+/*.living-left-1-p{*/
+    /*width: 100%;*/
+    /*height: 50px;*/
+    /*line-height: 50px;*/
+    /*font-size: 20px;*/
+    /*font-weight: bolder;*/
+    /*text-align: center;*/
+/*}*/
+/*.living-left-1-div{*/
+    /*color: #666666;*/
+    /*line-height: 26px;*/
+    /*text-align: left;*/
+/*}*/
+/*.living-left-2{*/
+    /*margin-top: 30px;*/
+    /*width: 100%;*/
+    /*height: 240px;*/
+/*}*/
+/*.living-left-2 li{*/
+    /*width: 240px;*/
+    /*height: 100%;*/
+    /*box-shadow: 2px 2px 2px 2px #eee;*/
+    /*margin-left: 1px;*/
+    /*float: left;*/
+/*}*/
+/*.living-left-2 li img{*/
+    /*display: inline-block;*/
+    /*width: 100%;*/
+    /*height: 136px;*/
+/*}*/
+/*.living-left-2 li p{*/
+    /*padding: 20px;*/
+    /*line-height: 26px;*/
+/*}*/
+/*.living-left-2 .living-left-empty{*/
+    /*width: 20px;*/
+    /*height: 100%;*/
+    /*float: left;*/
+/*}*/
+/*.living-right{*/
+    /*width: 360px;*/
+    /*!*height: 100%;*!*/
+    /*!*float: right;*!*/
+    /*position: relative;*/
+    /*border: 1px solid #ddd;*/
+    /*!*margin-bottom: 40px;*!*/
+/*}*/
+
+/*.Cultural-investment{*/
+    /*width: 100%;*/
+    /*height: 40px;*/
+    /*background: #06348b;*/
+    /*font-family: "华文行楷";*/
+    /*font-size: 28px;*/
+    /*font-weight: bolder;*/
+    /*text-align: center;*/
+    /*line-height: 45px;*/
+    /*color: white;*/
+/*}*/
+/*.living-more{*/
+    /*position: absolute;*/
+    /*right: 18px;*/
+    /*top: 12px;*/
+    /*color: white;*/
+    /*font-size: 12px;*/
+/*}*/
+/*.living-right-1{*/
+    /*width: 320px;*/
+    /*height: 260px;*/
+    /*margin: 20px auto 0;*/
+/*}*/
+/*.living-right-1 img{*/
+    /*width: 100%;*/
+    /*height: 190px;*/
+/*}*/
+/*.living-right-1 p{*/
+    /*line-height: 30px;*/
+    /*font-size: 16px;*/
+    /*letter-spacing: 2px;*/
+    /*margin-top: 6px;*/
+/*}*/
+/*!*====================数字展馆=================*!*/
+/*.number-hall{*/
+    /*width: 100%;*/
+    /*height: 440px;*/
+/*}*/
+/*.number-left{*/
+    /*width: 764px;*/
+    /*height: 100%;*/
+    /*border-top: 2px solid #cccccc;*/
+    /*position: relative;*/
+    /*float: left;*/
+/*}*/
+/*.number-left-content{*/
+    /*width: 100%;*/
+    /*height: 320px;*/
+    /*margin-top: 70px;*/
+/*}*/
+/*.number-left-content p{*/
+    /*padding: 0 20px;*/
+    /*float: left;*/
+    /*width: 58px;*/
+    /*height: 100%;*/
+    /*text-align: center;*/
+    /*line-height: 30px;*/
+    /*color: white;*/
+/*}*/
+/*.number-left-content img{*/
+    /*float: left;*/
+    /*width: 520px;*/
+    /*height: 100%;*/
+/*}*/
+/*.number-right{*/
+    /*float: right;*/
+    /*width: 400px;*/
+    /*height: 340px;*/
+    /*background: #dddddd;*/
+    /*margin-top: 50px;*/
+    /*position: relative;*/
+/*}*/
+/*.number-right .number-right-p{*/
+    /*width: 140px;*/
+    /*height: 40px;*/
+    /*margin-top: 30px;*/
+    /*margin-left: 30px;*/
+    /*background: #194ba1;*/
+    /*font-family: "华文行楷";*/
+    /*font-size: 26px;*/
+    /*font-weight: bolder;*/
+    /*color: white;*/
+    /*text-align: center;*/
+    /*line-height: 40px;*/
+    /*letter-spacing: 2px;*/
+/*}*/
+/*.number-right .number-right-a{*/
+    /*position: absolute;*/
+    /*top: 50px;*/
+    /*right: 30px;*/
+    /*color: #666666;*/
+/*}*/
+/*.number-right-content{*/
+    /*width: 340px;*/
+    /*height: 230px;*/
+    /*margin: 20px auto;*/
+/*}*/
+/*.number-right-content ul{*/
+    /*width: 100%;*/
+    /*height: 200px;*/
+/*}*/
+/*.number-right-content ul li{*/
+    /*width: 170px;*/
+    /*height: 80px;*/
+    /*float: left;*/
+    /*margin-bottom: 10px;*/
+/*}*/
+/*.number-right-content ul li img{*/
+    /*float: left;*/
+    /*width: 60px;*/
+    /*height: 60px;*/
+    /*border-radius: 60px;*/
+    /*margin-right: 10px;*/
+/*}*/
+/*.number-right-content ul li p a{*/
+    /*color: #333333;*/
+    /*font-size: 16px;*/
+    /*float: left;*/
+    /*width: 100px;*/
+    /*line-height: 20px;*/
+/*}*/
+/*.number-right-content ul li p span{*/
+    /*font-size: 14px;*/
+    /*color: #666666;*/
+    /*line-height: 18px;*/
+/*}*/
+/*.number-right-content a{*/
+    /*float: right;*/
+    /*color: #666666;*/
+/*}*/
+/*!*======================外宣媒体==============*!*/
+/*.Media-publicity{*/
+    /*width: 100%;*/
+    /*height: 850px;*/
+    /*border-top: 2px solid #cccccc;*/
+    /*position: relative;*/
+/*}*/
+/*.Media-title{*/
+    /*width: 100px;*/
+    /*height: 44px;*/
+    /*margin: 30px auto 20px;*/
+    /*line-height: 46px;*/
+    /*font-size: 22px;*/
+    /*color: #333333;*/
+    /*text-align: center;*/
+    /*border-bottom: 2px solid #194ba1;*/
+/*}*/
+/*.Media-banner{*/
+    /*width: 100%;*/
+    /*height: 305px;*/
+    /*position: relative;*/
+/*}*/
+/*.Media-list{*/
+    /*width: 100%;*/
+    /*height: 305px;*/
+    /*position: relative;*/
+/*}*/
+/*.Media-ul{*/
+    /*width: 2450px;*/
+    /*height: 300px;*/
+    /*position: absolute;*/
+    /*left: 0;*/
+/*}*/
+/*.Media-ul-li{*/
+    /*width: 218px;*/
+    /*height: 298px;*/
+    /*border: 1px solid #999999;*/
+    /*margin-right: 27px;*/
+    /*float: left;*/
+    /*box-shadow: 2px 2px 2px 2px #d4d4d4;*/
+/*}*/
+/*.Media-ul-li img{*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+/*}*/
+/*.Media-left, .Media-right{*/
+    /*position: absolute;*/
+    /*top: 120px;*/
+/*}*/
+/*.Media-left{*/
+    /*left: 0;*/
+/*}*/
+/*.Media-right{*/
+    /*right: 2px;*/
+/*}*/
+/*!*--------------------------*!*/
+/*.Media-two{*/
+    /*width: 100%;*/
+    /*height: 380px;*/
+    /*margin-top: 30px;*/
+/*}*/
+/*.Media-border{*/
+    /*width: 840px;*/
+    /*height: 100%;*/
+    /*float: left;*/
+    /*margin-left: 1px;*/
+    /*box-shadow: 2px 2px 2px 2px #d4d4d4;*/
+/*}*/
+/*.Media-border-title{*/
+    /*width: 100px;*/
+    /*height: 44px;*/
+    /*margin-left: 30px;*/
+    /*margin-top: 20px;*/
+    /*line-height: 46px;*/
+    /*font-size: 22px;*/
+    /*color: #333333;*/
+    /*text-align: center;*/
+    /*border-bottom: 2px solid #194ba1;*/
+/*}*/
+/*.Media-border-content{*/
+    /*width: 780px;*/
+    /*height: 254px;*/
+    /*margin: 26px auto;*/
+/*}*/
+/*.Media-border-content-left{*/
+    /*float: left;*/
+    /*width: 364px;*/
+    /*height: 100%;*/
+/*}*/
+/*.Media-border-content-left img, .Media-border-content-right img{*/
+    /*width: 180px;*/
+    /*height: 100%;*/
+    /*float: left;*/
+/*}*/
+/*.Media-border-content-left-content{*/
+    /*float: right;*/
+    /*width: 164px;*/
+/*}*/
+/*.Media-border-content-left-content p{*/
+    /*text-align: left;*/
+    /*font-size: 18px;*/
+/*}*/
+/*.Media-border-content-left-content div{*/
+    /*margin-top: 24px;*/
+    /*line-height: 24px;*/
+    /*color: #666666;*/
+    /*font-size: 14px;*/
+/*}*/
+
+/*.Media-border-content-left-content a{*/
+    /*float: right;*/
+    /*margin-top: 14px;*/
+    /*color: #666666;*/
+    /*font-size: 12px;*/
+/*}*/
+/*.Media-border-content-right{*/
+    /*float: right;*/
+    /*width: 364px;*/
+    /*height: 100%;*/
+/*}*/
+/*!*-------------外宣网络---------*!*/
+/*.Media-network{*/
+    /*width: 330px;*/
+    /*height: 100%;*/
+    /*float: right;*/
+    /*border: 1px solid #dddddd;*/
+/*}*/
+/*.Media-network-title{*/
+    /*width: 100px;*/
+    /*height: 44px;*/
+    /*float: right;*/
+    /*margin: 20px 30px 0 0;*/
+    /*line-height: 46px;*/
+    /*font-size: 22px;*/
+    /*color: #333333;*/
+    /*text-align: center;*/
+    /*border-bottom: 2px solid #194ba1;*/
+/*}*/
+/*.Media-network-three{*/
+    /*width: 270px;*/
+    /*height: 270px;*/
+    /*margin: 94px auto 0;*/
+    /*background: url("../img/Media-network.png") no-repeat;*/
+    /*position: relative;*/
+/*}*/
+/*.Media-network-1, .Media-network-2, .Media-network-3{*/
+    /*position: absolute;*/
+/*}*/
+/*.Media-network-1{*/
+    /*top: 30px;*/
+    /*left: 86px;*/
+/*}*/
+/*.Media-network-2{*/
+    /*bottom: 30px;*/
+    /*left: 20px;*/
+/*}*/
+/*.Media-network-3 {*/
+    /*right: 16px;*/
+    /*bottom: 31px;*/
+
+/*}*/
+
+
+
+
+
+
+
+
+
+
+
+/*!*==================================*!*/
+/*.publicity{*/
+    /*width: 1200px;*/
+    /*height: 270px;*/
+    /*margin: 0 auto;*/
+/*}*/
+/*.publicity-left{*/
+    /*float: left;*/
+    /*width: 340px;*/
+    /*height: 194px;*/
+    /*box-shadow: 2px 2px 2px 2px #eee;*/
+    /*margin-top: 30px;*/
+    /*padding-left: 30px;*/
+/*}*/
+/*.publicity-left-p{*/
+    /*width: 100px;*/
+    /*height: 52px;*/
+    /*border-bottom: 2px solid #06348b;*/
+    /*text-align: center;*/
+    /*font-size: 22px;*/
+    /*line-height: 52px;*/
+    /*color: #333333;*/
+    /*margin-top: 16px;*/
+/*}*/
+/*.publicity-left-ul{*/
+    /*width: 335px;*/
+    /*height: 94px;*/
+    /*margin-top: 16px;*/
+/*}*/
+/*.publicity-left-ul li{*/
+    /*font-size: 16px;*/
+    /*text-align: left;*/
+    /*line-height: 28px;*/
+/*}*/
+/*.publicity-left-ul li a{*/
+    /*color: #333333;*/
+/*}*/
+
+
+
+
+
+/*.publicity-right{*/
+    /*float: right;*/
+    /*width: 800px;*/
+    /*height: 194px;*/
+    /*box-shadow: 2px 2px 2px 2px #eee;*/
+    /*margin-top: 30px;*/
+/*}*/
+/*.publicity-right-ul{*/
+    /*width: 672px;*/
+    /*height: 100%;*/
+    /*float: left;*/
+/*}*/
+/*.publicity-right-ul li{*/
+    /*width: 180px;*/
+    /*height: 126px;*/
+    /*margin-left: 32px;*/
+    /*margin-top: 38px;*/
+    /*float: left;*/
+/*}*/
+/*.publicity-right-ul li img{*/
+    /*display: inline-block;*/
+    /*width: 100%;*/
+    /*height: 88px;*/
+/*}*/
+/*.publicity-right-ul li span{*/
+    /*display: inline-block;*/
+    /*width: 100%;*/
+    /*line-height: 38px;*/
+    /*text-align: center;*/
+    /*font-size: 16px;*/
+    /*color: #333333;*/
+/*}*/
+/*.overseas-media, .media-publicity{*/
+    /*width: 56px ;*/
+    /*height: 194px;*/
+    /*padding: 50px 20px;*/
+    /*float: right;*/
+    /*cursor: pointer;*/
+/*}*/
+/*.overseas-media{*/
+    /*background: #06348b;*/
+    /*color: white;*/
+    /*text-align: center;*/
+/*}*/
+/*.media-publicity{*/
+    /*background: #dddddd;*/
+    /*color: #333333;*/
+    /*text-align: center;*/
+/*}*/
+
+
+
+
+
+
+
+
+
+

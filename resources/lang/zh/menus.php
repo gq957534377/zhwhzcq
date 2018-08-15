@@ -35,6 +35,16 @@ return [
                 'main'            => '用户',
                 'view'            => '查看用户',
             ],
+            'labels' => [
+                'all'             => '所有标签',
+                'change-password' => '更改密码',
+                'create'          => '新建标签',
+                'deactivated'     => '未激活的用户',
+                'deleted'         => '已删除的标签',
+                'edit'            => '编辑标签',
+                'main'            => '用户',
+                'view'            => '查看标签',
+            ],
         ],
 
         'log-viewer' => [
@@ -47,6 +57,7 @@ return [
             'dashboard' => '指示板',
             'general'   => '常规',
             'system'    => '系统',
+            'labels'    => '标签',
         ],
     ],
 

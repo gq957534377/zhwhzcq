@@ -5,8 +5,14 @@
                 {{ __('menus.backend.sidebar.general') }}
             </li>
 
+            {{--指示板--}}
             <li class="nav-item">
                 <a class="nav-link {{ active_class(Active::checkUriPattern('admin/dashboard')) }}" href="{{ route('admin.dashboard') }}"><i class="icon-speedometer"></i> {{ __('menus.backend.sidebar.dashboard') }}</a>
+            </li>
+
+            {{--标签管理--}}
+            <li class="nav-item">
+                <a class="nav-link {{ active_class(Active::checkUriPattern('admin/labels')) }}" href="{{ route('admin.labels.index') }}"><i class="icon-speedometer"></i> {{ __('menus.backend.sidebar.labels') }}</a>
             </li>
 
             <li class="nav-title">

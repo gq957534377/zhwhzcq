@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e3fc7ab0b9a218c2631d3669953022b1",
+    "content-hash": "2edf8aa501432a53fcb7fe76b8f0eb1e",
     "packages": [
         {
             "name": "appstract/laravel-blade-directives",
@@ -3245,6 +3245,45 @@
                 "UUID RFC4122"
             ],
             "time": "2017-09-03T23:32:05+00:00"
+        },
+        {
+            "name": "zedisdog/laravel-schema-extend",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zedisdog/laravel-schema-extend.git",
+                "reference": "9174608d996aeaa8696c03e9002a7c460afae2ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zedisdog/laravel-schema-extend/zipball/9174608d996aeaa8696c03e9002a7c460afae2ef",
+                "reference": "9174608d996aeaa8696c03e9002a7c460afae2ef",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.0|^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jialeo\\LaravelSchemaExtend\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "WTFPL"
+            ],
+            "authors": [
+                {
+                    "name": "zed",
+                    "email": "2692273254@qq.com"
+                }
+            ],
+            "description": "supplement for eloquent migration",
+            "time": "2018-05-28T02:57:48+00:00"
         }
     ],
     "packages-dev": [
@@ -4068,6 +4107,64 @@
                 "yml"
             ],
             "time": "2016-02-11T16:21:17+00:00"
+        },
+        {
+            "name": "itsgoingd/clockwork",
+            "version": "v2.2.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itsgoingd/clockwork.git",
+                "reference": "3580b0b1406dc69a51359679acaa150d81a74ccb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itsgoingd/clockwork/zipball/3580b0b1406dc69a51359679acaa150d81a74ccb",
+                "reference": "3580b0b1406dc69a51359679acaa150d81a74ccb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4",
+                "psr/log": "1.*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Clockwork\\Support\\Laravel\\ClockworkServiceProvider"
+                    ],
+                    "aliases": {
+                        "Clockwork": "Clockwork\\Support\\Laravel\\Facade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Clockwork\\": "Clockwork/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "itsgoingd",
+                    "email": "itsgoingd@luzer.sk",
+                    "homepage": "https://twitter.com/itsgoingd"
+                }
+            ],
+            "description": "php dev tools integrated to your browser",
+            "homepage": "https://underground.works/clockwork",
+            "keywords": [
+                "Devtools",
+                "debugging",
+                "laravel",
+                "logging",
+                "lumen",
+                "profiling",
+                "slim"
+            ],
+            "time": "2018-04-24T20:00:28+00:00"
         },
         {
             "name": "maximebf/debugbar",

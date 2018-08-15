@@ -1,0 +1,51 @@
+
+.hot-title {
+	color: #666;
+	height: 40px;
+	border-bottom: 2px solid #ddd;
+}
+
+.hot-title div {
+	width: 120px;
+	font-size: 22px;
+	padding: 5px 10px;
+	line-height: 28px;
+	border-bottom: 4px solid #fe908f;
+}
+
+.hot ul {
+	margin: 20px 0;
+}
+
+.hot ul li {
+	font-size: 16px;
+	/*margin: 5px 0;*/
+	line-height: 40px;
+	/*list-style: square;*/
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+
+.hot ul li div {
+	float: left;
+	text-align: center;
+	color: white;
+	background: #fe908f;
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	margin: 8px 10px 8px 0px;
+}
+
+.hot ul li p {
+	float: left;
+	text-align: center;
+	color: white;
+	background: #ccc;
+	
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	margin: 8px 10px 8px 0px;
+}

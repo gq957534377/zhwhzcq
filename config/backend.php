@@ -2,7 +2,7 @@
 
 return [
     /*
-     * CoreUI BODY options, add following classes to body to change options
+     * gq1994 BODY options, add following classes to body to change options
      * // Header options
      * 1. '.header-fixed'					- Fixed Header
      *

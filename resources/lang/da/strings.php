@@ -30,7 +30,7 @@ return [
         'general' => [
             'all_rights_reserved' => 'Alle rettigheder forbeholdes.',
             'are_you_sure'        => 'Er du sikker?',
-            'boilerplate_link'    => 'Laravel 5 Boilerplate',
+            'boilerplate_link'    => '中华文化走出去',
             'continue'            => 'Fortsæt',
             'member_since'        => 'Medlem siden',
             'minutes'             => ' minutter',
@@ -62,7 +62,7 @@ return [
             'results'    => 'Search Results for :query',
         ],
 
-        'welcome' => '<p>Dette er temaet CoreUI som er udviklet af <a href="https://coreui.io/" target="_blank">creativeLabs</a>. Dette er en skrabet udgave med kun det nødvendige design og kode for at få det hele til at fungere. Download den fulde version for at tilføje flere komponenter til dit betjeningspanel.</p>
+        'welcome' => '<p>Dette er temaet gq1994 som er udviklet af <a href="https://coreui.io/" target="_blank">creativeLabs</a>. Dette er en skrabet udgave med kun det nødvendige design og kode for at få det hele til at fungere. Download den fulde version for at tilføje flere komponenter til dit betjeningspanel.</p>
 <p>Alle funktionaliteter er blot til fremvisning med undtagelse af <strong>Brugeradministrationen</strong> til venstre. Denne opsætning indeholder derfor en fuld funktionel adgangskontrol til at administrere brugere/roller/rettigheder.</p>
 <p>Vær opmærksom på at dette er et videregående projekt og der kan derfor forekomme fejl eller andre problemer, som jeg ikke er stødt på endnu. Jeg vil gøre mit bedste for at rette dem når jeg modtager dem.</p>
 <p>Håber at du er glad for indsatsen jeg har givet dette projekt. Du er velkommen til at besøge os på <a href="https://github.com/rappasoft/laravel-5-boilerplate" target="_blank">GitHub</a> for mere information og du kan samtidig med indberette <a href="https://github.com/rappasoft/Laravel-5-Boilerplate/issues" target="_blank">fejl her</a>.</p>

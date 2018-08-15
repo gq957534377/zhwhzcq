@@ -30,7 +30,7 @@ return [
         'general' => [
             'all_rights_reserved' => 'Alla rättigheter förbehålls.',
             'are_you_sure'        => 'Är du säker?',
-            'boilerplate_link'    => 'Laravel 5 Boilerplate',
+            'boilerplate_link'    => '中华文化走出去',
             'continue'            => 'Fortsätt',
             'member_since'        => 'Registrerad',
             'minutes'             => ' minutes',
@@ -62,7 +62,7 @@ return [
             'results'    => 'Search Results for :query',
         ],
 
-        'welcome' => '<p>Detta är CoreUI temat som är skapat av <a href="https://coreui.io/" target="_blank">creativeLabs</a>.
+        'welcome' => '<p>Detta är gq1994 temat som är skapat av <a href="https://coreui.io/" target="_blank">creativeLabs</a>.
 Detta är en avskalad version med enbart de mest nödvändiga stilmallarna och skripten för att få det att fungera.
 Ladda ner den fulla versionen och börja lägg till de komponenter du behöver.</p>
 <p>Alla länkar/funktioner är här är bara exempel förutom <strong>Användare och rättigheter</strong> och <strong>Loggöversikten</strong> i sidomenyn

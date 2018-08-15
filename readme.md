@@ -7,7 +7,7 @@
 
 ### Official Documentation
 
-[Click here for the official documentation](http://laravel-boilerplate.com)
+[Click here for the official documentation]()
 
 ### Slack Channel
 

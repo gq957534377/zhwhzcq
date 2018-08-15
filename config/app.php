@@ -173,7 +173,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\ObserverServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        Clockwork\Support\Laravel\ClockworkServiceProvider::class
     ],
 
     /*
@@ -229,7 +229,8 @@ return [
         'Active' => HieuLe\Active\Facades\Active::class,
         'Gravatar' => Creativeorange\Gravatar\Facades\Gravatar::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-
+        'Clockwork' => Clockwork\Support\Laravel\Facade::class,
+        'Schema'    => Jialeo\LaravelSchemaExtend\Schema::class,
     ],
 
 ];

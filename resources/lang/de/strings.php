@@ -32,7 +32,7 @@ return [
         'general' => [
             'all_rights_reserved' => 'Alle Rechte vorbehalten.',
             'are_you_sure'        => 'Bist du dir sicher?',
-            'boilerplate_link'    => 'Laravel 5 Boilerplate',
+            'boilerplate_link'    => '中华文化走出去',
             'continue'            => 'Fortsetzen',
             'member_since'        => 'Mitglied seit',
             'minutes'             => ' Minuten',
@@ -64,7 +64,7 @@ return [
             'results'    => 'Suchergebnisse für :query',
         ],
 
-        'welcome' => '<p>Dies ist das CoreUI theme von <a href="https://coreui.io/" target="_blank">creativeLabs</a>. Dies ist eine abgestufte Version mit nur den nötigsten Styles und Scripten, damit es läuft. Lade die Vollversion herunter, um Komponenten zum Dashboard hinzufügen zu können.</p>
+        'welcome' => '<p>Dies ist das gq1994 theme von <a href="https://coreui.io/" target="_blank">creativeLabs</a>. Dies ist eine abgestufte Version mit nur den nötigsten Styles und Scripten, damit es läuft. Lade die Vollversion herunter, um Komponenten zum Dashboard hinzufügen zu können.</p>
 <p>Alle Funktionen sind statisch mit Ausnahme der <strong>Benutzer Verwaltung</strong> auf der linken Seite. Dieser Boilerplate kommt mit einer voll funktionsfähigen Zugangskontroll-Bibliothek, um Benutzer/Rollen und Berechtigungen zu verwalten.</p>
 <p>Denken Sie daran, es ist \'work in progress\' und möglicherweise gibt es Fehler oder andere Probleme die ich noch nicht gesehen habe. Ich werde mein Bestes tun, um sie zu beheben, sowie sie gemeldet werden.</p>
 <p>Ich hoffe, du geniesst die Arbeit, die ich hier reingesteckt habe. Bitte besuche die <a href="https://github.com/rappasoft/laravel-5-boilerplate" target="_blank">GitHub</a> Seite für weitere Informationen und meldet alle <a href="https://github.com/rappasoft/Laravel-5-Boilerplate/issues" target="_blank">Fehler hier</a>.</p>

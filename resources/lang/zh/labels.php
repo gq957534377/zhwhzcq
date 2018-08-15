@@ -47,32 +47,26 @@ return [
                 ],
             ],
 
-            'users' => [
-                'active'              => '激活用户',
-                'all_permissions'     => '所有权限',
+            'labels' => [
+                'active'              => '启用标签',
                 'change_password'     => '更改密码',
                 'change_password_for' => '为 :user 更改密码',
-                'create'              => '新建用户',
+                'create'              => '新建标签',
                 'deactivated'         => '已停用的用户',
                 'deleted'             => '已删除的用户',
-                'edit'                => '编辑用户',
-                'management'          => '用户管理',
+                'edit'                => '编辑标签',
+                'management'          => '标签管理',
                 'no_permissions'      => '没有权限',
                 'no_roles'            => '没有角色可设置',
                 'permissions'         => '权限',
 
                 'table' => [
-                    'confirmed'      => '确认',
-                    'created'        => '创建',
-                    'email'          => '电子邮件',
-                    'id'             => 'ID',
-                    'last_updated'   => '最后更新',
-                    'name'           => '名称',
-                    'no_deactivated' => '没有停用的用户',
-                    'no_deleted'     => '没有删除的用户',
-                    'roles'          => '角色',
-                    'social' => 'Social',
-                    'total'          => '用户总计',
+                    'name'=> '标签名',
+                    'stage'=> '级别',
+                    'parent_id'=> '所属一级分类',
+                    'nav_show'=> '是否展示导航',
+                    'created_at'=>'创建时间',
+                    'total' => '标签总计',
                 ],
 
                 'tabs' => [

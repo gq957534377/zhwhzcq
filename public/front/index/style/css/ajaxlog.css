@@ -1,0 +1,26 @@
+#ikaimi_login .hidden{display:none;}
+#ikaimi_login .close{position:absolute;right:12px;top:8px;display:block;width:40px;height:40px;color:#aeaeae;font-size:24px;text-align:center;cursor:pointer;}
+#ikaimi_bg { position: fixed;z-index:105;top: 0px;left: 0px;height:100%; width:100%; background: #000;display: none;}
+.km_box,.km_box a{font-family:Arial,"\5fae\8f6f\96c5\9ed1";}
+.km_box{width:520px;margin:0 auto;padding-bottom:20px;background:#fff;border: 1px solid #00AA98;border-radius:8px;position:relative;font-size:14px;display:block;}
+.km_box form{padding-top:19px;}
+.km_box div{margin-bottom:13px;}
+.km_box .title{ height:52px; line-height:52px; overflow:hidden;border-bottom: 1px solid #ddddde;}
+.km_box .title h6{float:left;margin:0;height:52px;padding:0px 37px;font-size:18px;color:#008779;border-right:#eee solid 1px;margin-right:20px;}
+.km_box .title a{font-size:14px;color:#999;}
+.km_box em{color:#f00;font-size:12px;}
+.km_box label{color:#888;font-size:14px;margin-left:38px;}
+.km_box .lg_btm{text-align:left;margin-left:90px;}
+.km_box .lg_btm a,.km_box .lg_btm input{width:280px;height:38px;line-height:38px;margin:0 7px;background:#3598db;display:inline-block;color:#fff;text-decoration:none;text-align:center;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;border: 1px solid #3598db;cursor:pointer;}
+.km_box p{text-align:center;margin:10px 0 0;}
+.km_box p a{margin:0 7px;}
+.km_box .fast_log{margin:0;padding-left:17px;border-top:1px dashed #ddddde;font-size:14px;color:#8f9090;margin-top:19px;padding-top:13px;}
+.km_box .fast_log a{margin-left:10px;}
+.km_box .txt_style{width:280px;height:26px;padding:4px;line-height:26px;border:1px solid  #ddddde;}
+.km_box .log_err{display:none;color:red;text-align:center;}
+.km_log label span{margin-left:14px;}
+.km_log .lg_btm a,.km_log .txt_style{width:320px;}
+.km_log .remb_btm{margin-left:55px;}
+.km_reg label span{margin-left:28px;}
+.km_reg .lg_btm{margin-left:110px;}
+.km_reg .remb_btm{margin-left:70px;}

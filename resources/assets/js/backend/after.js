@@ -1,2 +1,2 @@
-// Loaded after CoreUI app.js
+// Loaded after gq1994 app.js
 

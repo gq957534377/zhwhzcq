@@ -4,7 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-// Loaded before CoreUI app.js
+// Loaded before gq1994 app.js
 require('../bootstrap');
 require('pace');
 require('../plugins');
