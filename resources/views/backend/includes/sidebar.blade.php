@@ -20,6 +20,11 @@
                 <a class="nav-link {{ active_class(Active::checkUriPattern('admin/articles')) }}" href="{{ route('admin.articles.index') }}"><i class="icon-speedometer"></i> 文章</a>
             </li>
 
+            {{--轮播图管理--}}
+            <li class="nav-item">
+                <a class="nav-link {{ active_class(Active::checkUriPattern('admin/banners')) }}" href="{{ route('admin.banners.index') }}"><i class="icon-speedometer"></i> 轮播</a>
+            </li>
+
             <li class="nav-title">
                 {{ __('menus.backend.sidebar.system') }}
             </li>

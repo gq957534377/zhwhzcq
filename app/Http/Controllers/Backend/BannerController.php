@@ -51,7 +51,7 @@ class BannerController extends Controller
             'sort' => $request->sort,
         ]);
 
-        return redirect()->route('admin.banner.index')->withFlashSuccess('添加缩略图成功');
+        return redirect()->route('admin.banners.index')->withFlashSuccess('添加缩略图成功');
     }
 
     /**
