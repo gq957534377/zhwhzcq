@@ -7,7 +7,8 @@
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('contact', 'ContactController@index')->name('contact');
 Route::post('contact/send', 'ContactController@send')->name('contact.send');
-Route::resource('article', 'ArticleController');
+Route::resource('articles', 'ArticleController');
+Route::get('article_pages', 'ArticleController@pages');
 
 /*
  * These frontend controllers require the user to be logged in

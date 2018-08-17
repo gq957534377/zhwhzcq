@@ -146,7 +146,7 @@
         </div><!--card-footer-->
     </div><!--card-->
     {{ html()->form()->close() }}
-
+    <div id="zxzApp"></div>
     {{--缩略图--}}
     <div id="banner_up_modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
          aria-labelledby="myLargeModalLabel">
@@ -199,90 +199,4 @@
 
     </script>
     <script src="/crop.min.js"></script>
-    <script>
-        $(function () {
-            var options =
-                {
-                    thumbBox: '.thumbBox',
-                    spinner: '.spinner',
-                    imgSrc: '',
-                };
-            var cropper = $('.imageBox').cropbox(options);
-            $('#upload-file').on('change', function () {
-
-                var file = this.files[0];
-                // 限制图片类型
-                if (file.type.indexOf("image") === -1) {
-                    swal('提示!', '请选择图片类型文件！', 'error');
-                    return false;
-                }
-                // 限制图片大小
-
-                if (file.size >= 1024 * 1024) {
-                    swal('提示!', '请选择小于1M的图片！', 'error');
-                    return false;
-                }
-
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    options.imgSrc = e.target.result;
-                    cropper = $('.imageBox').cropbox(options);
-                };
-                reader.readAsDataURL(this.files[0]);
-//                this.files = [];
-            });
-            $('#btnCrop').on('click', function () {
-                var img = cropper.getDataURL();
-                $('.cropped').html('');
-                $('.cropped').append('<img src="' + img + '" align="absmiddle" style="width:64px;margin-top:4px;border-radius:64px;box-shadow:0px 0px 12px #7E7E7E;" ><p>64px*64px</p>');
-                $('.cropped').append('<img src="' + img + '" align="absmiddle" style="width:128px;margin-top:4px;border-radius:128px;box-shadow:0px 0px 12px #7E7E7E;"><p>128px*128px</p>');
-                $('.cropped').append('<img src="' + img + '" align="absmiddle" style="width:180px;margin-top:4px;border-radius:180px;box-shadow:0px 0px 12px #7E7E7E;"><p>180px*180px</p>');
-
-
-                // 定义上传事件
-                // 将base64文件转换为bolb文件
-                function getBlobBydataURI(dataURI, type) {
-                    var binary = atob(dataURI.split(',')[1]);
-                    var array = [];
-                    for (var i = 0; i < binary.length; i++) {
-                        array.push(binary.charCodeAt(i));
-                    }
-                    return new Blob([new Uint8Array(array)], {type: type});
-                }
-
-                var formData = new FormData();
-//                var $Blob = getBlobBydataURI(img, 'image/jpeg');
-//                formData.append('banner', $Blob);
-                formData.append('_token', "{{csrf_token()}}");
-                console.log(formData);
-                console.log(1111);
-                $.ajax({
-                    url: '/admin/uploadBanner',
-                    type: 'post',
-                    beforeSend: function () {
-                        $('#banner_up-img').attr('src', '/loading.gif');
-                    },
-                    data: formData,
-                    success: function (data) {
-                        console.log(data);
-//                        $('#banner_up').val(data.key);
-//                        $('#banner_up-img').attr('src', url);
-//                        $('#banner_up_modal').modal('hide');
-
-                    }
-                });
-//
-            });
-            $('#btnZoomIn').on('click', function () {
-                cropper.zoomIn();
-            });
-            $('#btnZoomOut').on('click', function () {
-                cropper.zoomOut();
-            })
-            //  显示上传缩略图模态框
-            $('#banner').click(function () {
-                $('#banner_up_modal').modal('show');
-            })
-        })
-    </script>
 @endsection

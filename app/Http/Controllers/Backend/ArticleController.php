@@ -7,6 +7,7 @@ use App\Models\Article;
 use App\Models\Label;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
@@ -124,13 +125,9 @@ class ArticleController extends Controller
     public function uploadBanner(Request $request)
     {
         if ($request->hasFile('banner')) {
-            $file = $request->banner;
-            //提取上传后的临时存放地址
-            //拼装新的文件名
-            $extension = $file->getClientOriginalExtension();
-
+            $path = $request->file('banner')->store('public/banners');
+            return response()->json(['StatusCode' => 200, 'ResultData' => Storage::url($path)]);
         }
-
         return response()->json(['StatusCode' => 400, 'ResultData' => '请上传缩略图']);
     }
 }
