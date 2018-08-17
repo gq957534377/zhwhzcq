@@ -34,7 +34,9 @@ class ArticleController extends Controller
         $result = $query
             ->orderBy('updated_at', 'desc')
             ->orderBy('sort', 'desc')
-            ->paginate(15);
+            ->paginate(1);
+
+        empty($keys) && $keys[] = '全部';
         return view('frontend.list', ['articles' => $result, 'key' => implode('-', $keys)]);
     }
 
@@ -62,7 +64,7 @@ class ArticleController extends Controller
         $result = $query
             ->orderBy('updated_at', 'desc')
             ->orderBy('sort', 'desc')
-            ->paginate(15);
+            ->paginate(1);
         return response()->json(['StatusCode' => 200, 'ResultData' => $result]);
     }
 
