@@ -47,7 +47,19 @@
                                 ->autofocus() }}
                         </div><!--col-->
                     </div><!--form-group-->
-                    <input type="text" name="file" value="111">
+
+                    {{--缩略图--}}
+                    <div class="form-group row">
+                        {{ html()->label('缩略图')->class('col-md-2 form-control-label')->for('banner') }}
+
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <a href="javascript:void(0);" id="banner"><img id="banner_up-img"
+                                                                           src="{{$banner->file??'/upLoad.jpg'}}"/></a>
+                        </div>
+                        <input required value="{{$banner->file}}" type="hidden" name="file"
+                               id="banner_up">
+                    </div><!--form-group-->
+
                     <div class="form-group row">
                         {{ html()->label('排序')->class('col-md-2 form-control-label')->for('sort') }}
 
@@ -76,4 +88,19 @@
         </div><!--card-footer-->
     </div><!--card-->
 {{ html()->closeModelForm() }}
+@endsection
+@section('scripts')
+    <script type="text/javascript">
+        window.zxzIsGood = function(data, field){
+            if (data.StatusCode===200){
+                $('#banner_up-img').attr('src',data.ResultData);
+                $('#banner_up').val(data.ResultData);
+                $('.vicp-icon4').trigger('click');
+            }else{
+                alert(data.ResultData);
+            }
+        }
+    </script>
+
+    <script src="/crop.min.js"></script>
 @endsection

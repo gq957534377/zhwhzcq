@@ -153,7 +153,7 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                    <button type="button" id="close-model" class="close" data-dismiss="modal" aria-label="Close"><span
                                 aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">上传缩略图</h4>
                 </div>
@@ -197,10 +197,13 @@
             ue.execCommand('serverparam', '_token', '{{ csrf_token() }}'); // 设置 CSRF token.
         });
         window.zxzIsGood = function(data, field){
-            console.log(data);
-            $('#banner_up-img').attr('src',data.ResultData);
-            $('#banner_up').val(data.ResultData);
-            console.log(field);
+            if (data.StatusCode===200){
+                $('#banner_up-img').attr('src',data.ResultData);
+                $('#banner_up').val(data.ResultData);
+                $('.vicp-icon4').trigger('click');
+            }else{
+                alert(data.ResultData);
+            }
         }
     </script>
 

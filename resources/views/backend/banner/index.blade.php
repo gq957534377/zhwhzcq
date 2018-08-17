@@ -41,7 +41,9 @@
                                 <tr>
                                     <td>{{ $banner->sort}}</td>
                                     <td>{{ $banner->title}}</td>
-                                    <td>{{ $banner->file}}</td>
+                                    <td>
+                                        <img src="{{$banner->file}}" style="width: 70px;height: 30px;">
+                                    </td>
                                     <td>{{ $banner->url}}</td>
                                     <td>{{ $banner->created_at}}</td>
                                     <td>{{ $banner->updated_at}}</td>

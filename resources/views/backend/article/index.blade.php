@@ -43,7 +43,9 @@
                                 <tr>
                                     <td>{{ $article->title}}</td>
                                     <td>{{ $article->source}}</td>
-                                    <td>{{ $article->banner}}</td>
+                                    <td>
+                                        <img src="{{$article->banner}}" style="width: 70px;height: 30px;">
+                                    </td>
                                     <td title="{{$article->brief}}">{{str_limit($article->brief,10,'...')}}</td>
                                     <td>{{ $article->author}}</td>
                                     <td>{{ $article->sort}}</td>
