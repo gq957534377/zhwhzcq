@@ -87,7 +87,7 @@
                             <a href="javascript:void(0);" id="banner"><img id="banner_up-img"
                                                                            src="/upLoad.jpg"/></a>
                         </div>
-                        <input required value="11111" type="hidden" name="banner"
+                        <input required value="" type="hidden" name="banner"
                                id="banner_up">
                     </div><!--form-group-->
 
@@ -196,7 +196,13 @@
         ue.ready(function () {
             ue.execCommand('serverparam', '_token', '{{ csrf_token() }}'); // 设置 CSRF token.
         });
-
+        window.zxzIsGood = function(data, field){
+            console.log(data);
+            $('#banner_up-img').attr('src',data.ResultData);
+            $('#banner_up').val(data.ResultData);
+            console.log(field);
+        }
     </script>
+
     <script src="/crop.min.js"></script>
 @endsection
