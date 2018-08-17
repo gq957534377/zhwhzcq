@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Article;
 use App\Models\ArticleRelLabel;
 use App\Models\Banner;
+use App\Models\Label;
 
 /**
  * Class HomeController.
@@ -23,13 +24,15 @@ class HomeController extends Controller
             ->take(4)
             ->get();
 
+        // 导航
+        $labels = Label::where(['stage' => 1])->orderBy('id')->get();
         // 新闻要点
         $newsPoints = $this->articlesByChannelId(12, 4);
         // 外宣媒体
         // 实时要闻
         // 本月焦点
         // 文化投资
-        return view('frontend.index');
+        return view('frontend.index', ['labels' => $labels, 'banners' => $banners]);
     }
 
     private function articlesByChannelId($labelId, $num)

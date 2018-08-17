@@ -21,6 +21,18 @@
     <div class=" wrapper">
         <div class="logo"><a href="/" title="仿砍柴网站程序" target="_self">仿砍柴网站程序</a></div>
         <ul class="nav">
+            @foreach($labels as $label)
+                <li><strong><a href="{{url('/articles?label_id='.$label->id)}}"
+                               target="_self">{{$label->name}}</a></strong></li>
+                <dl>
+                    @foreach($label->childLabels as $childLabel)
+                        <li><a href="{{url('/articles?label_id='.$childLabel->id)}}"
+                               target="_self">{{$childLabel->name}}</a></li>
+                    @endforeach
+                </dl>
+            @endforeach
+        </ul>
+        <ul class="nav">
             <li><strong><a href="/"  target="_self">新闻</a></strong></li>
             <li><strong><a href="/guandian"  target="_self">海外平台</a></strong>
                 <dl><li><a href="/guandian/chuanmei/" target="_self">传媒</a></li><li><a href="/guandian/tongxin/" target="_self">通信</a></li><li><a href="/guandian/1/" target="_self">观点</a></li><li><a href="/guandian/chanpin/" target="_self">产品</a></li><li><a href="/guandian/dianshang/" target="_self">电商</a></li></dl>
@@ -50,6 +62,9 @@
             <li><strong><a href="/Next" target="_self">外宣媒体</a></strong></li>
             <li><strong><a href="/Next" target="_self">文化艺术节</a></strong></li>
         </ul>
+
+
+
         <div class="mtopic"><img src="/front/index/style/topic/mtopic.jpg" /></div>
         <div class="msearch">
             <form action="/e/search/" method="post" target="_blank">
@@ -91,11 +106,25 @@
             <!-- 首页幻灯片 -->
             <div class="m-slide">
                 <ul class="img">
-                    <li><a href="/chuangtou/jinrong/10931.html" title="上市公司更名傍互联网金融 换个马甲就涨停"><img src="/front/index/d/a/1.jpg" alt="上市公司更名傍互联网金融 换个马甲就涨停"/></a></li><li><a href="/chuangtou/chuangye/10930.html" title="创业者集体喊上口号：总理，我们一起创业吧！"><img src="/front/index/d/a/2.jpg" alt="创业者集体喊上口号：总理，我们一起创业吧！"/></a></li><li><a href="/shangye/1/9706.html" title="阿里“合伙人制度”与战略董事会建设：解决两权分离问题"><img src="/front/index/d/a/3.jpg" alt="阿里“合伙人制度”与战略董事会建设：解决两权分离问题"/></a></li><li><a href="/guandian/1/9628.html" title="梦想没了，众筹平台沦为渠道"><img src="/front/index/d/a/4.jpg" alt="梦想没了，众筹平台沦为渠道"/></a></li>		 </ul>
+                    @foreach($banners as $banner)
+                        <li><a href="{{$banner->url}}" title="{{$banner->title}}"><img
+                                        src="{{$banner->file}}" alt="{{$banner->title}}"/></a></li>
+                    @endforeach
+                    {{--<li><a href="/chuangtou/jinrong/10931.html" title="上市公司更名傍互联网金融 换个马甲就涨停"><img--}}
+                                    {{--src="/front/index/d/a/1.jpg" alt="上市公司更名傍互联网金融 换个马甲就涨停"/></a></li>--}}
+                    {{--<li><a href="/chuangtou/chuangye/10930.html" title="创业者集体喊上口号：总理，我们一起创业吧！"><img--}}
+                                    {{--src="/front/index/d/a/2.jpg" alt="创业者集体喊上口号：总理，我们一起创业吧！"/></a></li>--}}
+                    {{--<li><a href="/shangye/1/9706.html" title="阿里“合伙人制度”与战略董事会建设：解决两权分离问题"><img--}}
+                                    {{--src="/front/index/d/a/3.jpg" alt="阿里“合伙人制度”与战略董事会建设：解决两权分离问题"/></a></li>--}}
+                    {{--<li><a href="/guandian/1/9628.html" title="梦想没了，众筹平台沦为渠道"><img src="/front/index/d/a/4.jpg"--}}
+                                                                                   {{--alt="梦想没了，众筹平台沦为渠道"/></a></li>--}}
+                </ul>
                 <div id="ifocus_opdiv"></div>
                 <div id="ifocus_tx">
                     <ul>
-                        <li><a href="/chuangtou/jinrong/10931.html" title="上市公司更名傍互联网金融 换个马甲就涨停">上市公司更名傍互联网金融 换个马甲就涨停</a></li><li><a href="/chuangtou/chuangye/10930.html" title="创业者集体喊上口号：总理，我们一起创业吧！">创业者集体喊上口号：总理，我们一起创业吧！</a></li><li><a href="/shangye/1/9706.html" title="阿里“合伙人制度”与战略董事会建设：解决两权分离问题">阿里“合伙人制度”与战略董事会建设：解决两权分离问题</a></li><li><a href="/guandian/1/9628.html" title="梦想没了，众筹平台沦为渠道">梦想没了，众筹平台沦为渠道</a></li>
+                        @foreach($banners as $banner)
+                        <li><a href="{{$banner->url}}" title="{{$banner->title}}">{{$banner->title}}</a></li>
+                        @endforeach
                     </ul>
                 </div>
                 <ul class="tab">
