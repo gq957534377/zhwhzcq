@@ -36,8 +36,11 @@ class ArticleController extends Controller
             ->orderBy('sort', 'desc')
             ->paginate(1);
 
+        // 导航
+        $labels = Label::where(['stage' => 1])->orderBy('id')->get();
+
         empty($keys) && $keys[] = '全部';
-        return view('frontend.list', ['articles' => $result, 'key' => implode('-', $keys)]);
+        return view('frontend.list', ['articles' => $result, 'key' => implode('-', $keys), 'labels' => $labels]);
     }
 
     public function pages(Request $request)
@@ -70,6 +73,6 @@ class ArticleController extends Controller
 
     public function show(Article $article, Request $request)
     {
-        return view('frontend.info',['article'=>$article]);
+        return view('frontend.info', ['article' => $article]);
     }
 }

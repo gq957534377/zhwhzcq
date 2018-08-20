@@ -27,9 +27,11 @@ class HomeController extends Controller
         // 导航
         $labels = Label::where(['stage' => 1])->orderBy('id')->get();
         // 新闻要点
-        $newsPoints = $this->articlesByChannelId(3, 4);
+        $newsPoints = $this->articlesByChannelId(41, 4);
         // 外宣媒体
         $newsOut = $this->articlesByChannelId(15, 4);
+        // 专题活动
+        $ThematicActivities = $this->articlesByChannelId(7, 4);
         // 实时要闻
         $newsTime = $this->articlesByChannelId(15, 4);
         // 本月焦点
