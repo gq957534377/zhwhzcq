@@ -176,7 +176,6 @@
                             <input type="button" id="btnZoomOut" class="Btnsty_peyton"
                                    value="-">
                         </div>
-                        {{--<div class="cropped"></div>--}}
                     </div>
                     <div class="view-mail">
                         <br>
@@ -186,6 +185,25 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+
+    {{--标签选择--}}
+    <div class="row">
+        <div class="col-md-6">
+            <label for="">一级</label>
+            <select name="label" id="stage1" class="form-control" required="required">
+                @foreach ($labels as $label)
+                    <option value="{{ $label->id }}">{{ $label->name }}</option>
+                @endforeach
+                <option value="">其他</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label for="">二级</label>
+            <select name="label" class="form-control" id="stage2">
+
+            </select>
+        </div>
+    </div>
 @endsection
 @section('scripts')
     <script type="text/javascript">
@@ -196,15 +214,19 @@
         ue.ready(function () {
             ue.execCommand('serverparam', '_token', '{{ csrf_token() }}'); // 设置 CSRF token.
         });
-        window.zxzIsGood = function(data, field){
-            if (data.StatusCode===200){
-                $('#banner_up-img').attr('src',data.ResultData);
+        window.zxzIsGood = function (data, field) {
+            if (data.StatusCode === 200) {
+                $('#banner_up-img').attr('src', data.ResultData);
                 $('#banner_up').val(data.ResultData);
                 $('.vicp-icon4').trigger('click');
-            }else{
+            } else {
                 alert(data.ResultData);
             }
         }
+
+        $('#stage1').change(function () {
+            $('#stage2').html();
+        });
     </script>
 
     <script src="/crop.min.js"></script>
