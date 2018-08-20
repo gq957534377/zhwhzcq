@@ -158,48 +158,16 @@
             <!--新闻要点-->
             <div class="chosen">
                 <div class="com-title"><span>新闻要点</span></div>
-
-                <div class="chosenbox">
-                    <div class="chosenimg"><a href="/guandian/1/10944.html" title="24位副国级为这事走遍全国"><img  src="/front/index/d/a/u18.png" alt="24位副国级为这事走遍全国" /></a></div>
-                    <h3><a href="/guandian/1/10944.html" title="24位副国级为这事走遍全国" target="_blank">24位副国级为这事走遍全国事走遍全国</a></h3>
-                    <p>我的第一篇关于“互联网+”的文章是讨论“互联网+”与“+互联网”的，从那篇我的第一篇关于“互联网+”的文章是讨论“互联网+”与“+互联网”的，从那篇…</p>
-                    <p><span></span></p>
-                </div>
-
-                <div class="chosenbox chosenbox-ml">
-                    <div class="chosenimg"><a href="/guandian/1/10942.html" title="24位副国级为这事走遍全国"><img  src="/front/index/d/a/u18.png" alt="24位副国级为这事走遍全国" /></a></div>
-                    <h3><a href="/guandian/1/10942.html" title="24位副国级为这事走遍全国" target="_blank">24位副国级为这事走遍全国</a></h3>
-                    <p>我的第一篇关于“互联网+”的文章是讨论“互联网+”与“+互联网”的，从那篇我的第一篇关于“互联网+”的文章是讨论“互联网+”与“+互联网”的，从那篇…</p>
-                    <p><span></span></p>
-                </div>
-                <div class="chosenbox">
-                    <div class="chosenimg"><a href="/guandian/1/10944.html" title="24位副国级为这事走遍全国"><img  src="/front/index/d/a/u18.png" alt="24位副国级为这事走遍全国" /></a></div>
-                    <h3><a href="/guandian/1/10944.html" title="24位副国级为这事走遍全国" target="_blank">24位副国级为这事走遍全国事走遍全国</a></h3>
-                    <p>我的第一篇关于“互联网+”的文章是讨论“互联网+”与“+互联网”的，从那篇我的第一篇关于“互联网+”的文章是讨论“互联网+”与“+互联网”的，从那篇…</p>
-                    <p><span></span></p>
-                </div>
-
-                <div class="chosenbox chosenbox-ml">
-                    <div class="chosenimg"><a href="/guandian/1/10942.html" title="24位副国级为这事走遍全国"><img  src="/front/index/d/a/u18.png" alt="24位副国级为这事走遍全国" /></a></div>
-                    <h3><a href="/guandian/1/10942.html" title="24位副国级为这事走遍全国" target="_blank">24位副国级为这事走遍全国</a></h3>
-                    <p>我的第一篇关于“互联网+”的文章是讨论“互联网+”与“+互联网”的，从那篇我的第一篇关于“互联网+”的文章是讨论“互联网+”与“+互联网”的，从那篇…</p>
-                    <p><span></span></p>
-                </div>
-                <div class="chosenbox">
-                    <div class="chosenimg"><a href="/guandian/1/10944.html" title="24位副国级为这事走遍全国"><img  src="/front/index/d/a/u18.png" alt="24位副国级为这事走遍全国" /></a></div>
-                    <h3><a href="/guandian/1/10944.html" title="24位副国级为这事走遍全国" target="_blank">24位副国级为这事走遍全国事走遍全国</a></h3>
-                    <p>我的第一篇关于“互联网+”的文章是讨论“互联网+”与“+互联网”的，从那篇我的第一篇关于“互联网+”的文章是讨论“互联网+”与“+互联网”的，从那篇…</p>
-                    <p><span></span></p>
-                </div>
-
-                <div class="chosenbox chosenbox-ml">
-                    <div class="chosenimg"><a href="/guandian/1/10942.html" title="24位副国级为这事走遍全国"><img  src="/front/index/d/a/u18.png" alt="24位副国级为这事走遍全国" /></a></div>
-                    <h3><a href="/guandian/1/10942.html" title="24位副国级为这事走遍全国" target="_blank">24位副国级为这事走遍全国</a></h3>
-                    <p>我的第一篇关于“互联网+”的文章是讨论“互联网+”与“+互联网”的，从那篇我的第一篇关于“互联网+”的文章是讨论“互联网+”与“+互联网”的，从那篇…</p>
-                    <p><span></span></p>
-                </div>
-
-
+                @foreach($newsPoints as $newsPoint)
+                    <div class="chosenbox chosenbox-ml">
+                        <div class="chosenimg"><a href="/guandian/1/10942.html" title="24位副国级为这事走遍全国"><img
+                                        src="/front/index/d/a/u18.png" alt="24位副国级为这事走遍全国"/></a></div>
+                        <h3><a href="/guandian/1/10942.html" title="24位副国级为这事走遍全国" target="_blank">24位副国级为这事走遍全国</a>
+                        </h3>
+                        <p>我的第一篇关于“互联网+”的文章是讨论“互联网+”与“+互联网”的，从那篇我的第一篇关于“互联网+”的文章是讨论“互联网+”与“+互联网”的，从那篇…</p>
+                        <p><span></span></p>
+                    </div>
+                @endforeach
                 <div class="floatfix"></div>
             </div>
         <!--@精选导读-->

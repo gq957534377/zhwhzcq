@@ -27,16 +27,27 @@ class HomeController extends Controller
         // 导航
         $labels = Label::where(['stage' => 1])->orderBy('id')->get();
         // 新闻要点
-        $newsPoints = $this->articlesByChannelId(41, 4);
+        $newsPoints = $this->articlesByChannelId(41, 8);
         // 外宣媒体
         $newsOut = $this->articlesByChannelId(15, 4);
         // 专题活动
-        $ThematicActivities = $this->articlesByChannelId(7, 4);
+        $thematicActivities = $this->articlesByChannelId(7, 4);
         // 实时要闻
-        $newsTime = $this->articlesByChannelId(15, 4);
+        $newsTime = $this->articlesByChannelId(42, 4);
         // 本月焦点
+        $monthPoints = $this->articlesByChannelId(43, 4);
         // 文化投资
-        return view('frontend.index', ['labels' => $labels, 'banners' => $banners]);
+        $culturalInvestment = $this->articlesByChannelId(44, 4);
+        return view('frontend.index', [
+            'labels' => $labels,
+            'banners' => $banners,
+            'newsPoints' => $newsPoints,
+            'newsOut' => $newsOut,
+            'thematicActivities' =>$thematicActivities ,
+            'newsTime' => $newsTime,
+            'monthPoints' => $monthPoints,
+            'culturalInvestment' => $culturalInvestment,
+        ]);
     }
 
     private function articlesByChannelId($labelId, $num)
