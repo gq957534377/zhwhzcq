@@ -97,10 +97,11 @@
                     </ul>
                 </div>
                 <ul class="tab">
-                    <li><div class="color1">1</div></li>
-                    <li><div class="color2">2</div></li>
-                    <li><div class="color3">3</div></li>
-                    <li><div class="color4">4</div></li>
+                    @if(count($banners)>1)
+                        @foreach($banners as $key => $banner)
+                            <li><div class="color{{$key+1}}">{{$key+1}}</div></li>
+                        @endforeach
+                    @endif
                 </ul>
 
             </div>

@@ -146,121 +146,17 @@
         <div class="logo">
             <a href="http://www.vxinghe.com/" target="_blank"><img src="/front/info/logo_red.png"></a>
         </div>
-        <div class="menu">
+        <div class="menu" style="width: 69%">
             <ul>
+                @foreach($labels as $label)
+                    <li>
+                        <p>
+                            <a href="{{url('/articles?label_id='.$label->id)}}"
+                               target="_blank">{{$label->name}}</a>
+                        </p>
+                    </li>
 
-                <li>
-
-                    <p>
-                        <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81" target="_blank">新闻</a>
-                    </p>
-
-
-
-
-                    <div>
-                        <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=82" target="_blank">观点</a>
-                    </div>
-                </li>
-
-                <li>
-
-                    <p>
-                        <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=83" target="_blank">海外平台</a>
-                    </p>
-
-
-
-
-                    <div>
-                        <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=84" target="_blank">品牌活动</a>
-                    </div>
-                </li>
-
-                <li>
-
-                    <p>
-                        <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=85" target="_blank">国际交流</a>
-                    </p>
-
-
-
-
-                    <div>
-                        <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=86" target="_blank">地区交流</a>
-                    </div>
-                </li>
-
-                <li>
-
-                    <p>
-                        <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=87" target="_blank">民间交流</a>
-                    </p>
-
-
-
-
-                    <div>
-                        <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists2&amp;id=88" target="_blank">图书影视</a>
-                    </div>
-                </li>
-
-                <li>
-
-                    <p>
-                        <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=141" target="_blank">外宣媒体</a>
-                    </p>
-
-
-
-
-                    <div>
-                        <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=97" target="_blank">专题活动</a>
-                    </div>
-                </li>
-
-                <li>
-
-                    <p>
-                        <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=90" target="_blank">汉语推广</a>
-                    </p>
-
-
-
-
-                    <div>
-                        <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=91" target="_blank">华人华侨</a>
-                    </div>
-                </li>
-
-                <li>
-
-                    <p>
-                        <a href="http://www.vxinghe.com/" onclick="return false;" target="_blank">数字展馆</a>
-                    </p>
-
-
-
-
-                    <div>
-                        <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=94" target="_blank">一带一路</a>
-                    </div>
-                </li>
-
-                <li>
-
-                    <p>
-                        <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=95" target="_blank">丝路客厅</a>
-                    </p>
-
-
-
-
-                    <div>
-                        <a href="http://www.vxinghe.com/" onclick="return false;" target="_blank">中华之美</a>
-                    </div>
-                </li>
-
+                @endforeach
             </ul>
         </div>
     </div>
