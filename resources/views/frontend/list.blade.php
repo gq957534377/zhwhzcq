@@ -299,7 +299,7 @@
                 @endforeach
             </ul>
         </div>
-
+        <input id="request-data" type="hidden" value={{json_encode(Request::all())}}>
 
         @if($articles->lastPage()>1)
             <div id="more" class="more-button grayborder" data-next_page="{{$articles->currentPage()+1}}">加载更多</div>
@@ -387,37 +387,42 @@
     </div>
 </div>
 
-<script type="application/javascript" src="/front/list/slider.js"></script>
-<script type="application/javascript" src="/front/list/listpage.js"></script>
+{{--<script type="application/javascript" src="/front/list/slider.js"></script>--}}
+{{--<script type="application/javascript" src="/front/list/listpage.js"></script>--}}
 <script type="application/javascript" src="/front/list/common.js"></script>
 <script>
     $("#more").click(function () {
-        alert(11);
+        alert(1111);
         var This = $(this);
         var url = "/article_pages";
-        var data=JSON.parse({{json_encode(Request::all())}});
-        console.log(data);
+        var data=JSON.parse($('#request-data').val());
+        data.page=This.data('next_page');
         $.ajax({
             url: url,
             type: 'GET',
-            data: {
-                page:This.data('next_page'),
-            },
+            data: data,
             success: function (data) {
-                var length = data.length;
-                if (length > 0) {
-                    var html = '';
-
-                    $(".list ul").append(html)
-                    $("#more").attr('page', page);
-                    if (length < 10)
+                if (data.StatusCode === 200) {
+                    var html = data.ResultData.data.map(function (res) {
+//                        var ht='<li><div class="list-title"><a href="/articles/'+res.id+'" target="_blank">';
+//                        ht+=res.title+'</a></div><div class="list-image"><a href="/articles/';
+//                        ht+=res.id+'" target="_blank"><img src="'+res.banner+''"></a></div><div class="list-content"><p style="font-size: 16px;">'+res.brief+'</p><span>'+res.created_at+'</span></div></li>';
+//                            console.log(ht);
+                        return '<h1>11</h1>';
+                    });
+                    console.log(html);
+                    $(".list ul").append(html);
+                    if (!data.ResultData.next_page_url || !data.ResultData.data) {
                         $("#more").html('已经到底部了！');
+                    }
                 } else {
-                    $("#more").html('已经到底部了！');
+                    alert(data.ResultData);
                 }
+                $("#more").html('加载更多');
             },
-            complete: function () {//完成响应
-            }
+            before: function () {
+                $("#more").html('加载中......');
+            },
         });
     });
 </script>
@@ -493,9 +498,9 @@
 <script type="text/javascript" src="/front/list/zturn.js"></script>
 <script type="text/javascript" src="/front/list/down-up.js"></script>
 <script type="text/javascript" src="/front/list/index.js"></script>
-<script type="text/javascript" src="/front/list/number.js"></script>
+{{--<script type="text/javascript" src="/front/list/number.js"></script>--}}
 <script type="text/javascript" src="/front/list/picture.js"></script>
-<script type="text/javascript" src="/front/list/banner.js"></script>
+{{--<script type="text/javascript" src="/front/list/banner.js"></script>--}}
 <script type="text/javascript" src="/front/list/search.js"></script>
 <script src="/front/list/scrolltotop.js" type="text/javascript"></script>
 <!--<script src="--><!--" type="text/javascript"></script>-->
