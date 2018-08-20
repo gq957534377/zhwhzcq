@@ -163,7 +163,7 @@
 <div class="header box-shadow min-width1200">
     <div class="width1200 clear">
         <div class="logo">
-            <a href="http://www.vxinghe.com/" target="_blank"><img src="/front/list/logo_red.png"></a>
+            <a href="/" target="_blank"><img src="/front/list/logo_red.png"></a>
         </div>
         <div class="menu" style=" width:69%">
             <ul>

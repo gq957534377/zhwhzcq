@@ -38,6 +38,8 @@ class HomeController extends Controller
         $monthPoints = $this->articlesByChannelId(43, 4);
         // 文化投资
         $culturalInvestment = $this->articlesByChannelId(44, 4);
+
+//        dd($newsOut);
         return view('frontend.index', [
             'labels' => $labels,
             'banners' => $banners,
