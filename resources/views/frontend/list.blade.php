@@ -280,14 +280,11 @@
             <ul>
                 @foreach($articles as $article)
                     <li>
-                        <!--                    外宣期刊-->
                         <div class="list-title">
-                            <a href="/articles/{{$article->id}}"
-                               target="_blank">{{$article->title}}</a>
+                            <a href="/articles/{{$article->id}}" target="_blank">{{$article->title}}</a>
                         </div>
                         <div class="list-image">
-                            <a href="/articles/{{$article->id}}"
-                               target="_blank"><img src="{{$article->banner}}"></a>
+                            <a href="/articles/{{$article->id}}" target="_blank"><img src="{{$article->banner}}"></a>
                         </div>
                         <div class="list-content">
                             <p style="font-size: 16px;">
@@ -391,12 +388,13 @@
 {{--<script type="application/javascript" src="/front/list/listpage.js"></script>--}}
 <script type="application/javascript" src="/front/list/common.js"></script>
 <script>
+    var page=$("#more").data('next_page');
     $("#more").click(function () {
-        alert(1111);
         var This = $(this);
         var url = "/article_pages";
         var data=JSON.parse($('#request-data').val());
-        data.page=This.data('next_page');
+        data.page=page;
+
         $.ajax({
             url: url,
             type: 'GET',
@@ -404,14 +402,27 @@
             success: function (data) {
                 if (data.StatusCode === 200) {
                     var html = data.ResultData.data.map(function (res) {
-//                        var ht='<li><div class="list-title"><a href="/articles/'+res.id+'" target="_blank">';
-//                        ht+=res.title+'</a></div><div class="list-image"><a href="/articles/';
-//                        ht+=res.id+'" target="_blank"><img src="'+res.banner+''"></a></div><div class="list-content"><p style="font-size: 16px;">'+res.brief+'</p><span>'+res.created_at+'</span></div></li>';
-//                            console.log(ht);
-                        return '<h1>11</h1>';
+                        console.log(res);
+                        html = '<li>';
+                        html += '<div class="list-title">';
+                        html += '<a href="/articles/' + res.id + '" target="_blank">' + res.title + '</a>';
+                        html += '</div>';
+                        html += '<div class="list-image">';
+                        html += '<a href="/articles/' + res.id + '" target="_blank"><img src="' + res.banner + '"></a>';
+                        html += '</div>';
+                        html += '<div class="list-content">';
+                        html += '<p style="font-size: 16px;">';
+                        html += res.brief;
+                        html += '</p>';
+                        html += '<span>' + res.created_at + '</span>';
+                        html += '</div>';
+                        html += '</li>';
+                        return html;
                     });
                     console.log(html);
                     $(".list ul").append(html);
+                    page=page+1;
+
                     if (!data.ResultData.next_page_url || !data.ResultData.data) {
                         $("#more").html('已经到底部了！');
                     }
