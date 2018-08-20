@@ -73,6 +73,9 @@ class ArticleController extends Controller
 
     public function show(Article $article, Request $request)
     {
-        return view('frontend.info', ['article' => $article]);
+        // 导航
+        $labels = Label::where(['stage' => 1])->orderBy('id')->get();
+
+        return view('frontend.info', ['article' => $article, 'labels' => $labels]);
     }
 }
