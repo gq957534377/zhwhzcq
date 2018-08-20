@@ -115,31 +115,15 @@
             <div class="topnews">
                 <div class="com-title"><span>实时要闻</span></div>
                 <div class="sideMenu" style="margin:0 auto">
-                    <h3 class="h3img1"><a href="/yuanchuang/10932.html" title="碎片化阅读时代，我们需要怎样的新闻客户端？">碎片化阅读时代，我们需要怎样的新闻客户端？</a>
-                    </h3>
-                    <ul>
-                        <li>随着互联网大数据时代的到来，以用户社交网络为基础和用户信息流为载体的阅读平台悄然诞生，以今日头条为代表的新闻客户端在不知不觉中生长出了算法推荐的...</li>
-                    </ul>
-                    <h3 class="h3img2"><a href="/guandian/1/10944.html" title="小米成了“中米”，梦想成了现实">小米成了“中米”，梦想成了现实</a></h3>
-                    <ul>
-                        <li>而曾经小不经事的小米粉，已经长成，他们在一个不大的房子里喜爱张杰、看着《男人装》和黄晓明。希望从一颗不起眼的粗粮长成一颗光鲜亮丽的水果。得到尊重...</li>
-                    </ul>
-                    <h3 class="h3img3"><a href="/guandian/1/10942.html" title="从互联网的+-X÷开始带你认识“互联网+”八大悖论">从互联网的+-X÷开始带你认识“互联网+”八大悖论</a>
-                    </h3>
-                    <ul>
-                        <li>我的第一篇关于“互联网+”的文章是讨论“互联网+”与“+互联网”的，从那篇开始陆陆续续写了十几篇关于“互联网+”的文章。到底什么是“互联网+”?我曾...</li>
-                    </ul>
-                    <h3 class="h3img4"><a href="/shangye/1/10940.html" title="小米的学霸之路：厚积薄发的从容赌徒">小米的学霸之路：厚积薄发的从容赌徒</a>
-                    </h3>
-                    <ul>
-                        <li>两天前，在正式宣布与酷派合资推出“奇酷”手机品牌的发布会上，周鸿祎以“Are you OK”作为开场白，显然，这是在嘲讽他的业内同行和湖北同乡在印度发布会上显...</li>
-                    </ul>
-                    <h3 class="h3img5 on"><a href="/chuangtou/chuangye/10938.html"
-                                             title="BAT、风投、地产密集布局孵化器，“众创时代”孵化器怎么玩？">BAT、风投、地产密集布局孵化器，“众创时代”孵化器怎么玩？</a>
-                    </h3>
-                    <ul>
-                        <li>近期，京东推出JD+计划“孵化器”，腾讯宣布年内建立25个线下众创空间，上市公司鹏博士发布鹏云课堂2.0推出教育O2O孵化器，“优客工场”要打造“孵化器中的万...</li>
-                    </ul>
+                    @foreach($newsTime as $item)
+                        <h3 class="h3img1">
+                            <a href="{{$item->url}}" title="{{$item->title}}">{{$item->title}}</a>
+                        </h3>
+                        <ul>
+                            <li>{{$item->brief}}...</li>
+                        </ul>
+                    @endforeach
+
                 </div>
             </div>
             <!-- 首页-标语02 -->
@@ -161,11 +145,14 @@
                 <div class="com-title"><span>新闻要点</span></div>
                 @foreach($newsPoints as $newsPoint)
                     <div class="chosenbox chosenbox-ml">
-                        <div class="chosenimg"><a href="/guandian/1/10942.html" title="24位副国级为这事走遍全国"><img
-                                        src="/front/index/d/a/u18.png" alt="24位副国级为这事走遍全国"/></a></div>
-                        <h3><a href="/guandian/1/10942.html" title="24位副国级为这事走遍全国" target="_blank">24位副国级为这事走遍全国</a>
+                        <div class="chosenimg">
+                            <a href="{{$newsPoint->url}}" title="{{$newsPoint->title}}">
+                                <img src="{{$newsPoint->banner}}" alt="{{$newsPoint->title}}"/>
+                            </a>
+                        </div>
+                        <h3><a href="{{$newsPoint->url}}" title="{{$newsPoint->title}}" target="_blank">{{$newsPoint->title}}</a>
                         </h3>
-                        <p>我的第一篇关于“互联网+”的文章是讨论“互联网+”与“+互联网”的，从那篇我的第一篇关于“互联网+”的文章是讨论“互联网+”与“+互联网”的，从那篇…</p>
+                        <p>{{$newsPoint->brief}}…</p>
                         <p><span></span></p>
                     </div>
                 @endforeach
@@ -173,35 +160,22 @@
             </div>
         <!--@精选导读-->
             <!--外宣媒体-->
-            <script type="text/javascript" src="/front/index/style/js/jquery.timeago.js"></script>
             <div class="hot">
                 <div class="com-title"><span>外宣媒体</span></div>
                 <div id="content_list">
+                    @foreach($newsOut as $item)
 
                     <div class="hotbox">
                         <div class="hotimg">
-                            <a href=""><img  src="/front/index/d/a/u75.png" alt="市场监管总局：打击傍名牌等制售假冒伪劣商品行为"/></a>
+                            <a href="{{$item->url}}">
+                                <img  src="{{$item->banner}}" alt="{{$item->title}}"/>
+                            </a>
                         </div>
-                        <h3><a href="/guandian/1/10945.html">市场监管总局：打击傍名牌等制售假冒伪劣商品行为伪劣商品行为</a></h3>
+                        <h3><a href="{{$item->url}}">{{$item->title}}</a></h3>
 
-                        <span class="fst">中国新闻网</span> · <span><i>5</i>评论</span> · <span><time class="timeago" datetime="2015-05-11 12:43:00.0"></time></span>
+                        <span class="fst">{{$item->source}}</span>  · <span><time class="timeago" datetime="{{$item->created_at}}"></time></span>
                     </div>
-                    <div class="hotbox">
-                        <div class="hotimg">
-                            <a href=""><img  src="/front/index/d/a/u75.png" alt="市场监管总局：打击傍名牌等制售假冒伪劣商品行为"/></a>
-                        </div>
-                        <h3><a href="/guandian/1/10945.html">市场监管总局：打击傍名牌等制售假冒伪劣商品行为伪劣商品行为</a></h3>
-
-                        <span class="fst">中国新闻网</span> · <span><i>5</i>评论</span> · <span><time class="timeago" datetime="2015-05-11 12:43:00.0"></time></span>
-                    </div>
-                    <div class="hotbox">
-                        <div class="hotimg">
-                            <a href=""><img  src="/front/index/d/a/u75.png" alt="市场监管总局：打击傍名牌等制售假冒伪劣商品行为"/></a>
-                        </div>
-                        <h3><a href="/guandian/1/10945.html">市场监管总局：打击傍名牌等制售假冒伪劣商品行为伪劣商品行为</a></h3>
-
-                        <span class="fst">中国新闻网</span> · <span><i>5</i>评论</span> · <span><time class="timeago" datetime="2015-05-11 12:43:00.0"></time></span>
-                    </div>
+                    @endforeach
 
                 </div>
                 <!--<div class="IndexLoading">
@@ -216,70 +190,16 @@
             <div class="hot">
                 <div class="com-title"><span>专题活动</span></div>
                 <div id="content_list">
-
+                    @foreach($thematicActivities as $thematicActivity)
                     <div class="hotbox">
                         <div class="hotimg">
-                            <a href=""><img  src="/front/index/d/a/u75.png" alt="市场监管总局：打击傍名牌等制售假冒伪劣商品行为"/></a>
+                            <a href="{{$thematicActivity->url}}"><img  src="{{$thematicActivity->banner}}" alt="{{$thematicActivity->title}}"/></a>
                         </div>
-                        <h3><a href="/guandian/1/10945.html">市场监管总局：打击傍名牌等制售假冒伪劣商品行为伪劣商品行为</a></h3>
+                        <h3><a href="{{$thematicActivity->url}}">{{$thematicActivity->title}}</a></h3>
 
-                        <span class="fst">中国新闻网</span> · <span><i>5</i>评论</span> · <span><time class="timeago" datetime="2015-05-11 12:43:00.0"></time></span>
+                        <span class="fst">{{$thematicActivity->source}}</span> · <span><time class="timeago" datetime="{{$thematicActivity->created_at}}"></time></span>
                     </div>
-                    <div class="hotbox">
-                        <div class="hotimg">
-                            <a href=""><img  src="/front/index/d/a/u75.png" alt="市场监管总局：打击傍名牌等制售假冒伪劣商品行为"/></a>
-                        </div>
-                        <h3><a href="/guandian/1/10945.html">市场监管总局：打击傍名牌等制售假冒伪劣商品行为伪劣商品行为</a></h3>
-
-                        <span class="fst">中国新闻网</span> · <span><i>5</i>评论</span> · <span><time class="timeago" datetime="2015-05-11 12:43:00.0"></time></span>
-                    </div>
-                    <div class="hotbox">
-                        <div class="hotimg">
-                            <a href=""><img  src="/front/index/d/a/u75.png" alt="市场监管总局：打击傍名牌等制售假冒伪劣商品行为"/></a>
-                        </div>
-                        <h3><a href="/guandian/1/10945.html">市场监管总局：打击傍名牌等制售假冒伪劣商品行为伪劣商品行为</a></h3>
-
-                        <span class="fst">中国新闻网</span> · <span><i>5</i>评论</span> · <span><time class="timeago" datetime="2015-05-11 12:43:00.0"></time></span>
-                    </div>
-
-                </div>
-                <!--<div class="IndexLoading">
-                <a href="javascript:getMoreSortAppInfo()" id="morenews">点击加载更多内容 &darr;</a>
-                <a id="noMore" style="display:none">全部加载完了</a>
-                <a id="loading" style="display:none"><img src="/style/images/loader.gif"></a>
-                </div>-->
-            </div>
-
-            <!--专题活动-->
-            <script type="text/javascript" src="/front/index/style/js/jquery.timeago.js"></script>
-            <div class="hot">
-                <div class="com-title"><span>专题活动</span></div>
-                <div id="content_list">
-
-                    <div class="hotbox">
-                        <div class="hotimg">
-                            <a href=""><img  src="/front/index/d/a/u75.png" alt="市场监管总局：打击傍名牌等制售假冒伪劣商品行为"/></a>
-                        </div>
-                        <h3><a href="/guandian/1/10945.html">市场监管总局：打击傍名牌等制售假冒伪劣商品行为伪劣商品行为</a></h3>
-
-                        <span class="fst">中国新闻网</span> · <span><i>5</i>评论</span> · <span><time class="timeago" datetime="2015-05-11 12:43:00.0"></time></span>
-                    </div>
-                    <div class="hotbox">
-                        <div class="hotimg">
-                            <a href=""><img  src="/front/index/d/a/u75.png" alt="市场监管总局：打击傍名牌等制售假冒伪劣商品行为"/></a>
-                        </div>
-                        <h3><a href="/guandian/1/10945.html">市场监管总局：打击傍名牌等制售假冒伪劣商品行为伪劣商品行为</a></h3>
-
-                        <span class="fst">中国新闻网</span> · <span><i>5</i>评论</span> · <span><time class="timeago" datetime="2015-05-11 12:43:00.0"></time></span>
-                    </div>
-                    <div class="hotbox">
-                        <div class="hotimg">
-                            <a href=""><img  src="/front/index/d/a/u75.png" alt="市场监管总局：打击傍名牌等制售假冒伪劣商品行为"/></a>
-                        </div>
-                        <h3><a href="/guandian/1/10945.html">市场监管总局：打击傍名牌等制售假冒伪劣商品行为伪劣商品行为</a></h3>
-
-                        <span class="fst">中国新闻网</span> · <span><i>5</i>评论</span> · <span><time class="timeago" datetime="2015-05-11 12:43:00.0"></time></span>
-                    </div>
+                    @endforeach
 
                 </div>
                 <!--<div class="IndexLoading">
@@ -305,14 +225,18 @@
                 </div>
             </div>
             <!--本月焦点-->
+
             <div class="read">
                 <div class="com-title"><span>本月焦点</span></div>
-                <a href=""><img src="/front/index/d/a/u84.jpg" alt="" /></a>
+                @foreach($monthPoints as $item)
+                <a href="{{$item->url}}"><img src="{{$item->banner}}" alt="{{$item->title}}" /></a>
 
                 <div class="flink" >
-                    <a href=""><p>港股市场开闸，等待上市的独角兽鱼贯而出。当“造富梦”进入兑现期，这是移动互联网时代，所有人能吃到的最后一口肉。</p></a>
+                    <a href="{{$item->url}}"><p>{{$item->brief}}</p></a>
                 </div>
+                @endforeach
             </div>
+
 
         <!--@广告3-->
             <!--<div class="columnauthor">
@@ -354,7 +278,10 @@
             <div class="newsletter">
                 <div class="com-title"><span>文化投资</span></div>
                 <ul>
-                    <li><a href="/kuaibao/jishi/11197.html" title="长沙大妈豪掷20万充话费 “中国大妈”再登网民热议榜">长沙大妈豪掷20万充话费 “中国大妈”再登网民热议榜</a></li><li><a href="/kuaibao/jishi/11186.html" title="央行降息或致存款搬家 P2P行业再迎发展新机遇">央行降息或致存款搬家 P2P行业再迎发展新机遇</a></li><li><a href="/kuaibao/jishi/11196.html" title="移动医疗开诊所行得通吗？">移动医疗开诊所行得通吗？</a></li><li><a href="/kuaibao/yejie/11194.html" title="WiFi会是入口么？看淡WiFi模组，这家物联网公司已经进入C轮">WiFi会是入口么？看淡WiFi模组，这家物联网公司已经进入C轮</a></li><li><a href="/kuaibao/yejie/11192.html" title="iBeacon CS “互联网”的第一步">iBeacon CS “互联网”的第一步</a></li><li><a href="/kuaibao/yejie/11189.html" title="复盘爱投资750万逾期项目">复盘爱投资750万逾期项目</a></li></ul>
+                    @foreach($culturalInvestment as $item)
+                    <li><a href="{{$item->url}}" title="{{$item->item}}">{{$item->title}}</a></li>
+                    @endforeach
+                </ul>
             </div>
 
             <script type="text/javascript" src="/front/index/style/js/scrollad.js"></script>
