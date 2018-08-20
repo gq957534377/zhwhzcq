@@ -19,7 +19,9 @@ class ArticleController extends Controller
 
         if (!empty($request->label_id)) {
             $articleIds = ArticleRelLabel::whereIn('label_id', Label::where('id', $request->label_id)
-                ->orWhere('parent_id', $request->label_id))
+                ->orWhere('parent_id', $request->label_id)
+                ->pluck('id')
+                ->toArray())
                 ->pluck('article_id')
                 ->toArray();
 
@@ -53,7 +55,9 @@ class ArticleController extends Controller
 
         if (!empty($request->label_id)) {
             $articleIds = ArticleRelLabel::whereIn('label_id', Label::where('id', $request->label_id)
-                ->orWhere('parent_id', $request->label_id))
+                ->orWhere('parent_id', $request->label_id)
+                ->pluck('id')
+                ->toArray())
                 ->pluck('article_id')
                 ->toArray();
 
