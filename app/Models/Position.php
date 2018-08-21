@@ -32,7 +32,7 @@ class Position extends Model
     public function getLabelsButtonAttribute()
     {
         return '<a href="/admin/positions_labels/'.$this->id.'"
-                 class="dropdown-item">绑定标签</a> ';
+                 class="btn btn-success dropdown-item">绑定标签</a> ';
     }
 
 
@@ -46,9 +46,9 @@ class Position extends Model
 			<button id="userActions" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			  More
 			</button>
+						  ' . $this->labels_button . '
 			<div class="dropdown-menu" aria-labelledby="userActions">
 			  ' . $this->delete_button . '
-			  ' . $this->labels_button . '
 			</div>
 		  </div>
 		</div>';
