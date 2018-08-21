@@ -129,6 +129,25 @@
                         </div><!--col-->
                     </div><!--form-group-->
 
+                    <div class="form-group row">
+                        <label class="col-md-2 form-control-label">标签</label>
+
+                        <div class="table-responsive col-md-10">
+                            <div class="form-group row">
+                                @foreach($labels as $k=>$label)
+                                    <div class="checkbox col-md-2">
+                                        <label class="switch switch-sm switch-3d switch-primary"
+                                               for="permission-{{$k}}"><input
+                                                    class="switch-input" type="checkbox" name="labels[]"
+                                                    id="permission-{{$k}}" value="{{$label->id}}"><span
+                                                    class="switch-label"></span><span
+                                                    class="switch-handle"></span></label>
+                                        <label for="permission-1">{{$label->name}}</label>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div><!--col-->
+                    </div>
                 </div><!--col-->
             </div><!--row-->
         </div><!--card-body-->
@@ -186,24 +205,6 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-    {{--标签选择--}}
-    <div class="row">
-        <div class="col-md-6">
-            <label for="">一级</label>
-            <select name="label" id="stage1" class="form-control" required="required">
-                @foreach ($labels as $label)
-                    <option value="{{ $label->id }}">{{ $label->name }}</option>
-                @endforeach
-                <option value="">其他</option>
-            </select>
-        </div>
-        <div class="col-md-6">
-            <label for="">二级</label>
-            <select name="label" class="form-control" id="stage2">
-
-            </select>
-        </div>
-    </div>
 @endsection
 @section('scripts')
     <script type="text/javascript">

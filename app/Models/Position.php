@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Label extends Model
+class Position extends Model
 {
     use SoftDeletes;
 
@@ -16,12 +16,12 @@ class Label extends Model
 
     public function getEditButtonAttribute()
     {
-        return '<a href="' . route('admin.labels.edit', $this) . '" class="btn btn-primary"><i class="fas fa-edit" data-toggle="tooltip" data-placement="top" title="' . __('buttons.general.crud.edit') . '"></i></a>';
+        return '<a href="' . route('admin.positions.edit', $this) . '" class="btn btn-primary"><i class="fas fa-edit" data-toggle="tooltip" data-placement="top" title="' . __('buttons.general.crud.edit') . '"></i></a>';
     }
 
     public function getDeleteButtonAttribute()
     {
-            return '<a href="' . route('admin.labels.destroy', $this) . '"
+        return '<a href="' . route('admin.positions.destroy', $this) . '"
                  data-method="delete"
                  data-trans-button-cancel="' . __('buttons.general.cancel') . '"
                  data-trans-button-confirm="' . __('buttons.general.crud.delete') . '"
@@ -45,5 +45,20 @@ class Label extends Model
 			</div>
 		  </div>
 		</div>';
+    }
+
+    public function parentPosition()
+    {
+        return $this->hasOne(Position::class, 'id', 'parent_id');
+    }
+
+    public function getNavShowCnAttribute()
+    {
+        return $this->nav_show === 1 ? '<span style="color: red;">展示</span>' : '不展示';
+    }
+
+    public function childPositions()
+    {
+        return $this->hasMany(Position::class, 'parent_id', 'id');
     }
 }

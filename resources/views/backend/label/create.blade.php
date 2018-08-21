@@ -35,41 +35,6 @@
                                     ->autofocus() }}
                             </div><!--col-->
                         </div><!--form-group-->
-
-                        <div class="form-group row">
-                        {{ html()->label(__('validation.attributes.backend.access.labels.stage'))->class('col-md-2 form-control-label')->for('stage') }}
-                            <div class="col-md-10">
-                                <select name="stage" class="form-control" required="required">
-                                    <option value="1">一级</option>
-                                    <option value="2">二级</option>
-                                </select>
-                            </div><!--col-->
-                        </div><!--form-group-->
-
-                        <div class="form-group row">
-                            {{ html()->label(__('validation.attributes.backend.access.labels.parent_id'))->class('col-md-2 form-control-label')->for('parent_id') }}
-
-                            <div class="col-md-10">
-                                <select name="parent_id" class="form-control" required="required">
-                                    @foreach ($labels as $label)
-                                        <option value="{{ $label->id }}">{{ $label->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div><!--col-->
-                        </div><!--form-group-->
-
-                        <div class="form-group row">
-                            {{ html()->label(__('validation.attributes.backend.access.labels.nav_show'))->class('col-md-2 form-control-label')->for('nav_show') }}
-
-                            <div class="col-md-10">
-                                <label class="switch switch-3d switch-primary">
-                                    {{ html()->checkbox('nav_show', true, '1')->class('switch-input') }}
-                                    <span class="switch-label"></span>
-                                    <span class="switch-handle"></span>
-                                </label>
-                            </div><!--col-->
-                        </div><!--form-group-->
-
                     </div><!--col-->
                 </div><!--row-->
             </div><!--card-body-->

@@ -1,11 +1,10 @@
 <?php
 
+use Jialeo\LaravelSchemaExtend\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use Jialeo\LaravelSchemaExtend\Schema;
 
-
-class CreateLabelsTable extends Migration
+class CreatePositionRelLabelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,13 +13,11 @@ class CreateLabelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('labels', function (Blueprint $table) {
+        Schema::create('position_rel_labels', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',64)->nullable()->comment('标签名');
-
+            $table->integer('label_id')->comment('标签id');
+            $table->integer('position_id')->comment('位置id');
             $table->timestamps();
-            $table->softDeletes();
-            $table->comment = '标签表';
         });
     }
 
@@ -31,6 +28,6 @@ class CreateLabelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('labels');
+        Schema::dropIfExists('position_rel_labels');
     }
 }

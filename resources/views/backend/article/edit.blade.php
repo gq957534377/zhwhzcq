@@ -125,7 +125,25 @@
                                 ->autofocus() }}
                         </div><!--col-->
                     </div><!--form-group-->
+                    <div class="form-group row">
+                        <label class="col-md-2 form-control-label">标签</label>
 
+                        <div class="table-responsive col-md-10">
+                            <div class="form-group row">
+                                @foreach($labels as $k=>$label)
+                                    <div class="checkbox col-md-2">
+                                        <label class="switch switch-sm switch-3d switch-primary"
+                                               for="permission-{{$k}}"><input
+                                                    class="switch-input" type="checkbox" @if(in_array($label->id,$article->labels->pluck('id')->toArray())) checked @endif name="labels[]"
+                                                    id="permission-{{$k}}" value="{{$label->id}}"><span
+                                                    class="switch-label"></span><span
+                                                    class="switch-handle"></span></label>
+                                        <label for="permission-1">{{$label->name}}</label>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div><!--col-->
+                    </div>
                 </div><!--col-->
             </div><!--row-->
         </div><!--card-body-->

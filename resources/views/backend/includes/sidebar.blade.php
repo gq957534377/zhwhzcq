@@ -10,6 +10,11 @@
                 <a class="nav-link {{ active_class(Active::checkUriPattern('admin/dashboard')) }}" href="{{ route('admin.dashboard') }}"><i class="icon-speedometer"></i> {{ __('menus.backend.sidebar.dashboard') }}</a>
             </li>
 
+            {{--位置管理--}}
+            <li class="nav-item">
+                <a class="nav-link {{ active_class(Active::checkUriPattern('admin/positions')) }}" href="{{ route('admin.positions.index') }}"><i class="icon-speedometer"></i> 位置</a>
+            </li>
+
             {{--标签管理--}}
             <li class="nav-item">
                 <a class="nav-link {{ active_class(Active::checkUriPattern('admin/labels')) }}" href="{{ route('admin.labels.index') }}"><i class="icon-speedometer"></i> {{ __('menus.backend.sidebar.labels') }}</a>

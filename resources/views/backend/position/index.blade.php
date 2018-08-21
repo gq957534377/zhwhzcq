@@ -1,9 +1,9 @@
 @extends ('backend.layouts.app')
 
-@section ('title', app_name() . ' | ' . __('labels.backend.access.labels.management'))
+@section ('title', app_name() . ' | 位置管理')
 
 @section('breadcrumb-links')
-    @include('backend.label.includes.breadcrumb-links')
+    @include('backend.position.includes.breadcrumb-links')
 @endsection
 
 @section('content')
@@ -12,13 +12,13 @@
             <div class="row">
                 <div class="col-sm-5">
                     <h4 class="card-title mb-0">
-                        {{ __('labels.backend.access.labels.management') }}
-                        <small class="text-muted">{{ __('labels.backend.access.labels.active') }}</small>
+                        位置管理
+                        <small class="text-muted">创建列表</small>
                     </h4>
                 </div><!--col-->
 
                 <div class="col-sm-7">
-                    @include('backend.label.includes.header-buttons')
+                    @include('backend.position.includes.header-buttons')
                 </div><!--col-->
             </div><!--row-->
             <div class="row mt-4">
@@ -27,19 +27,25 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>{{ __('labels.backend.access.labels.table.name') }}</th>
-                                <th>{{ __('labels.backend.access.labels.table.created_at') }}</th>
-                                <th>{{ __('labels.general.actions') }}</th>
+                                <th>标签名</th>
+                                <th>所属级别</th>
+                                <th>父级id</th>
+                                <th>是否展示在导航 </th>
+                                <th>排序</th>
+                                <th>创建时间</th>
+                                <th>操作</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach ($labels as $label)
+                            @foreach ($positions as $position)
                                 <tr>
-                                    <td>{{ $label->id}}</td>
-                                    <td>{{ $label->name}}</td>
-                                    <td>{{ $label->created_at}}</td>
-                                    <td>{!! $label->action_buttons !!}</td>
+                                    <td>{{ $position->name}}</td>
+                                    <td>{{ $position->stage}}</td>
+                                    <td>{{ $position->parentPosition->name??'无'}}</td>
+                                    <td>{!! $position->nav_show_cn !!}</td>
+                                    <td>{{ $position->sort}}</td>
+                                    <td>{{ $position->created_at}}</td>
+                                    <td>{!! $position->action_buttons !!}</td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -50,13 +56,13 @@
             <div class="row">
                 <div class="col-7">
                     <div class="float-left">
-                        {!! $labels->total() !!} {{ trans_choice('labels.backend.access.labels.table.total', $labels->total()) }}
+                        {!! $positions->total() !!} {{ trans_choice('位置共计', $positions->total()) }}
                     </div>
                 </div><!--col-->
 
                 <div class="col-5">
                     <div class="float-right">
-                        {!! $labels->render() !!}
+                        {!! $positions->render() !!}
                     </div>
                 </div><!--col-->
             </div><!--row-->

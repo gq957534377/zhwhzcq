@@ -60,4 +60,13 @@ class Article extends Model
 		  </div>
 		</div>';
     }
+
+    public function labels()
+    {
+        return $this->belongsToMany(
+            Label::class,
+            'article_rel_labels',
+            'article_id', 'label_id'
+        );
+    }
 }

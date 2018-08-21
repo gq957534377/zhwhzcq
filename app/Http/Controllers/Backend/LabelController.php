@@ -12,12 +12,6 @@ class LabelController extends Controller
     public function index(Request $request)
     {
         $where = [];
-        if (!empty($request->parent_id)) {
-            $where['parent_id'] = $request->parent_id;
-        }
-        if (!empty($request->stage)) {
-            $where['stage'] = $request->stage;
-        }
         $query = Label::where($where);
 
         if (!empty($request->name)) {
@@ -25,9 +19,7 @@ class LabelController extends Controller
         }
 
         $result = $query
-            ->with('parentLabel')
             ->orderBy('updated_at', 'desc')
-            ->orderBy('stage', 'asc')
             ->paginate(15);
         return view('backend.label.index', ['labels' => $result]);
     }
@@ -56,9 +48,6 @@ class LabelController extends Controller
     {
         Label::create([
             'name' => $request->name,
-            'stage' => $request->stage,
-            'parent_id' => $request->parent_id,
-            'nav_show' => $request->nav_show,
         ]);
 
         return redirect()->route('admin.labels.index')->withFlashSuccess(__('alerts.backend.labels.created'));
@@ -73,8 +62,7 @@ class LabelController extends Controller
      */
     public function edit(Label $label)
     {
-        $parents = Label::where(['stage' => 1])->get();
-        return view('backend.label.edit', ['label' => $label, 'parents' => $parents]);
+        return view('backend.label.edit', ['label' => $label]);
     }
 
     /**
@@ -89,9 +77,6 @@ class LabelController extends Controller
     {
         Label::where(['id'=>$label->id])->update([
             'name' => $request->name,
-            'stage' => $request->stage,
-            'parent_id' => $request->parent_id,
-            'nav_show' => $request->nav_show,
         ]);
 
         return redirect()->route('admin.labels.index')->withFlashSuccess(__('alerts.backend.labels.updated'));

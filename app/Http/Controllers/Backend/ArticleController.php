@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Requests\Backend\ArticleRequest;
 use App\Models\Article;
+use App\Models\ArticleRelLabel;
 use App\Models\Label;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -43,8 +44,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        $labels = Label::where(['stage' => 1])->get();
-
+        $labels = Label::get();
         return view('backend.article.create', ['labels' => $labels]);
     }
 
@@ -57,16 +57,30 @@ class ArticleController extends Controller
      */
     public function store(ArticleRequest $request)
     {
-        Article::create([
-            'title' => $request->title,
-            'source' => $request->source,
-            'banner' => $request->banner,
-            'brief' => $request->brief,
-            'url' => $request->url,
-            'author' => $request->author,
-            'sort' => $request->sort,
-            'content' => $request->get('content'),
-        ]);
+        \DB::beginTransaction();
+        try {
+            $article = Article::create([
+                'title' => $request->title,
+                'source' => $request->source,
+                'banner' => $request->banner,
+                'brief' => $request->brief,
+                'url' => $request->url,
+                'author' => $request->author,
+                'sort' => $request->sort,
+                'content' => $request->get('content'),
+            ]);
+
+            foreach ($request->labels as $labelId) {
+                ArticleRelLabel::create([
+                    'article_id' => $article->id,
+                    'label_id' => $labelId
+                ]);
+            }
+            \DB::commit();
+        } catch (\Exception $e) {
+            \DB::rollBack();
+            return redirect()->route('admin.articles.index')->withFlashError('添加文章失败');
+        }
 
         return redirect()->route('admin.articles.index')->withFlashSuccess('添加文章成功');
     }
@@ -80,7 +94,7 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        $labels = Label::where(['stage' => 1])->get();
+        $labels = Label::get();
         return view('backend.article.edit', ['labels' => $labels, 'article' => $article]);
     }
 
@@ -94,16 +108,32 @@ class ArticleController extends Controller
      */
     public function update(Article $article, ArticleRequest $request)
     {
-        Article::where(['id' => $article->id])->update([
-            'title' => $request->title,
-            'source' => $request->source,
-            'banner' => $request->banner,
-            'brief' => $request->brief,
-            'url' => $request->url,
-            'author' => $request->author,
-            'sort' => $request->sort,
-            'content' => $request->get('content'),
-        ]);
+        \DB::beginTransaction();
+        try {
+            Article::where(['id' => $article->id])->update([
+                'title' => $request->title,
+                'source' => $request->source,
+                'banner' => $request->banner,
+                'brief' => $request->brief,
+                'url' => $request->url,
+                'author' => $request->author,
+                'sort' => $request->sort,
+                'content' => $request->get('content'),
+            ]);
+
+            ArticleRelLabel::whereIn('label_id', $article->labels->pluck('id')->toArray())->delete();
+
+            foreach ($request->labels as $labelId) {
+                ArticleRelLabel::create([
+                    'article_id' => $article->id,
+                    'label_id' => $labelId
+                ]);
+            }
+            \DB::commit();
+        } catch (\Exception $e) {
+            \DB::rollBack();
+            return redirect()->route('admin.articles.index')->withFlashError('添加文章失败');
+        }
 
         return redirect()->route('admin.articles.index')->withFlashSuccess('修改文章成功');
     }
