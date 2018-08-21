@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Requests\Backend\PositionRequest;
+use App\Models\Label;
 use App\Models\Position;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -29,6 +30,7 @@ class PositionController extends Controller
             ->orderBy('updated_at', 'desc')
             ->orderBy('stage', 'asc')
             ->paginate(15);
+
         return view('backend.position.index', ['positions' => $result]);
     }
 
@@ -86,9 +88,9 @@ class PositionController extends Controller
      * @return mixed
      * @author 郭庆
      */
-    public function update(Position $position,PositionRequest $request)
+    public function update(Position $position, PositionRequest $request)
     {
-        Position::where(['id'=>$position->id])->update([
+        Position::where(['id' => $position->id])->update([
             'name' => $request->name,
             'stage' => $request->stage,
             'parent_id' => $request->parent_id,

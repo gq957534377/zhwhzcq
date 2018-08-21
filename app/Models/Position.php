@@ -29,6 +29,12 @@ class Position extends Model
                  class="dropdown-item">' . __('buttons.general.crud.delete') . '</a> ';
     }
 
+    public function getLabelsButtonAttribute()
+    {
+        return '<a href="/admin/positions_labels/'.$this->id.'"
+                 class="dropdown-item">绑定标签</a> ';
+    }
+
 
     public function getActionButtonsAttribute()
     {
@@ -42,6 +48,7 @@ class Position extends Model
 			</button>
 			<div class="dropdown-menu" aria-labelledby="userActions">
 			  ' . $this->delete_button . '
+			  ' . $this->labels_button . '
 			</div>
 		  </div>
 		</div>';
@@ -60,5 +67,15 @@ class Position extends Model
     public function childPositions()
     {
         return $this->hasMany(Position::class, 'parent_id', 'id');
+    }
+
+
+    public function labels()
+    {
+        return $this->belongsToMany(
+            Label::class,
+            'position_rel_labels',
+            'position_id', 'label_id'
+        );
     }
 }

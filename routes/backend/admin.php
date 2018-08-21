@@ -10,3 +10,5 @@ Route::resource('articles', 'ArticleController');
 Route::resource('banners', 'BannerController');
 Route::post('uploadBanner', 'ArticleController@uploadBanner');
 Route::resource('positions', 'PositionController');
+Route::post('positions_saveLabels/{position}', 'PositionRelLabelController@saveLabels');
+Route::get('positions_labels/{position}', 'PositionRelLabelController@Labels');
