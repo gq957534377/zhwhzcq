@@ -2,7 +2,7 @@
 $(function () {
 			if ($('.nav li') == "undefined") return;
 			$('.nav li').hover(function(){
-				$(this).addClass('selected');							  
+				$(this).addClass('selected');
 			},function(){
 				$(this).removeClass('selected');		
 			})
