@@ -5,13 +5,7 @@
 
     <meta name="keywords" content="资讯中心，滚动，时政，国际，财经，军事，娱乐，华人，图片，政权，房产，汽车，廉政，互联网，新媒体，教育，电视剧，电影，视频，访谈，直播，专题，旅游，广播，科技">
     <meta name="description" content="向世界展示中华文化独特魅力">
-    <link href="http://www.vxinghe.com/public/images/portal/favicon.ico" rel="Shortcut Icon" type="image/x-icon">
-    <link href="http://www.vxinghe.com/public/images/portal/favicon.ico" rel="Bookmark" type="image/x-icon">
-    <!--<link rel="stylesheet" type="text/css" href="--><!--" />-->
-    <!--<link rel="stylesheet" type="text/css" href="--><!--" />-->
-    <!--<link rel="stylesheet" type="text/css" href="--><!--" />-->
     <script src="/front/info/jquery-1.12.4.min.js" type="text/javascript"></script>
-
     <meta name="format-detection" content="telephone=no">
 </head>
 <body>
@@ -134,9 +128,9 @@
             </ul>
         </div>
         <div class="search">
-            <input type="text" placeholder="搜索">
+            {{--<input type="text" placeholder="搜索">--}}
             <div class="search-button">
-                <img src="/front/info/search.png">
+                {{--<img src="/front/info/search.png">--}}
             </div>
         </div>
     </div>
@@ -151,7 +145,7 @@
                 @foreach($labels as $label)
                     <li>
                         <p>
-                            <a href="{{url('/articles?label_id='.$label->id)}}"
+                            <a href="{{url('/articles?position_id='.$label->id)}}"
                                target="_blank">{{$label->name}}</a>
                         </p>
                     </li>
@@ -203,49 +197,18 @@
         </div>
     </div>
     <div class="right">
-        <!--        专题-->
-
         <div class="hot">
             <div class="hot-title clear">
                 <div>热点排行</div>
             </div>
             <ul>
-
-                <li>
-                    <div>1</div>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=detail&amp;id=6918" target="_blank">中国－中东欧国家文化合作协调中心在马其顿揭幕</a>
-                </li>
-
-
-                <li>
-                    <div>2</div>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=detail&amp;id=6808" target="_blank">电影《中国推销员》卖到全球67国</a>
-                </li>
-
-
-                <li>
-                    <p>3</p>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=detail&amp;id=6857" target="_blank">“一带一路”与对外文化传播</a>
-                </li>
-
-
-                <li>
-                    <p>4</p>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=detail&amp;id=6805" target="_blank">论中国文化走出去的必然和机遇</a>
-                </li>
-
-
-                <li>
-                    <p>5</p>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=detail&amp;id=6797" target="_blank">中国年味儿洋溢美国中部小城</a>
-                </li>
-
-
-                <li>
-                    <p>6</p>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=detail&amp;id=6790" target="_blank">浙江省政协委员支招：借一带一路助力文化走出去</a>
-                </li>
-
+                @foreach($hotArticles as  $k => $hotArticle)
+                    <li>
+                        <div>{{$k+1}}</div>
+                        <a href="/articles/{{$hotArticle->id}}"
+                           target="_blank">{{$hotArticle->title}}</a>
+                    </li>
+                @endforeach
             </ul>
         </div>
         <div class="recommand">
@@ -253,24 +216,21 @@
                 <div>精彩推荐</div>
             </div>
             <ul>
-                <li>
-                    <div class="xinwen-right-image">
-                        <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=detail&amp;id=7003" target="_blank"><img style="width: 360px;height: 210px" src="/front/info/1523859060.jpg"></a>
-                    </div>
-                    <div class="xinwen-right-title">
-                        <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=detail&amp;id=7003" target="_blank">钢琴家郎朗：将借联合国力量助推运河文化走出去</a>
-                    </div>
-                </li>
-                <li>
-                    <div class="xinwen-right-image">
-                        <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=detail&amp;id=6918" target="_blank"><img style="width: 360px;height: 210px" src="/front/info/1522140556.jpg"></a>
-                    </div>
-                    <div class="xinwen-right-title">
-                        <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=detail&amp;id=6918" target="_blank">中国－中东欧国家文化合作协调中心在马其顿揭幕</a>
-                    </div>
-                </li>
+                @foreach($pointArticles as  $pointArticle)
+                    <li>
+                        <div class="xinwen-right-image">
+                            <a href="/articles/{{$pointArticle->id}}"
+                               target="_blank">
+                                <img style="width: 360px;height: 210px" src="{{$pointArticle->banner}}">
+                            </a>
+                        </div>
+                        <div class="xinwen-right-title">
+                            <a href="/articles/{{$pointArticle->id}}"
+                               target="_blank">{{$pointArticle->title}}</a>
+                        </div>
+                    </li>
+                @endforeach
             </ul>
-
         </div>
     </div>
 </div>
@@ -294,7 +254,6 @@
 </script>
 
 <script src="/front/info/jweixin-1.2.0.js"></script>
-<script src="/front/info/weixin.js" type="text/javascript"></script>
 <script>
     $(function(){
         setShareInfo("中华文化“走出去” 中国琉璃对话法国玻璃", "当地时间4月20日，由中国现代琉璃艺术开拓者与奠基人、琉璃工房创始人——杨惠姗和张毅携手法国国宝级玻璃艺术大师安东尼·勒彼里耶的当代琉璃艺术联展在安德尔-卢瓦尔省省会图尔市历史古迹古安博物馆拉开帷幕。")

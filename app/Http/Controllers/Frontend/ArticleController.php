@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Models\Article;
 use App\Models\ArticleRelLabel;
-use App\Models\Label;
+use App\Models\Position;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -17,33 +17,45 @@ class ArticleController extends Controller
 
         $query = Article::where($where);
 
-        if (!empty($request->label_id)) {
-            $articleIds = ArticleRelLabel::whereIn('label_id', Label::where('id', $request->label_id)
-                ->orWhere('parent_id', $request->label_id)
-                ->pluck('id')
-                ->toArray())
+        if (!empty($request->position_id) && !empty($position = Position::find($request->position_id))) {
+            $lableIds = $position->labels->pluck('id')->unique()->toArray();
+            $articleIds = ArticleRelLabel::whereIn('label_id', $lableIds)
                 ->pluck('article_id')
                 ->toArray();
+            $articleIds = array_keys(array_count_values($articleIds), count($lableIds));
 
             $query = $query->whereIn('id', $articleIds);
-            $label = Label::find($request->label_id);
-            !empty($label) && $keys[] = $label->name;
+            $keys[] = $position->name;
         }
 
         if (!empty($request->title)) {
             $query = $query->where('title', 'like', '%' . $request->title . '%');
         }
 
-        $result = $query
+        $query = $query
             ->orderBy('updated_at', 'desc')
-            ->orderBy('sort', 'desc')
-            ->paginate(1);
+            ->orderBy('sort', 'desc');
+        $query2 = clone $query;
+
+        $result = $query->paginate(1);
 
         // 导航
-        $labels = Label::where(['stage' => 1])->orderBy('id')->get();
+        $labels = Position::where(['stage' => 1])->orderBy('sort')->get();
+
+        // 热点排行
+        $hotArticles = $query2->orderBy('updated_at', 'desc')->take(4)->get();
+
+        // 精彩推荐
+        $pointArticles = $query2->orderBy('updated_at', 'desc')->take(2)->get();
 
         empty($keys) && $keys[] = '全部';
-        return view('frontend.list', ['articles' => $result, 'key' => implode('-', $keys), 'labels' => $labels]);
+        return view('frontend.list', [
+            'articles' => $result,
+            'key' => implode('-', $keys),
+            'labels' => $labels,
+            'hotArticles' => $hotArticles,
+            'pointArticles' => $pointArticles
+        ]);
     }
 
     public function pages(Request $request)
@@ -53,17 +65,15 @@ class ArticleController extends Controller
 
         $query = Article::where($where);
 
-        if (!empty($request->label_id)) {
-            $articleIds = ArticleRelLabel::whereIn('label_id', Label::where('id', $request->label_id)
-                ->orWhere('parent_id', $request->label_id)
-                ->pluck('id')
-                ->toArray())
+        if (!empty($request->position_id) && !empty($position = Position::find($request->position_id))) {
+            $lableIds = $position->labels->pluck('id')->unique()->toArray();
+            $articleIds = ArticleRelLabel::whereIn('label_id', $lableIds)
                 ->pluck('article_id')
                 ->toArray();
+            $articleIds = array_keys(array_count_values($articleIds), count($lableIds));
 
             $query = $query->whereIn('id', $articleIds);
-            $label = Label::find($request->label_id);
-            !empty($label) && $keys[] = $label->name;
+            $keys[] = $position->name;
         }
 
         if (!empty($request->title)) {
@@ -80,8 +90,19 @@ class ArticleController extends Controller
     public function show(Article $article, Request $request)
     {
         // 导航
-        $labels = Label::where(['stage' => 1])->orderBy('id')->get();
+        $labels = Position::where(['stage' => 1])->orderBy('sort')->get();
 
-        return view('frontend.info', ['article' => $article, 'labels' => $labels]);
+        // 热点排行
+        $hotArticles = Article::orderBy('updated_at', 'desc')->take(4)->get();
+
+        // 精彩推荐
+        $pointArticles = Article::orderBy('updated_at', 'desc')->take(2)->get();
+
+        return view('frontend.info', [
+            'article' => $article,
+            'labels' => $labels,
+            'hotArticles' => $hotArticles,
+            'pointArticles' => $pointArticles
+        ]);
     }
 }

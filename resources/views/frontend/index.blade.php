@@ -24,13 +24,13 @@
             @foreach($labels as $label)
                 <li>
                     <strong>
-                        <a href="{{url('/articles?label_id='.$label->id)}}"
+                        <a href="{{url('/articles?position_id='.$label->id)}}"
                                target="_self">{{$label->name}}</a>
                     </strong>
                     <dl>
-                        @foreach($label->childLabels as $childLabel)
+                        @foreach($label->childPositions as $childLabel)
                             <li>
-                                <a href="{{url('/articles?label_id='.$childLabel->id)}}"
+                                <a href="{{url('/articles?position_id='.$childLabel->id)}}"
                                target="_self">{{$childLabel->name}}</a>
                             </li>
                         @endforeach
@@ -40,14 +40,14 @@
             @endforeach
         </ul>
         <div class="mtopic"><img src="/front/index/style/topic/mtopic.jpg" /></div>
-        <div class="msearch">
-            <form action="/e/search/" method="post" target="_blank">
-                <input type="hidden" name="show" value="title,keyboard" />
-                <input type="hidden" name="tempid" value="1" />
-                <input type="text"  placeholder="输入关键词" class="text-msearch"  name="keyboard">
-                <input type="submit" value="" class="btn-msearch">
-            </form>
-        </div>
+        {{--<div class="msearch">--}}
+            {{--<form action="/e/search/" method="post" target="_blank">--}}
+                {{--<input type="hidden" name="show" value="title,keyboard" />--}}
+                {{--<input type="hidden" name="tempid" value="1" />--}}
+                {{--<input type="text"  placeholder="输入关键词" class="text-msearch"  name="keyboard">--}}
+                {{--<input type="submit" value="" class="btn-msearch">--}}
+            {{--</form>--}}
+        {{--</div>--}}
         <div class="langchose"><a href="">中文</a><a href="">Eng</a><a href="">中文</a><a href="">其他</a></div>
         <div class="action">
             <a href="/e/DoInfo/AddInfo.php?mid=1&enews=MAddInfo&classid=25" class="n1" target="_blank" title="投稿">投稿</a>

@@ -7,6 +7,7 @@ use App\Models\Article;
 use App\Models\ArticleRelLabel;
 use App\Models\Banner;
 use App\Models\Label;
+use App\Models\Position;
 
 /**
  * Class HomeController.
@@ -25,36 +26,41 @@ class HomeController extends Controller
             ->get();
 
         // 导航
-        $labels = Label::where(['stage' => 1])->orderBy('id')->get();
+        $labels = Position::where(['stage' => 1])->orderBy('sort')->get();
         // 新闻要点
-        $newsPoints = $this->articlesByChannelId(41, 8);
+        $newsPoints = $this->articlesByPositionId(41, 8);
         // 外宣媒体
-        $newsOut = $this->articlesByChannelId(15, 4);
+        $newsOut = $this->articlesByPositionId(15, 4);
         // 专题活动
-        $thematicActivities = $this->articlesByChannelId(7, 4);
+        $thematicActivities = $this->articlesByPositionId(7, 4);
         // 实时要闻
-        $newsTime = $this->articlesByChannelId(42, 4);
+        $newsTime = $this->articlesByPositionId(42, 4);
         // 本月焦点
-        $monthPoints = $this->articlesByChannelId(43, 4);
+        $monthPoints = $this->articlesByPositionId(43, 4);
         // 文化投资
-        $culturalInvestment = $this->articlesByChannelId(44, 4);
+        $culturalInvestment = $this->articlesByPositionId(44, 4);
 
-//        dd($newsOut);
         return view('frontend.index', [
             'labels' => $labels,
             'banners' => $banners,
             'newsPoints' => $newsPoints,
             'newsOut' => $newsOut,
-            'thematicActivities' =>$thematicActivities ,
+            'thematicActivities' => $thematicActivities,
             'newsTime' => $newsTime,
             'monthPoints' => $monthPoints,
             'culturalInvestment' => $culturalInvestment,
         ]);
     }
 
-    private function articlesByChannelId($labelId, $num)
+    private function articlesByPositionId($positionId, $num)
     {
-        $articleIds = ArticleRelLabel::where('label_id', $labelId)
+        $position = Position::find($positionId);
+        if (empty($position)) return [];
+
+        $articleIds = ArticleRelLabel::whereIn('label_id', $position
+            ->labels
+            ->pluck('id')
+            ->toArray())
             ->pluck('article_id')
             ->toArray();
 
