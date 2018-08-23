@@ -2,8 +2,7 @@
 hao.innerHTML=js_hao.innerHTML;js_hao.innerHTML="";
 sfava.innerHTML=js_fav.innerHTML;js_fav.innerHTML="";
 mood.innerHTML=js_mood.innerHTML;js_mood.innerHTML="";
-//百度分享
-with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+
 //字体
 $(function () {
 	var tfontsize = $(".tfontsize");

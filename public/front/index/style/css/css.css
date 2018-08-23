@@ -24,7 +24,7 @@ li{list-style:none}
 caption,th{text-align:left}
 q:before,q:after{content:''}
 *html{background-image:url(about:blank);background-attachment:fixed}
-body{color:#333;font-size:12px;line-height:22px;background:#F2F2F2 url(../images/bg1.jpg) repeat-x center top;}
+body{color:#333;font-size:12px;line-height:22px;background:#F2F2F2 repeat-x center top;}
 a{outline:0;text-decoration:none;color:#333}
 a:hover{text-decoration:none;color:#f00}
 /** 面包屑 */
@@ -155,5 +155,5 @@ a:hover{text-decoration:none;color:#f00}
 .backtotop .totop span {background-position:0 -105px;}
 .backtotop .totop span:hover {background-position:-42px -105px;}
 .backtotop a:hover {background:#00AA98;}
-.erweipic{background:url('/style/images/two_code.png') no-repeat; width:180px; height:194px; display:none; position:absolute; z-index:9999;}
+.erweipic{width:180px; height:194px; display:none; position:absolute; z-index:9999;}
 .erweipic img{width:150px;height:150px;margin:13px 0px 0px 13px;}

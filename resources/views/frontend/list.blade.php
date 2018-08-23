@@ -10,8 +10,6 @@
     <meta name="keywords" content="资讯中心，滚动，时政，国际，财经，军事，娱乐，华人，图片，政权，房产，汽车，廉政，互联网，新媒体，教育，电视剧，电影，视频，访谈，直播，专题，旅游，广播，科技">
     <meta name="description" content="向世界展示中华文化独特魅力">
     <link rel="stylesheet" href="/front/list/common.css">
-    <script src="/front/list/jquery-1.12.4.min.js" type="text/javascript"></script>
-
     {{--本页面css--}}
     <link rel="stylesheet" href="/front/list/list.css">
     <link rel="stylesheet" href="/front/list/sidebar.css">
@@ -25,7 +23,6 @@
             }
         }
     </style>
-
 </head>
 <body>
 <div class="nav">
@@ -251,60 +248,6 @@
         </div>
     </div>
 </div>
-
-<script type="application/javascript" src="/front/list/common.js"></script>
-<script>
-    var page = $("#more").data('next_page');
-    $("#more").click(function () {
-        var This = $(this);
-        var url = "/article_pages";
-        var data = JSON.parse($('#request-data').val());
-        data.page = page;
-
-        $.ajax({
-            url: url,
-            type: 'GET',
-            data: data,
-            success: function (data) {
-                if (data.StatusCode === 200) {
-                    var html = data.ResultData.data.map(function (res) {
-                        console.log(res);
-                        html = '<li>';
-                        html += '<div class="list-title">';
-                        html += '<a href="/articles/' + res.id + '" target="_blank">' + res.title + '</a>';
-                        html += '</div>';
-                        html += '<div class="list-image">';
-                        html += '<a href="/articles/' + res.id + '" target="_blank"><img src="' + res.banner + '"></a>';
-                        html += '</div>';
-                        html += '<div class="list-content">';
-                        html += '<p style="font-size: 16px;">';
-                        html += res.brief;
-                        html += '</p>';
-                        html += '<span>' + res.created_at + '</span>';
-                        html += '</div>';
-                        html += '</li>';
-                        return html;
-                    });
-                    console.log(html);
-                    $(".list ul").append(html);
-                    page = page + 1;
-
-                    if (!data.ResultData.next_page_url || !data.ResultData.data) {
-                        $("#more").html('没有更多了！');
-                    }
-                } else {
-                    alert(data.ResultData);
-                }
-                // $("#more").html('加载更多');
-            },
-            before: function () {
-                $("#more").html('加载中......');
-            },
-        });
-    });
-</script>
-<script src="/front/list/jweixin-1.2.0.js"></script>
-
 <div class="friendship-link">
     <div class="link-center">
         <div class="link-five">
@@ -357,30 +300,59 @@
     </div>
     <div class="div-mask"></div>
 </div>
-<script language="javascript">
-    var userId = 1;		//用户ID
-    var userName = 'admin';	//用户名
-    var nickName = '里约里奇';	//昵称
-    var BASE_URL = 'http://www.vxinghe.com';	//
-    var PUBLIC_URL = 'http://www.vxinghe.com/public';
-    var DATA_URL = BASE_URL + '/data/';
-</script>
-<script type="application/javascript" src="/front/list/slider.js"></script>
-<script type="text/javascript" src="/front/list/zturn.js"></script>
-<script type="text/javascript" src="/front/list/down-up.js"></script>
-<script type="text/javascript" src="/front/list/index.js"></script>
-{{--<script type="text/javascript" src="/front/list/number.js"></script>--}}
-<script type="text/javascript" src="/front/list/picture.js"></script>
-{{--<script type="text/javascript" src="/front/list/banner.js"></script>--}}
-<script type="text/javascript" src="/front/list/search.js"></script>
-<script src="/front/list/scrolltotop.js" type="text/javascript"></script>
-<!--<script src="--><!--" type="text/javascript"></script>-->
-<script src="/front/list/header.js" type="text/javascript"></script>
 
 
-<div align="center" style="color:#FF3300;margin:5pt;font-family:Verdana;display:none;"><a href="http://www.coolphp.org/"
-                                                                                          style="color:#FF3300;margin:5pt;font-family:Verdana">CoolPHP</a>
-    <sup style="color:gray;font-size:9pt">1.0</sup><span style="color:silver"> { 欢迎使用CoolPHP MVC开发架构 } -- [ Cool,It being fast ]</span>
-</div>
 </body>
+<script src="/front/list/jquery-1.12.4.min.js" type="text/javascript"></script>
+<script type="application/javascript" src="/front/list/common.js"></script>
+<script>
+    var page = $("#more").data('next_page');
+    $("#more").click(function () {
+        var This = $(this);
+        var url = "/article_pages";
+        var data = JSON.parse($('#request-data').val());
+        data.page = page;
+
+        $.ajax({
+            url: url,
+            type: 'GET',
+            data: data,
+            success: function (data) {
+                if (data.StatusCode === 200) {
+                    var html = data.ResultData.data.map(function (res) {
+                        console.log(res);
+                        html = '<li>';
+                        html += '<div class="list-title">';
+                        html += '<a href="/articles/' + res.id + '" target="_blank">' + res.title + '</a>';
+                        html += '</div>';
+                        html += '<div class="list-image">';
+                        html += '<a href="/articles/' + res.id + '" target="_blank"><img src="' + res.banner + '"></a>';
+                        html += '</div>';
+                        html += '<div class="list-content">';
+                        html += '<p style="font-size: 16px;">';
+                        html += res.brief;
+                        html += '</p>';
+                        html += '<span>' + res.created_at + '</span>';
+                        html += '</div>';
+                        html += '</li>';
+                        return html;
+                    });
+                    console.log(html);
+                    $(".list ul").append(html);
+                    page = page + 1;
+
+                    if (!data.ResultData.next_page_url || !data.ResultData.data) {
+                        $("#more").html('没有更多了！');
+                    }
+                } else {
+                    alert(data.ResultData);
+                }
+                // $("#more").html('加载更多');
+            },
+            before: function () {
+                $("#more").html('加载中......');
+            },
+        });
+    });
+</script>
 </html>

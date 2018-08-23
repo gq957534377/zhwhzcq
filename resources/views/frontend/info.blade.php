@@ -1,20 +1,27 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!-- saved from url=(0063)http://www.vxinghe.com/portal/index.php?c=home&a=detail&id=7037 -->
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>{{$article->title}}</title>
 
     <meta name="keywords" content="资讯中心，滚动，时政，国际，财经，军事，娱乐，华人，图片，政权，房产，汽车，廉政，互联网，新媒体，教育，电视剧，电影，视频，访谈，直播，专题，旅游，广播，科技">
     <meta name="description" content="向世界展示中华文化独特魅力">
-    <script src="/front/info/jquery-1.12.4.min.js" type="text/javascript"></script>
     <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="/front/info/detail.css">
+    <link rel="stylesheet" href="/front/info/sidebar.css">
+    <link rel="stylesheet" href="/front/info/footer.css">
+    <style>
+        @media screen and (max-width: 1270px) {
+            body, .friendship-link, .footer, .div-mask {
+                width: 1270px;
+            }
+        }
+    </style>
 </head>
 <body>
 
 <link rel="stylesheet" href="/front/info/common.css">
-<!--<link rel="stylesheet" href="--><!--" />-->
-
-
-
 <div class="nav">
     <div class="width1200">
         <div class="language">
@@ -65,28 +72,36 @@
         <div class="city">
             <ul>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=detail&amp;id=7037#" target="_self">北京</a>
+                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=detail&amp;id=7037#"
+                       target="_self">北京</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=detail&amp;id=7037#" target="_self">天津</a>
+                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=detail&amp;id=7037#"
+                       target="_self">天津</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=detail&amp;id=7037#" target="_self">河北</a>
+                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=detail&amp;id=7037#"
+                       target="_self">河北</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=detail&amp;id=7037#" target="_self">山西</a>
+                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=detail&amp;id=7037#"
+                       target="_self">山西</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=detail&amp;id=7037#" target="_self">陕西</a>
+                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=detail&amp;id=7037#"
+                       target="_self">陕西</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=detail&amp;id=7037#" target="_self">辽宁</a>
+                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=detail&amp;id=7037#"
+                       target="_self">辽宁</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=detail&amp;id=7037#" target="_self">吉林</a>
+                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=detail&amp;id=7037#"
+                       target="_self">吉林</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=detail&amp;id=7037#" target="_self">上海</a>
+                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=detail&amp;id=7037#"
+                       target="_self">上海</a>
                 </li>
                 <li class="more-li">
                     <img src="/front/info/more.png">
@@ -156,24 +171,12 @@
     </div>
 </div>
 
-<!--<link rel="stylesheet" type="text/css" href="--><!--" />-->
-<link rel="stylesheet" href="/front/info/detail.css">
-<link rel="stylesheet" href="/front/info/sidebar.css">
-<link rel="stylesheet" href="/front/info/go-out.css">
-<link rel="stylesheet" href="/front/info/index1.css">
-<link rel="stylesheet" href="/front/info/footer.css">
-<link rel="stylesheet" type="text/css" href="/front/info/ruguoPager.css">
-<style>
-    @media screen and (max-width: 1270px) {
-        body, .friendship-link, .footer, .div-mask{
-            width: 1270px;
-        }
-    }
-</style>
+
 <div class="main clear">
     <div class="position"><img src="/front/info/home.png">
         <a href="http://www.vxinghe.com/" target="_self">首页</a><span>&gt;</span>
-        <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81" target="_self">新闻</a><span>&gt;</span>{{$article->title}}&nbsp;&nbsp;正文
+        <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81"
+           target="_self">新闻</a><span>&gt;</span>{{$article->title}}&nbsp;&nbsp;正文
     </div>
     <div class="left">
         <div class="article box-shadow">
@@ -181,7 +184,9 @@
             <div class="article-about clear">
                 <div class="float-left">
                     <span class="article-time">发布时间：{{$article->created_at}}</span>
-                    <span class="article-from">来源：                            <a href="http://www.taiwan.cn/31t/wh31/201804/t20180423_11947430.htm" target="_blank" rel="nofollow">{{$article->source}}</a>
+                    <span class="article-from">来源：                            <a
+                                href="http://www.taiwan.cn/31t/wh31/201804/t20180423_11947430.htm" target="_blank"
+                                rel="nofollow">{{$article->source}}</a>
                         </span>
                 </div>
                 <div class="float-right">
@@ -234,31 +239,6 @@
         </div>
     </div>
 </div>
-
-
-<script type="application/javascript" src="/front/info/slider.js"></script>
-<script type="application/javascript" src="/front/info/detailpage.js"></script>
-<script type="application/javascript" src="/front/info/common.js"></script>
-<script src="/front/info/jquery-1.12.4.min.js" type="text/javascript"></script>
-<script src="/front/info/ruguoTextPager.js" type="text/javascript"></script>
-
-<script>
-    var pager = new ruguoPager();
-    pager.objName="pager";
-    pager.pagerID="pager";
-    pager.txtID="con";
-    pager.toPoint="con"
-    pager.showPageCount=3;
-    pager.currPage=1;
-    ruguoPagerLoad(pager);
-</script>
-
-<script src="/front/info/jweixin-1.2.0.js"></script>
-<script>
-    $(function(){
-        setShareInfo("中华文化“走出去” 中国琉璃对话法国玻璃", "当地时间4月20日，由中国现代琉璃艺术开拓者与奠基人、琉璃工房创始人——杨惠姗和张毅携手法国国宝级玻璃艺术大师安东尼·勒彼里耶的当代琉璃艺术联展在安德尔-卢瓦尔省省会图尔市历史古迹古安博物馆拉开帷幕。")
-    })
-</script>
 <div class="friendship-link">
     <div class="link-center">
         <div class="link-five">
@@ -311,25 +291,8 @@
         </div>
     </div>
     <div class="div-mask"></div>
-</div><script language="javascript">
-    var userId = 1;		//用户ID
-    var userName = 'admin';	//用户名
-    var nickName = '里约里奇';	//昵称
-    var BASE_URL = 'http://www.vxinghe.com';	//
-    var PUBLIC_URL =  'http://www.vxinghe.com/public';
-    var  DATA_URL = BASE_URL+'/data/';
-</script>
-<script type="application/javascript" src="/front/info/slider.js"></script>
-<script type="text/javascript" src="/front/info/zturn.js"></script>
-<script type="text/javascript" src="/front/info/down-up.js"></script>
-<script type="text/javascript" src="/front/info/index.js"></script>
-<script type="text/javascript" src="/front/info/number.js"></script>
-<script type="text/javascript" src="/front/info/picture.js"></script>
-<script type="text/javascript" src="/front/info/banner.js"></script>
-<script type="text/javascript" src="/front/info/search.js"></script>
-<script src="/front/info/scrolltotop.js" type="text/javascript"></script>
-<!--<script src="--><!--" type="text/javascript"></script>-->
-<script src="/front/info/header.js" type="text/javascript"></script>
-
-
-<div align="center" style="color:#FF3300;margin:5pt;font-family:Verdana;display:none;"> <a href="http://www.coolphp.org/" style="color:#FF3300;margin:5pt;font-family:Verdana">CoolPHP</a> <sup style="color:gray;font-size:9pt">1.0</sup><span style="color:silver"> { 欢迎使用CoolPHP MVC开发架构 } -- [ Cool,It being fast ]</span> </div></body></html>
+</div>
+</body>
+<script src="/front/info/jquery-1.12.4.min.js" type="text/javascript"></script>
+<script type="application/javascript" src="/front/info/common.js"></script>
+</html>

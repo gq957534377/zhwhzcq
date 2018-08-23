@@ -4,16 +4,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="renderer" content="ie-comp">
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
-    <script type="text/javascript" src="/front/index/style/js/mobile.js"></script>
-    <script type="text/javascript">uaredirect("http://m.diguo001.com/");</script>
     <meta name="keywords" content="帝国网站管理系统,EmpireCMS" />
     <meta name="description" content="　　帝国软件是一家专注于网络软件开发的科技公司，其主营产品“帝国网站管理系统(EmpireCMS)”是目前国内应用最广泛的CMS程序。通过十多年的不断创新与完善，使系统集安全、稳定、强大、灵活于一身。目前EmpireCMS程序已经广泛应用在国内上百万家网站，覆盖国内上千万上网人群，并经过上千家知名网站的严格检测，被称为国内最安全、最稳定的开源CMS系统。" />
     <title>仿砍柴网站程序</title>
     <link rel="stylesheet" type="text/css" href="/front/index/style/css/css.css" />
     <link rel="stylesheet" type="text/css" href="/front/index/style/css/style.css" />
     <link rel="shortcut icon" href="/favicon.ico" />
-    <script type="text/javascript" src="/front/index/style/js/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="/front/index/style/js/common.js"></script>
 </head>
 <body>
 <!--网站公共头部-->
@@ -36,7 +32,6 @@
                         @endforeach
                     </dl>
                 </li>
-
             @endforeach
         </ul>
         <div class="mtopic"><img src="/front/index/style/topic/mtopic.jpg" /></div>
@@ -50,10 +45,9 @@
         {{--</div>--}}
         <div class="langchose"><a href="">中文</a><a href="">Eng</a><a href="">中文</a><a href="">其他</a></div>
         <div class="action">
-            <a href="/e/DoInfo/AddInfo.php?mid=1&enews=MAddInfo&classid=25" class="n1" target="_blank" title="投稿">投稿</a>
+
             <div class="userbar">
                 <div class="user" id="show_userinfo">
-                    <span class="avatar"><img src="/style/images/symbol-25.png" /></span>
                     <a href="javascript:;" class="n4 head-username">游  客</a>
                     <ul class="drap">
                         <li class="i3"><a  href="javascript:void(0);" onclick="AjaxReg()" target="_self" class="head-register">注  册</a></li>
@@ -64,7 +58,6 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="/e/member/ajaxlog/?loadjs=1"></script>
 <!--@网站公共头部-->
 <div class="main">
     <!--主要内容-->
@@ -128,7 +121,7 @@
             </div>
             <!-- 首页-标语02 -->
             <div class="rightbanber">
-                <a href="/aboutme/report.html"><img src="/front/index/style/images/img3.png"  /></a>
+                {{--<a href="/aboutme/report.html"><img src="/front/index/style/images/img3.png"  /></a>--}}
             </div>
         <!-- @首页-标语02 -->
         </div>
@@ -186,7 +179,6 @@
             </div>
 
             <!--专题活动-->
-            <script type="text/javascript" src="/front/index/style/js/jquery.timeago.js"></script>
             <div class="hot">
                 <div class="com-title"><span>专题活动</span></div>
                 <div id="content_list">
@@ -284,7 +276,6 @@
                 </ul>
             </div>
 
-            <script type="text/javascript" src="/front/index/style/js/scrollad.js"></script>
         <!--@广告4-->
             <div class="floatfix"></div>
         </div>
@@ -315,24 +306,7 @@
     <!-- @友情链接 -->
     </div>
 </div>
-<input id="pageNo" type="hidden" value="1" />
-<input id="pageCnt" type="hidden" value="6" />
-<script type="text/javascript" src="/front/index/style/js/index.js"></script>
-<script type="text/javascript">
-    window._bd_share_config = {
-        common : {
-            bdText : '推荐一个非常赞的网站，来自：扩展变量-简称',
-            bdDesc : '　　帝国软件是一家专注于网络软件开发的科技公司，其主营产品“帝国网站管理系统(EmpireCMS)”是目前国内应用最广泛的CMS程序。通过十多年的不断创新与完善，使系统集安全、稳定、强大、灵活于一身。目前EmpireCMS程序已经广泛应用在国内上百万家网站，覆盖国内上千万上网人群，并经过上千家知名网站的严格检测，被称为国内最安全、最稳定的开源CMS系统。',
-            bdUrl : 'http://www.diguo001.com/',
-            bdPic : 'http://www.diguo001.com/style/logo/nopic.gif'
-        },
-        share : [{
-            "bdSize" : 32
-        }],
-    }
-</script>
 <div id="erweipic" class="erweipic">
-    <script src="/e/extend/code/?data=http://m.diguo001.com/" language="javascript"></script>
 </div>
 <div class="footer">
     <div class="wrapper">
@@ -341,11 +315,11 @@
             <a href="/aboutme/index.html" target="_blank"> 关于我们</a><span></span><a href="/aboutme/report.html" target="_blank">寻求报道</a><span></span><a href="/aboutme/submission.html" target="_blank">投稿须知</a><span></span><a href="/aboutme/cooperation.html" target="_blank">商务合作</a><span></span>	<a href="/aboutme/sitemap.html" target="_blank">网站地图</a>
             <span></span><a href="/baidunews.xml" target="_blank">百度新闻</a>
             <span></span><a href="/tags.html" target="_blank">标签云</a>
-            <span></span>#统计代码
+            <span></span>
         </div>
     </div>
 </div>
-<script type="text/javascript" src="/e/extend/html/"></script>
-<!---承接帝国程序二次开发，网站制作。QQ：75250060 苏奇--->
 </body>
+<script type="text/javascript" src="/front/index/style/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/front/index/style/js/common.js"></script>
 </html>
