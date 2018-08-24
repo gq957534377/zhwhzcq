@@ -30,7 +30,8 @@ class PositionController extends Controller
             ->orderBy('stage', 'ASC')
             ->orderBy('sort', 'ASC')
             ->orderBy('id', 'DESC')
-            ->paginate(15);
+            ->paginate(15)
+            ->appends($request->all());
 
         return view('backend.position.index', ['positions' => $result]);
     }
