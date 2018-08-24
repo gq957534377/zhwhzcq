@@ -115,7 +115,7 @@
                 <div class="com-title"><span>实时要闻</span></div>
                 <div class="sideMenu" style="margin:0 auto">
                     @foreach($newsTime as $k=>$item)
-                        <h3 class="h3img{{$k}}">
+                        <h3 class="h3img{{($k+1)}}">
                             <a href="{{$item->url}}" title="{{$item->title}}">{{$item->title}}</a>
                         </h3>
                         <ul>
