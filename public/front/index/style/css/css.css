@@ -26,7 +26,7 @@ q:before,q:after{content:''}
 *html{background-image:url(about:blank);background-attachment:fixed}
 body{color:#333;font-size:12px;line-height:22px;background:#F2F2F2 repeat-x center top;}
 a{outline:0;text-decoration:none;color:#333}
-a:hover{text-decoration:none;color:#f00}
+a:hover{text-decoration:none;color:#e60000}
 /** 面包屑 */
 .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
 .clearfix{display:block}
@@ -56,7 +56,7 @@ a:hover{text-decoration:none;color:#f00}
 /** 整体宽度 */
 .wrapper{ width:1200px; margin: 0 auto; clear: both; height: auto; position: relative;}
 /** nav */
-.nav{ float:left; margin-left:0px; clear: left; width: 760px; height: 60px; padding: 9px 40px ; background-color: #f00;}
+.nav{ float:left; margin-left:0px; clear: left; width: 760px; height: 60px; padding: 9px 40px ; background-color: #e60000;}
 .nav li{ float:left; font-size:16px;  position:relative; height:30px; line-height:30px; z-index:1;}
 .nav li.selected { z-index: 2; }
 .nav li i{ display:inline-block; background:url(../images/arrow.png) no-repeat; width:12px; height:7px; position:relative; top:-2px; margin-left:5px;}
@@ -101,7 +101,6 @@ a:hover{text-decoration:none;color:#f00}
 .action .drap li a:hover{ color:#00AA98;}
 .action .avatar img{ height:30px; width:30px;}
 /** * topmini */
-.topbar{ height:37px; background:#3E3E3E; position:fixed; left:0; top:0; width:100%; z-index:1;left:0px;_top:expression(document.documentElement.scrollTop+document.documentElement.clientHeight-this.clientHeight);}
 .topbar div.topbar_item{ display:block; width:1200px; margin:0px auto; position:relative}
 .minav{ float:left; margin-left:15px;}
 .minav li{ float:left; font-size:16px;  position:relative;height:37px; line-height:37px; z-index:1;}
