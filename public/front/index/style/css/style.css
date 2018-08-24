@@ -12,7 +12,7 @@
     float:left;
     overflow:hidden;
     width:378px;
-    margin: 20px 5px 20px 5px;
+    margin: 15px 5px 15px 5px;
 }
 .topbar .logo a{ display:block; height:auto; width:100%;}
 .topbar .logo a img {
@@ -20,12 +20,12 @@
     height:auto;
 }
 /*顶部搜索*/
-.topbar .msearch { position: absolute; top: 35px; right: 10px; background: url(../images/search_bg.png) no-repeat; width: 209px; height: 31px;}
+.topbar .msearch { position: absolute; top: 53px; right: 10px; background: url(../images/search_bg.png) no-repeat; width: 209px; height: 31px;}
 .topbar .msearch .text-msearch { width: 150px; height: 17px; padding: 5px; position: absolute; left: 1px; top: 1px; border: none; font-size: 14px;}
 .topbar .msearch .btn-msearch { width: 44px; height: 30px; background: url(../images/btn-msearch.png) no-repeat center; position: absolute; top: 1px; right: 0px; border: none; cursor: pointer; color: #a5a4a4;}
 .topbar .mtopic { float: left; width: 360px; height: 78px; background-color: #999; }
 .topbar .mtopic img { width: 360px; height: 78px; }
-.topbar .langchose { position: absolute; right: 370px; top: 75px; width: 200px; font-size: 14px; height: 30px; line-height: 30px; text-align: right; }
+.topbar .langchose { position: absolute; right: 370px; top: 60px; width: 200px; font-size: 14px; height: 30px; line-height: 30px; text-align: right; }
 .topbar .langchose a { margin-left: 14px; color:#666;}
 .topbar .langchose a.active {color: #e60000;}
 
@@ -130,14 +130,14 @@
 .mainnews .newsr .rightbanber { margin-top: 20px;  }
 .mainnews .newsr .rightbanber img { width: 320px; height: 90px;}
 
-.mainnews .newsr .follow, .listr .follow { margin-top:10px; height: 385px;padding-top:18px;}
-.mainnews .newsr .follow .followcon { background-color: #F4F4F4; height: 335px; margin-top: 12px; overflow: hidden;}
+.mainnews .newsr .follow, .listr .follow { margin-top:10px; padding-top:18px;}
+.mainnews .newsr .follow .followcon { background-color: #F4F4F4;  margin: 12px 0 12px 0; padding:0 0 12px 0; overflow: hidden;}
 .listr .follow .followcon { background-color: #F4F4F4; height: 334px; margin-top: 7px; overflow: hidden;}
 .mainnews .newsr .follow .followcon p img, .listr .follow .followcon p img { margin: 0 30px 30px; width: 86px; height: 86px; border: 5px solid #fff;}
 .mainnews .newsr .follow .followcon span, .listr .follow .followcon span { display: block; margin: 25px 0; text-align: center; font-size: 16px; color: #4c4c4c;}
 .mainnews .newsr .follow .followcon a, .listr .follow .followcon a { float:left;display: inline-block !important; *display: inline; zoom: 1; width: 69px; height: 84px; margin: 10px 20px 0;}
-.mainnews .newsr .follow .followcon a.awb1 { background: url(../images/wb1.png) no-repeat; }
-.mainnews .newsr .follow .followcon a.awb2 { background: url(../images/wb2.png) no-repeat; }
+.mainnews .newsr .follow .followcon a.awb1 { background-image: url(../images/wb1.png); }
+.mainnews .newsr .follow .followcon a.awb2 { background-image: url(../images/wb2.png); }
 .mainnews .newsr .follow .followcon #arc_fxbtm{width:56px;float:left;}
 .mainnews .newsr .follow .followcon #arc_fxbtm .bds_more{ background: url(../images/subscription.png) no-repeat;}
 
@@ -177,10 +177,10 @@
 	 /*合作伙伴、友情链接*/
 .main .mainother { width: 1150px; padding: 0 25px; background-color: #fff; margin: 0 auto; overflow: hidden; padding-bottom: 20px; margin-top: 15px;}
 .mainother .partners, .mainother .links { overflow: hidden; }
-.mainother .partners .partnerstitle { background: url(../images/partnerstitle.png) no-repeat; width: 1150px; height: 51px; margin-top: 15px; }
+.mainother .partners .partnerstitle { background: url(../images/partnertitle_new.png) no-repeat; width: 1150px; height: 51px; margin-top: 15px; }
 .mainother .partners .partnersimg { float: left; border: 1px solid #EEEDED; width: 129px; height: 54px; margin: 20px 6px;}
 .mainother .partners .partnersimg img { width: 129px; height: 54px;}
-.mainother .links .linkstitle { background: url(../images/linkstitle.png) no-repeat; width: 1150px; height: 51px; margin-top: 15px; }
+.mainother .links .linkstitle { background: url(../images/linkstitle_new.png) no-repeat; width: 1150px; height: 51px; margin-top: 15px; }
 .mainother .links ul li { float: left; font-size: 14px; margin: 5px 10px; *width: 80px;}
 
 /*首页-End*/
@@ -400,3 +400,22 @@
 .div2 .div3 .followcon p img { margin: 0 16px;}
 .div2 .div3 .followcon span{ display: block; margin: 25px 0; text-align: center; font-size: 16px; color: #4c4c4c;}
 .div2 .div3 .followcon a{ float:left;display: inline-block !important; *display: inline; zoom: 1; width: 69px; height: 84px; margin: 10px 20px 0;}
+
+.qr-grid {
+
+}
+.qr-grid i {
+    width:106px;
+    height:122px;
+    display:inline-block;
+    background-size:cover;
+    margin: 0 25px 0 25px;
+}
+
+.qr-grid .left {
+    background-image: url(../images/qrcode_left.png);
+}
+
+.qr-grid .right {
+    background-image: url(../images/qrcode_right.png);
+}

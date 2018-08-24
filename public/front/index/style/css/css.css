@@ -144,7 +144,7 @@ a:hover{text-decoration:none;color:#e60000}
 /*返回顶部及收藏*/
 .backtotop{display:block;position:fixed;width:56px;height:156px;overflow:hidden; _position: absolute;_top:expression(documentElement.scrollTop +document.documentElement.clientHeight/2 - 58 + "px");}
 .backtotop a {width:38px; height:48px; overflow:hidden; text-indent:-99em;float:left;display:block;cursor:pointer;background:#75CFD9;}
-.backtotop span {background:url('../images/backtotop.png') no-repeat;width:38px; height:48px;display:block;margin:0 auto;}
+.backtotop span {background:url('../images/backtotop_new.png') no-repeat;width:38px; height:48px;display:block;margin:0 auto;}
 .backtotop .erweima {margin-bottom:6px;}
 .backtotop .erweima span {background-position:0 0;}
 .backtotop .erweima span:hover {background-position:-42px 0px;}
