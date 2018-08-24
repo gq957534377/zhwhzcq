@@ -20,7 +20,7 @@
     height:auto;
 }
 /*顶部搜索*/
-.topbar .msearch { position: absolute; top: 53px; right: 10px; background: url(../images/search_bg.png) no-repeat; width: 209px; height: 31px;}
+.topbar .msearch { position: absolute; top: 58px; right: 10px; background: url(../images/search_bg.png) no-repeat; width: 209px; height: 31px;}
 .topbar .msearch .text-msearch { width: 150px; height: 17px; padding: 5px; position: absolute; left: 1px; top: 1px; border: none; font-size: 14px;}
 .topbar .msearch .btn-msearch { width: 44px; height: 30px; background: url(../images/btn-msearch.png) no-repeat center; position: absolute; top: 1px; right: 0px; border: none; cursor: pointer; color: #a5a4a4;}
 .topbar .mtopic { float: left; width: 360px; height: 78px; background-color: #999; }
