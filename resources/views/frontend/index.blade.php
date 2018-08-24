@@ -38,19 +38,14 @@
                 </li>
             @endforeach
         </ul>
-        <div class="mtopic"><img src="{{ asset('/front/index/style/topic/mtopic-201808242159.jpg') }}" /></div>
-        {{--<div class="msearch">--}}
-            {{--<form action="/e/search/" method="post" target="_blank">--}}
-                {{--<input type="hidden" name="show" value="title,keyboard" />--}}
-                {{--<input type="hidden" name="tempid" value="1" />--}}
-                {{--<input type="text"  placeholder="输入关键词" class="text-msearch"  name="keyboard">--}}
-                {{--<input type="submit" value="" class="btn-msearch">--}}
-            {{--</form>--}}
-        {{--</div>--}}
-        <div class="langchose">
-            <a class="active" href="#">中文</a>
-            <a href="#">Eng</a>
-            <a href="#">其他</a>
+        <div class="mtopic">
+            <a href="/articles?position_id=47"><img src="{{ asset('/front/index/style/topic/mtopic-201808242159.jpg') }}" /></a>
+        </div>
+        <div class="msearch">
+        <form action="/articles" method="get" target="_blank">
+        <input type="text"  placeholder="输入关键词" class="text-msearch"  name="title">
+        <input type="submit" value="" class="btn-msearch">
+        </form>
         </div>
         <div class="action">
 
@@ -121,8 +116,8 @@
             <div class="topnews">
                 <div class="com-title"><span>实时要闻</span></div>
                 <div class="sideMenu" style="margin:0 auto">
-                    @foreach($newsTime as $item)
-                        <h3 class="h3img1">
+                    @foreach($newsTime as $k=>$item)
+                        <h3 class="h3img{{($k+1)}}">
                             <a href="{{$item->url}}" title="{{$item->title}}">{{$item->title}}</a>
                         </h3>
                         <ul>
@@ -134,7 +129,7 @@
             </div>
             <!-- 首页-标语02 -->
             <div class="rightbanber">
-                {{--<a href="/aboutme/report.html"><img src="/front/index/style/images/img3.png"  /></a>--}}
+                <a href="/articles?position_id=49"><img src="/front/index/style/images/img3.png"  /></a>
             </div>
         <!-- @首页-标语02 -->
         </div>

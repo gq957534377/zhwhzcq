@@ -21,13 +21,13 @@ class HomeController extends Controller
     {
         // 获取轮播图
         $banners = Banner::orderBy('sort', 'desc')
-            ->orderBy('updated_at', 'desc')
+            ->orderBy('sort', 'desc')
             ->take(4)
             ->get();
 
         // 导航
-        $labels = Position::where(['stage' => 1])
-            ->orderBy('sort','asc')
+        $labels = Position::where(['stage' => 1, 'nav_show' => 1])
+            ->orderBy('sort', 'asc')
             ->take(16)
             ->get();
 
@@ -38,7 +38,7 @@ class HomeController extends Controller
         // 专题活动
         $thematicActivities = $this->articlesByPositionId(7, 4);
         // 实时要闻
-        $newsTime = $this->articlesByPositionId(42, 4);
+        $newsTime = $this->articlesByPositionId(42, 5);
         // 本月焦点
         $monthPoints = $this->articlesByPositionId(43, 4);
         // 文化投资

@@ -41,7 +41,7 @@ class ArticleController extends Controller
         $result = $query->paginate(10);
 
         // 导航
-        $labels = Position::where(['stage' => 1])->orderBy('sort')->get();
+        $labels = Position::where(['stage' => 1, 'nav_show' => 1])->orderBy('sort')->get();
 
         // 热点排行
         $hotArticles = $query2->orderBy('updated_at', 'desc')->take(4)->get();
@@ -91,7 +91,7 @@ class ArticleController extends Controller
     public function show(Article $article, Request $request)
     {
         // 导航
-        $labels = Position::where(['stage' => 1])->orderBy('sort')->get();
+        $labels = Position::where(['stage' => 1, 'nav_show' => 1])->orderBy('sort')->get();
 
         // 热点排行
         $hotArticles = Article::orderBy('updated_at', 'desc')->take(4)->get();
