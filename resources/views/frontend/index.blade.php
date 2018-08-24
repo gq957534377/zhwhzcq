@@ -39,7 +39,9 @@
 
                 @endforeach
         </ul>
-        <div class="mtopic"><img src="/front/index/style/topic/mtopic.jpg" /></div>
+        <div class="mtopic">
+            <a href="/articles?position_id=47"><img src="/front/index/style/topic/mtopic.jpg" /></a>
+        </div>
         <div class="msearch">
         <form action="/articles" method="get" target="_blank">
         <input type="text"  placeholder="输入关键词" class="text-msearch"  name="title">
@@ -105,7 +107,7 @@
         <!-- @首页幻灯片 -->
             <!-- 广告位01 -->
             <div class="leftbanber">
-                <a href="javascript:alert('首页左侧820x90，ID(1)');" target="_blank"><img src="/front/index/d/a/a1.png" /></a>		</div>
+                <a href="/articles?position_id=48" target="_blank"><img src="/front/index/d/a/a1.png" /></a>		</div>
         <!-- @广告位01 -->
         </div>
         <div class="newsr">
@@ -124,7 +126,7 @@
             </div>
             <!-- 首页-标语02 -->
             <div class="rightbanber">
-                <a href="/aboutme/report.html"><img src="/front/index/style/images/img3.png"  /></a>
+                <a href="/articles?position_id=49"><img src="/front/index/style/images/img3.png"  /></a>
             </div>
         <!-- @首页-标语02 -->
         </div>

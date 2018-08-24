@@ -21,13 +21,13 @@ class HomeController extends Controller
     {
         // 获取轮播图
         $banners = Banner::orderBy('sort', 'desc')
-            ->orderBy('updated_at', 'desc')
+            ->orderBy('sort', 'desc')
             ->take(4)
             ->get();
 
         // 导航
-        $labels = Position::where(['stage' => 1])
-            ->orderBy('sort','asc')
+        $labels = Position::where(['stage' => 1, 'nav_show' => 1])
+            ->orderBy('sort', 'asc')
             ->take(16)
             ->get();
 
