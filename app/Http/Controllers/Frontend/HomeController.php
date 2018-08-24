@@ -38,7 +38,7 @@ class HomeController extends Controller
         // 专题活动
         $thematicActivities = $this->articlesByPositionId(7, 4);
         // 实时要闻
-        $newsTime = $this->articlesByPositionId(42, 4);
+        $newsTime = $this->articlesByPositionId(42, 5);
         // 本月焦点
         $monthPoints = $this->articlesByPositionId(43, 4);
         // 文化投资
