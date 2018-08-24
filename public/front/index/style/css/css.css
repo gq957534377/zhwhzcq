@@ -56,13 +56,13 @@ a:hover{text-decoration:none;color:#f00}
 /** 整体宽度 */
 .wrapper{ width:1200px; margin: 0 auto; clear: both; height: auto; position: relative;}
 /** nav */
-.nav{ float:left; margin-left:0px; clear: left; width: 765px; height: 60px; padding: 9px 5px 9px 70px ; background-color: #f00;}
-.nav li{ float:left; font-size:16px;  position:relative; height:30px; line-height:30px; z-index:1; padding: 0 5px;}
+.nav{ float:left; margin-left:0px; clear: left; width: 760px; height: 60px; padding: 9px 40px ; background-color: #f00;}
+.nav li{ float:left; font-size:16px;  position:relative; height:30px; line-height:30px; z-index:1;}
 .nav li.selected { z-index: 2; }
 .nav li i{ display:inline-block; background:url(../images/arrow.png) no-repeat; width:12px; height:7px; position:relative; top:-2px; margin-left:5px;}
 .nav li strong{font-weight:800 !important;}
 .nav li strong a{ display:block; float:left; height:30px; line-height:30px;
-    padding:0 10px; color:#fff; font-size:16px; position:relative;z-index:3;}
+    padding:0 15px; color:#fff; font-size:16px; position:relative;z-index:3;}
 .nav li:hover{background:#a00;}
 .nav li.on strong a{background:#a00; color:#fff;}
 .nav dl{background:#a00;position:absolute;height:auto;left:0px;top:0px;padding:32px 0px 0px 0px;text-align:center;display:none;z-index:2;}
