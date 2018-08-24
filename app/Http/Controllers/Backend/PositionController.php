@@ -62,7 +62,7 @@ class PositionController extends Controller
             'stage' => $request->stage,
             'parent_id' => $request->parent_id,
             'nav_show' => $request->nav_show??2,
-            'sort' => $request->sort,
+            'sort' => $request->sort??0,
         ]);
 
         return redirect()->route('admin.positions.index')->withFlashSuccess('创建位置成功');
@@ -96,7 +96,7 @@ class PositionController extends Controller
             'stage' => $request->stage,
             'parent_id' => $request->parent_id,
             'nav_show' => $request->nav_show??2,
-            'sort' => $request->sort,
+            'sort' => $request->sort??0,
         ]);
 
         return redirect()->route('admin.positions.index')->withFlashSuccess('修改位置成功');
