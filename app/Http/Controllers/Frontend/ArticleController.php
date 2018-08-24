@@ -37,7 +37,7 @@ class ArticleController extends Controller
             ->orderBy('sort', 'desc');
         $query2 = clone $query;
 
-        $result = $query->paginate(1);
+        $result = $query->paginate(10);
 
         // 导航
         $labels = Position::where(['stage' => 1])->orderBy('sort')->get();
@@ -83,7 +83,7 @@ class ArticleController extends Controller
         $result = $query
             ->orderBy('updated_at', 'desc')
             ->orderBy('sort', 'desc')
-            ->paginate(1);
+            ->paginate(10);
         return response()->json(['StatusCode' => 200, 'ResultData' => $result]);
     }
 
