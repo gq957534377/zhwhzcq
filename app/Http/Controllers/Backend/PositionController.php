@@ -27,10 +27,10 @@ class PositionController extends Controller
 
         $result = $query
             ->with('parentPosition')
-            ->orderBy('updated_at', 'desc')
-            ->orderBy('stage', 'asc')
-            ->paginate(15)
-            ->appends($request->all());
+            ->orderBy('stage', 'ASC')
+            ->orderBy('sort', 'ASC')
+            ->orderBy('id', 'DESC')
+            ->paginate(15);
 
         return view('backend.position.index', ['positions' => $result]);
     }
