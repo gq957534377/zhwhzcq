@@ -20,7 +20,20 @@
                 <div class="col-sm-7">
                     @include('backend.position.includes.header-buttons')
                 </div><!--col-->
+                <div class="col-sm-3">
+                    <select id="stage" class="form-control input-sm">
+                        <option value="">全部级别</option>
+                        <option value="1" @if(!empty(Request::get('stage'))&&Request::get('stage')==1)selected @endif>一级</option>
+                        <option value="2" @if(!empty(Request::get('stage'))&&Request::get('stage')==2)selected @endif>二级</option>
+                    </select>
+                </div>
+
             </div><!--row-->
+
+            <div class="row">
+
+            </div>
+
             <div class="row mt-4">
                 <div class="col">
                     <div class="table-responsive">
@@ -30,7 +43,7 @@
                                 <th>标签名</th>
                                 <th>所属级别</th>
                                 <th>父级id</th>
-                                <th>是否展示在导航 </th>
+                                <th>是否展示在导航</th>
                                 <th>排序</th>
                                 <th>创建时间</th>
                                 <th>操作</th>
@@ -69,3 +82,10 @@
         </div><!--card-body-->
     </div><!--card-->
 @endsection
+@section('scripts')
+    <script>
+        $('#stage').change(function () {
+            window.location.href='/admin/positions?stage='+$(this).val()
+        });
+    </script>
+    @endsection

@@ -29,6 +29,7 @@ class ArticleController extends Controller
         }
 
         if (!empty($request->title)) {
+            $keys[] = $request->title;
             $query = $query->where('title', 'like', '%' . $request->title . '%');
         }
 

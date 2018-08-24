@@ -61,7 +61,7 @@ class PositionController extends Controller
             'name' => $request->name,
             'stage' => $request->stage,
             'parent_id' => $request->parent_id,
-            'nav_show' => $request->nav_show,
+            'nav_show' => $request->nav_show??2,
             'sort' => $request->sort,
         ]);
 
