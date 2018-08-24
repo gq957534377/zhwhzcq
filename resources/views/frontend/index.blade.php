@@ -47,6 +47,13 @@
         <input type="submit" value="" class="btn-msearch">
         </form>
         </div>
+	
+	<div class="langchose">
+            <a class="active" href="#">中文</a>
+            <a href="#">Eng</a>
+            <a href="#">其他</a>
+        </div>
+	
         <div class="action">
 
             <div class="userbar">
