@@ -32,6 +32,7 @@ class ArticleController extends Controller
         $result = $query
             ->orderBy('updated_at', 'desc')
             ->orderBy('sort', 'desc')
+            ->append($request->all())
             ->paginate(15);
         return view('backend.article.index', ['articles' => $result]);
     }
