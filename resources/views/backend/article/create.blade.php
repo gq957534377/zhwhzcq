@@ -121,7 +121,6 @@
 
                         <div class="col-md-10">
                             {{ html()->textarea('content')
-                                ->class('form-control')
                                 ->placeholder('内容')
                                 ->attribute('id','content')
                                 ->style(['height'=>'300px'])
@@ -209,7 +208,9 @@
 @section('scripts')
     <script type="text/javascript">
         var ue = UE.getEditor('content', {
-            autoHeightEnabled: true,
+            autoHeightEnabled: false,
+            minFrameHeight: 500,
+            scaleEnabled: true,
             autoFloatEnabled: true,
         });
         ue.ready(function () {
