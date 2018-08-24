@@ -26,7 +26,11 @@ class HomeController extends Controller
             ->get();
 
         // 导航
-        $labels = Position::where(['stage' => 1])->orderBy('sort')->get();
+        $labels = Position::where(['stage' => 1])
+            ->orderBy('sort','asc')
+            ->take(16)
+            ->get();
+
         // 新闻要点
         $newsPoints = $this->articlesByPositionId(41, 8);
         // 外宣媒体
