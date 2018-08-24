@@ -4,51 +4,56 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="renderer" content="ie-comp">
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
-    <script type="text/javascript" src="/front/index/style/js/mobile.js"></script>
-    <script type="text/javascript">uaredirect("http://m.diguo001.com/");</script>
-    <meta name="keywords" content="帝国网站管理系统,EmpireCMS" />
-    <meta name="description" content="　　帝国软件是一家专注于网络软件开发的科技公司，其主营产品“帝国网站管理系统(EmpireCMS)”是目前国内应用最广泛的CMS程序。通过十多年的不断创新与完善，使系统集安全、稳定、强大、灵活于一身。目前EmpireCMS程序已经广泛应用在国内上百万家网站，覆盖国内上千万上网人群，并经过上千家知名网站的严格检测，被称为国内最安全、最稳定的开源CMS系统。" />
-    <title>仿砍柴网站程序</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title></title>
     <link rel="stylesheet" type="text/css" href="/front/index/style/css/css.css" />
     <link rel="stylesheet" type="text/css" href="/front/index/style/css/style.css" />
     <link rel="shortcut icon" href="/favicon.ico" />
-    <script type="text/javascript" src="/front/index/style/js/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="/front/index/style/js/common.js"></script>
 </head>
 <body>
 <!--网站公共头部-->
 <div class="topbar">
     <div class=" wrapper">
-        <div class="logo"><a href="/" title="仿砍柴网站程序" target="_self">仿砍柴网站程序</a></div>
+        <div class="logo">
+            <a href="/" title="仿砍柴网站程序" target="_self">
+                <img src="{{ asset('front/index/style/logo/logo_new.png') }}" />
+            </a>
+        </div>
         <ul class="nav">
             @foreach($labels as $label)
                 <li>
                     <strong>
                         <a href="{{url('/articles?position_id='.$label->id)}}"
-                           target="_self">{{$label->name}}</a>
+                               target="_self">{{$label->name}}</a>
                     </strong>
                     <dl>
-                @foreach($label->childPositions as $childLabel)
-                    <li>
-                        <a href="{{url('/articles?position_id='.$childLabel->id)}}"
-                           target="_self">{{$childLabel->name}}</a>
-                    </li>
-                    @endforeach
+                        @foreach($label->childPositions as $childLabel)
+                            <li>
+                                <a href="{{url('/articles?position_id='.$childLabel->id)}}"
+                               target="_self">{{$childLabel->name}}</a>
+                            </li>
+                        @endforeach
                     </dl>
-                    </li>
-
-                @endforeach
+                </li>
+            @endforeach
         </ul>
-        <div class="mtopic"><img src="/front/index/style/topic/mtopic.jpg" /></div>
-        <div class="msearch">
-        <form action="/articles" method="get" target="_blank">
-        <input type="text"  placeholder="输入关键词" class="text-msearch"  name="title">
-        <input type="submit" value="" class="btn-msearch">
-        </form>
+        <div class="mtopic"><img src="{{ asset('/front/index/style/topic/mtopic-201808242159.jpg') }}" /></div>
+        {{--<div class="msearch">--}}
+            {{--<form action="/e/search/" method="post" target="_blank">--}}
+                {{--<input type="hidden" name="show" value="title,keyboard" />--}}
+                {{--<input type="hidden" name="tempid" value="1" />--}}
+                {{--<input type="text"  placeholder="输入关键词" class="text-msearch"  name="keyboard">--}}
+                {{--<input type="submit" value="" class="btn-msearch">--}}
+            {{--</form>--}}
+        {{--</div>--}}
+        <div class="langchose">
+            <a class="active" href="#">中文</a>
+            <a href="#">Eng</a>
+            <a href="#">其他</a>
         </div>
-        <div class="langchose"><a href="">中文</a><a href="">Eng</a><a href="">中文</a><a href="">其他</a></div>
         <div class="action">
-            <a href="/e/DoInfo/AddInfo.php?mid=1&enews=MAddInfo&classid=25" class="n1" target="_blank" title="投稿">投稿</a>
+
             <div class="userbar">
                 <div class="user" id="show_userinfo">
                     <a href="javascript:;" class="n4 head-username">游  客</a>
@@ -60,8 +65,9 @@
             </div>
         </div>
     </div>
+
+    <div class="clearfix"></div>
 </div>
-<script type="text/javascript" src="/e/member/ajaxlog/?loadjs=1"></script>
 <!--@网站公共头部-->
 <div class="main">
     <!--主要内容-->
@@ -89,7 +95,7 @@
                 <div id="ifocus_tx">
                     <ul>
                         @foreach($banners as $banner)
-                            <li><a href="{{$banner->url}}" title="{{$banner->title}}">{{$banner->title}}</a></li>
+                        <li><a href="{{$banner->url}}" title="{{$banner->title}}">{{$banner->title}}</a></li>
                         @endforeach
                     </ul>
                 </div>
@@ -105,26 +111,30 @@
         <!-- @首页幻灯片 -->
             <!-- 广告位01 -->
             <div class="leftbanber">
-                <a href="javascript:alert('首页左侧820x90，ID(1)');" target="_blank"><img src="/front/index/d/a/a1.png" /></a>		</div>
+                <a href="http://www.cicc.org.cn/html/2018/dtzx_0823/4957.html" target="_blank">
+                    <img src="{{ asset('/front/index/d/a/ad_index_middle_banner.jpg') }}" />
+                </a>
+            </div>
         <!-- @广告位01 -->
         </div>
         <div class="newsr">
             <div class="topnews">
                 <div class="com-title"><span>实时要闻</span></div>
                 <div class="sideMenu" style="margin:0 auto">
-                    @foreach($newsTime as $k=>$item)
-                        <h3 class="h3img{{$k}}">
+                    @foreach($newsTime as $item)
+                        <h3 class="h3img1">
                             <a href="{{$item->url}}" title="{{$item->title}}">{{$item->title}}</a>
                         </h3>
                         <ul>
                             <li>{{$item->brief}}...</li>
                         </ul>
                     @endforeach
+
                 </div>
             </div>
             <!-- 首页-标语02 -->
             <div class="rightbanber">
-                <a href="/aboutme/report.html"><img src="/front/index/style/images/img3.png"  /></a>
+                {{--<a href="/aboutme/report.html"><img src="/front/index/style/images/img3.png"  /></a>--}}
             </div>
         <!-- @首页-标语02 -->
         </div>
@@ -161,16 +171,16 @@
                 <div id="content_list">
                     @foreach($newsOut as $item)
 
-                        <div class="hotbox">
-                            <div class="hotimg">
-                                <a href="{{$item->url}}">
-                                    <img  src="{{$item->banner}}" alt="{{$item->title}}"/>
-                                </a>
-                            </div>
-                            <h3><a href="{{$item->url}}">{{$item->title}}</a></h3>
-
-                            <span class="fst">{{$item->source}}</span>  · <span><time class="timeago" datetime="{{$item->created_at}}"></time></span>
+                    <div class="hotbox">
+                        <div class="hotimg">
+                            <a href="{{$item->url}}">
+                                <img  src="{{$item->banner}}" alt="{{$item->title}}"/>
+                            </a>
                         </div>
+                        <h3><a href="{{$item->url}}">{{$item->title}}</a></h3>
+
+                        <span class="fst">{{$item->source}}</span>  · <span><time class="timeago" datetime="{{$item->created_at}}"></time></span>
+                    </div>
                     @endforeach
 
                 </div>
@@ -182,19 +192,18 @@
             </div>
 
             <!--专题活动-->
-            <script type="text/javascript" src="/front/index/style/js/jquery.timeago.js"></script>
             <div class="hot">
                 <div class="com-title"><span>专题活动</span></div>
                 <div id="content_list">
                     @foreach($thematicActivities as $thematicActivity)
-                        <div class="hotbox">
-                            <div class="hotimg">
-                                <a href="{{$thematicActivity->url}}"><img  src="{{$thematicActivity->banner}}" alt="{{$thematicActivity->title}}"/></a>
-                            </div>
-                            <h3><a href="{{$thematicActivity->url}}">{{$thematicActivity->title}}</a></h3>
-
-                            <span class="fst">{{$thematicActivity->source}}</span> · <span><time class="timeago" datetime="{{$thematicActivity->created_at}}"></time></span>
+                    <div class="hotbox">
+                        <div class="hotimg">
+                            <a href="{{$thematicActivity->url}}"><img  src="{{$thematicActivity->banner}}" alt="{{$thematicActivity->title}}"/></a>
                         </div>
+                        <h3><a href="{{$thematicActivity->url}}">{{$thematicActivity->title}}</a></h3>
+
+                        <span class="fst">{{$thematicActivity->source}}</span> · <span><time class="timeago" datetime="{{$thematicActivity->created_at}}"></time></span>
+                    </div>
                     @endforeach
 
                 </div>
@@ -225,11 +234,11 @@
             <div class="read">
                 <div class="com-title"><span>本月焦点</span></div>
                 @foreach($monthPoints as $item)
-                    <a href="{{$item->url}}"><img src="{{$item->banner}}" alt="{{$item->title}}" /></a>
+                <a href="{{$item->url}}"><img src="{{$item->banner}}" alt="{{$item->title}}" /></a>
 
-                    <div class="flink" >
-                        <a href="{{$item->url}}"><p>{{$item->brief}}</p></a>
-                    </div>
+                <div class="flink" >
+                    <a href="{{$item->url}}"><p>{{$item->brief}}</p></a>
+                </div>
                 @endforeach
             </div>
 
@@ -275,12 +284,11 @@
                 <div class="com-title"><span>文化投资</span></div>
                 <ul>
                     @foreach($culturalInvestment as $item)
-                        <li><a href="{{$item->url}}" title="{{$item->item}}">{{$item->title}}</a></li>
+                    <li><a href="{{$item->url}}" title="{{$item->item}}">{{$item->title}}</a></li>
                     @endforeach
                 </ul>
             </div>
 
-            <script type="text/javascript" src="/front/index/style/js/scrollad.js"></script>
         <!--@广告4-->
             <div class="floatfix"></div>
         </div>
@@ -311,24 +319,7 @@
     <!-- @友情链接 -->
     </div>
 </div>
-<input id="pageNo" type="hidden" value="1" />
-<input id="pageCnt" type="hidden" value="6" />
-<script type="text/javascript" src="/front/index/style/js/index.js"></script>
-<script type="text/javascript">
-    window._bd_share_config = {
-        common : {
-            bdText : '推荐一个非常赞的网站，来自：扩展变量-简称',
-            bdDesc : '　　帝国软件是一家专注于网络软件开发的科技公司，其主营产品“帝国网站管理系统(EmpireCMS)”是目前国内应用最广泛的CMS程序。通过十多年的不断创新与完善，使系统集安全、稳定、强大、灵活于一身。目前EmpireCMS程序已经广泛应用在国内上百万家网站，覆盖国内上千万上网人群，并经过上千家知名网站的严格检测，被称为国内最安全、最稳定的开源CMS系统。',
-            bdUrl : 'http://www.diguo001.com/',
-            bdPic : 'http://www.diguo001.com/style/logo/nopic.gif'
-        },
-        share : [{
-            "bdSize" : 32
-        }],
-    }
-</script>
 <div id="erweipic" class="erweipic">
-    <script src="/e/extend/code/?data=http://m.diguo001.com/" language="javascript"></script>
 </div>
 <div class="footer">
     <div class="wrapper">
@@ -337,11 +328,11 @@
             <a href="/aboutme/index.html" target="_blank"> 关于我们</a><span></span><a href="/aboutme/report.html" target="_blank">寻求报道</a><span></span><a href="/aboutme/submission.html" target="_blank">投稿须知</a><span></span><a href="/aboutme/cooperation.html" target="_blank">商务合作</a><span></span>	<a href="/aboutme/sitemap.html" target="_blank">网站地图</a>
             <span></span><a href="/baidunews.xml" target="_blank">百度新闻</a>
             <span></span><a href="/tags.html" target="_blank">标签云</a>
-            <span></span>#统计代码
+            <span></span>
         </div>
     </div>
 </div>
-<!---承接帝国程序二次开发，网站制作。QQ：75250060 苏奇--->
 </body>
-
+<script type="text/javascript" src="/front/index/style/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/front/index/style/js/common.js"></script>
 </html>
