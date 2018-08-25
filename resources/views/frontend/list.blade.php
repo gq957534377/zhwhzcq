@@ -324,12 +324,11 @@
             success: function (data) {
                 if (data.StatusCode === 200) {
                     var html = data.ResultData.data.map(function (res) {
-                        console.log(res);
                         html = '<li>';
                         html += '<div class="list-title">';
                         html += '<a href="/articles/' + res.id + '" target="_blank">' + res.title + '</a>';
                         html += '</div>';
-                        if (!res.banner){
+                        if (res.banner) {
                             html += '<div class="list-image">';
                             html += '<a href="/articles/' + res.id + '" target="_blank"><img src="' + res.banner + '"></a>';
                             html += '</div>';
@@ -339,7 +338,7 @@
                         html += '<p style="font-size: 16px;">';
                         html += res.brief;
                         html += '</p>';
-                        html += '<span>' + res.created_at + '</span>';
+                        html += '<span class="fst">' + res.author + '&nbsp;&nbsp;' + res.created_at + '</span>';
                         html += '</div>';
                         html += '</li>';
                         return html;
