@@ -174,7 +174,6 @@
                                title="{{$newsPoint->title}}" target="_blank">{{$newsPoint->title}}</a>
                         </h3>
                         <p>{{$newsPoint->brief}}…</p>
-                        <p><span></span></p>
                     </div>
                 @endforeach
                 <div class="floatfix"></div>
@@ -195,7 +194,9 @@
                             <h3>
                                 <a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}">{{$item->title}}</a>
                             </h3>
-
+                            <p style="height: 55px">
+                                {{str_limit($thematicActivity->brief,200,'...')}}
+                            </p>
                             <span class="fst">{{$item->source}}</span> · <span><time class="timeago"
                                                                                      datetime="{{$item->created_at}}"></time></span>
                         </div>

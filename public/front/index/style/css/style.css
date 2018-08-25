@@ -85,7 +85,7 @@
 .mainnews .newsl .chosenbox-ml { margin-left:9px;}
 .mainnews .newsl .chosenbox .chosenimg { float: left; margin-right: 10px; display: inline; width: 130px; height: 85px;}
 .mainnews .newsl .chosenbox .chosenimg img{ width: 130px; height: 85px;}
-.mainnews .newsl .chosenbox h3 { font-size: 16px; margin-left: 140px; text-align: left;font-weight:normal; height: 22px; overflow: hidden; word-break:break-all; word-wrap:break-word;}
+.mainnews .newsl .chosenbox h3 { font-size: 16px; text-align: left;font-weight:normal; height: 22px; overflow: hidden; word-break:break-all; word-wrap:break-word;}
 .mainnews .newsl .chosenbox h3:hover { color: #e60000;}
 .mainnews .newsl .chosenbox h3:hover a { color: #e60000; text-decoration:none;}
 .mainnews .newsl .chosenbox p { color: #676666; margin-bottom: 5px; height: 66px; overflow: hidden; word-break:break-all; word-wrap:break-word;}
