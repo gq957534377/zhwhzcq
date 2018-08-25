@@ -15,8 +15,8 @@
             <div class="row">
                 <div class="col-sm-5">
                     <h4 class="card-title mb-0">
-                        {{ __('labels.backend.access.labels.management') }}
-                        <small class="text-muted">{{ __('labels.backend.access.labels.edit') }}</small>
+                        文章管理
+                        <small class="text-muted">编辑文章</small>
                     </h4>
                 </div><!--col-->
             </div><!--row-->

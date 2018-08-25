@@ -56,7 +56,7 @@
                             <a href="javascript:void(0);" id="banner"><img id="banner_up-img"
                                                                            src="{{$banner->file??'/upLoad.jpg'}}"/></a>
                         </div>
-                        <input required value="{{$banner->file}}" type="hidden" name="file"
+                        <input required type="hidden" name="file" value="{{$banner->file}}"
                                id="banner_up">
                     </div><!--form-group-->
 
@@ -88,6 +88,8 @@
         </div><!--card-footer-->
     </div><!--card-->
 {{ html()->closeModelForm() }}
+<div id="zxzApp"></div>
+
 @endsection
 @section('scripts')
     <script type="text/javascript">
