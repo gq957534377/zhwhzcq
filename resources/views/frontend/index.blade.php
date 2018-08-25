@@ -1,15 +1,16 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="renderer" content="ie-comp">
-    <meta http-equiv="X-UA-Compatible" content="IE=8" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="/front/index/style/css/css.css" />
-    <link rel="stylesheet" type="text/css" href="/front/index/style/css/style.css" />
-    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/front/index/style/css/css.css"/>
+    <link rel="stylesheet" type="text/css" href="/front/index/style/css/style.css"/>
+    <link rel="shortcut icon" href="/favicon.ico"/>
     <script type="text/javascript" src="/front/index/style/js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="/front/index/style/js/jquery.timeago.js"></script>
 </head>
@@ -19,7 +20,7 @@
     <div class=" wrapper">
         <div class="logo">
             <a href="/" title="" target="_self">
-                <img src="{{ asset('front/index/style/logo/logo_new.png') }}" />
+                <img src="{{ asset('front/index/style/logo/logo_new.png') }}"/>
             </a>
         </div>
         <ul class="nav">
@@ -27,43 +28,46 @@
                 <li>
                     <strong>
                         <a href="{{url('/articles?position_id='.$label->id)}}"
-                               target="_self">{{$label->name}}</a>
+                           target="_self">{{$label->name}}</a>
                     </strong>
                     <dl>
-                        @foreach($label->childPositions as $childLabel)
-                            <li>
-                                <a href="{{url('/articles?position_id='.$childLabel->id)}}"
-                               target="_self">{{$childLabel->name}}</a>
-                            </li>
-                        @endforeach
+                @foreach($label->childPositions as $childLabel)
+                    <li>
+                        <a href="{{url('/articles?position_id='.$childLabel->id)}}"
+                           target="_self">{{$childLabel->name}}</a>
+                    </li>
+                    @endforeach
                     </dl>
-                </li>
-            @endforeach
+                    </li>
+                @endforeach
         </ul>
         <div class="mtopic">
-            <a href="/articles?position_id=47"><img src="{{ asset('/front/index/style/topic/mtopic-201808242159.jpg') }}" /></a>
+            <a href="/articles?position_id=47"><img
+                        src="{{ asset('/front/index/style/topic/mtopic-201808242159.jpg') }}"/></a>
         </div>
         <div class="msearch">
-        <form action="/articles" method="get" target="_blank">
-        <input type="text"  placeholder="输入关键词" class="text-msearch"  name="title">
-        <input type="submit" value="" class="btn-msearch">
-        </form>
+            <form action="/articles" method="get" target="_blank">
+                <input type="text" placeholder="输入关键词" class="text-msearch" name="title">
+                <input type="submit" value="" class="btn-msearch">
+            </form>
         </div>
-	
-	<div class="langchose">
+
+        <div class="langchose">
             <a class="active" href="#">中文</a>
             <a href="#">Eng</a>
             <a href="#">其他</a>
         </div>
-	
+
         <div class="action">
 
             <div class="userbar">
                 <div class="user" id="show_userinfo">
-                    <a href="javascript:;" class="n4 head-username">游  客</a>
+                    <a href="javascript:;" class="n4 head-username">游 客</a>
                     <ul class="drap">
-                        <li class="i3"><a  href="javascript:void(0);" onclick="AjaxReg()" target="_self" class="head-register">注  册</a></li>
-                        <li class="i4"><a href="javascript:void(0);" target="_self"  onclick="AjaxLog()"  class="head-login">登  陆</a></li>
+                        <li class="i3"><a href="javascript:void(0);" onclick="AjaxReg()" target="_self"
+                                          class="head-register">注 册</a></li>
+                        <li class="i4"><a href="javascript:void(0);" target="_self" onclick="AjaxLog()"
+                                          class="head-login">登 陆</a></li>
                     </ul>
                 </div>
             </div>
@@ -89,7 +93,8 @@
                 <ul class="img">
                     @foreach($banners as $banner)
                         <li>
-                            <a href="{{ route('frontend.articles.show', ['article' => $banner->id]) }}" title="{{$banner->title}}">
+                            <a href="{{ route('frontend.articles.show', ['article' => $banner->id]) }}"
+                               title="{{$banner->title}}">
                                 <img src="{{$banner->file}}" alt="{{$banner->title}}"/>
                             </a>
                         </li>
@@ -99,14 +104,17 @@
                 <div id="ifocus_tx">
                     <ul>
                         @foreach($banners as $banner)
-                        <li><a href="{{ route('frontend.articles.show', ['article' => $banner->id]) }}" title="{{$banner->title}}">{{$banner->title}}</a></li>
+                            <li><a href="{{ route('frontend.articles.show', ['article' => $banner->id]) }}"
+                                   title="{{$banner->title}}">{{$banner->title}}</a></li>
                         @endforeach
                     </ul>
                 </div>
                 <ul class="tab">
                     @if(count($banners)>1)
                         @foreach($banners as $key => $banner)
-                            <li><div class="color{{$key+1}}">{{$key+1}}</div></li>
+                            <li>
+                                <div class="color{{$key+1}}">{{$key+1}}</div>
+                            </li>
                         @endforeach
                     @endif
                 </ul>
@@ -116,7 +124,7 @@
             <!-- 广告位01 -->
             <div class="leftbanber">
                 <a href="http://www.cicc.org.cn/html/2018/dtzx_0823/4957.html" target="_blank">
-                    <img src="{{ asset('/front/index/d/a/ad_index_middle_banner.jpg') }}" />
+                    <img src="{{ asset('/front/index/d/a/ad_index_middle_banner.jpg') }}"/>
                 </a>
             </div>
         <!-- @广告位01 -->
@@ -127,7 +135,8 @@
                 <div class="sideMenu" style="margin:0 auto">
                     @foreach($newsTime as $k=>$item)
                         <h3 class="h3img{{($k+1)}}">
-                            <a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}" title="{{$item->title}}">{{$item->title}}</a>
+                            <a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}"
+                               title="{{$item->title}}">{{$item->title}}</a>
                         </h3>
                         <ul>
                             <li>{{$item->brief}}...</li>
@@ -138,7 +147,7 @@
             </div>
             <!-- 首页-标语02 -->
             <div class="rightbanber">
-                <a href="/articles?position_id=49"><img src="/front/index/style/images/ent.png"  /></a>
+                <a href="/articles?position_id=49"><img src="/front/index/style/images/ent.png"/></a>
             </div>
         <!-- @首页-标语02 -->
         </div>
@@ -156,11 +165,13 @@
                 @foreach($newsPoints as $newsPoint)
                     <div class="chosenbox chosenbox-ml">
                         <div class="chosenimg">
-                            <a href="{{ route('frontend.articles.show', ['article' => $newsPoint->id]) }}" title="{{$newsPoint->title}}">
+                            <a href="{{ route('frontend.articles.show', ['article' => $newsPoint->id]) }}"
+                               title="{{$newsPoint->title}}">
                                 <img src="{{$newsPoint->banner}}" alt="{{$newsPoint->title}}"/>
                             </a>
                         </div>
-                        <h3><a href="{{ route('frontend.articles.show', ['article' => $newsPoint->id]) }}" title="{{$newsPoint->title}}" target="_blank">{{$newsPoint->title}}</a>
+                        <h3><a href="{{ route('frontend.articles.show', ['article' => $newsPoint->id]) }}"
+                               title="{{$newsPoint->title}}" target="_blank">{{$newsPoint->title}}</a>
                         </h3>
                         <p>{{$newsPoint->brief}}…</p>
                         <p><span></span></p>
@@ -175,16 +186,19 @@
                 <div id="content_list">
                     @foreach($newsOut as $item)
 
-                    <div class="hotbox">
-                        <div class="hotimg">
-                            <a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}">
-                                <img  src="{{$item->banner}}" alt="{{$item->title}}"/>
-                            </a>
-                        </div>
-                        <h3><a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}">{{$item->title}}</a></h3>
+                        <div class="hotbox">
+                            <div class="hotimg">
+                                <a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}">
+                                    <img src="{{$item->banner}}" alt="{{$item->title}}"/>
+                                </a>
+                            </div>
+                            <h3>
+                                <a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}">{{$item->title}}</a>
+                            </h3>
 
-                        <span class="fst">{{$item->source}}</span>  · <span><time class="timeago" datetime="{{$item->created_at}}"></time></span>
-                    </div>
+                            <span class="fst">{{$item->source}}</span> · <span><time class="timeago"
+                                                                                     datetime="{{$item->created_at}}"></time></span>
+                        </div>
                     @endforeach
 
                 </div>
@@ -200,14 +214,24 @@
                 <div class="com-title"><span>专题活动</span></div>
                 <div id="content_list">
                     @foreach($thematicActivities as $thematicActivity)
-                    <div class="hotbox">
-                        <div class="hotimg">
-                            <a href="{{ route('frontend.articles.show', ['article' => $thematicActivity->id]) }}"><img  src="{{$thematicActivity->banner}}" alt="{{$thematicActivity->title}}"/></a>
-                        </div>
-                        <h3><a href="{{ route('frontend.articles.show', ['article' => $thematicActivity->id]) }}">{{$thematicActivity->title}}</a></h3>
+                        <div class="hotbox">
+                            @if(!empty($thematicActivity->banner))
+                                <div class="hotimg">
+                                    <a href="{{ route('frontend.articles.show', ['article' => $thematicActivity->id]) }}"><img
+                                                src="{{$thematicActivity->banner}}" alt="{{$thematicActivity->title}}"/></a>
+                                </div>
+                            @endif
 
-                        <span class="fst">{{$thematicActivity->source}}</span> · <span><time class="timeago" datetime="{{$thematicActivity->created_at}}"></time></span>
-                    </div>
+                            <h3 style="margin-top: 0"><a
+                                        href="{{ route('frontend.articles.show', ['article' => $thematicActivity->id]) }}">{{$thematicActivity->title}}</a>
+                            </h3>
+                            <p style="height: 55px">
+                                {{str_limit($thematicActivity->brief,200,'...')}}
+                            </p>
+
+                            <span class="fst">{{$thematicActivity->source}}</span> · <span><time class="timeago"
+                                                                                                 datetime="{{$thematicActivity->created_at}}"></time></span>
+                        </div>
                     @endforeach
 
                 </div>
@@ -226,7 +250,7 @@
 
             <div class="follow">
                 <div class="com-title"><span>关注我们</span></div>
-                <div class="followcon"> <span>关注微信公众号，了解最新精彩内容</span>
+                <div class="followcon"><span>关注微信公众号，了解最新精彩内容</span>
                     <p class="qr-grid">
                         <i class="left"></i>
                         <i class="right"></i>
@@ -238,11 +262,13 @@
             <div class="read">
                 <div class="com-title"><span>本月焦点</span></div>
                 @foreach($monthPoints as $item)
-                <a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}"><img src="{{$item->banner}}" alt="{{$item->title}}" /></a>
+                    <a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}"><img
+                                src="{{$item->banner}}" alt="{{$item->title}}"/></a>
 
-                <div class="flink" >
-                    <a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}"><p>{{$item->brief}}</p></a>
-                </div>
+                    <div class="flink">
+                        <a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}">
+                            <p>{{$item->brief}}</p></a>
+                    </div>
                 @endforeach
             </div>
 
@@ -288,7 +314,8 @@
                 <div class="com-title"><span>文化投资</span></div>
                 <ul>
                     @foreach($culturalInvestment as $item)
-                    <li><a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}" title="{{$item->item}}">{{$item->title}}</a></li>
+                        <li><a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}"
+                               title="{{$item->item}}">{{$item->title}}</a></li>
                     @endforeach
                 </ul>
             </div>
@@ -303,10 +330,18 @@
         <!-- 合作伙伴 -->
         <div class="partners">
             <div class="partnerstitle"></div>
-            <div class="partnersimg"><a href="http://www.smallseashell.com" title="今日头条" target="_blank"><img src="http://img.ikanchai.com/templates/ikanchai/html/images/link_logo7.jpg" alt="今日头条" /></a></div>
-            <div class="partnersimg"><a href="http://www.smallseashell.com" title="创业家" target="_blank"><img src="http://img.ikanchai.com/templates/ikanchai/html/images/link_logo5.jpg" alt="创业家" /></a></div>
-            <div class="partnersimg"><a href="http://www.smallseashell.com" title="创享派" target="_blank"><img src="http://img.ikanchai.com/templates/ikanchai/html/images/link_logo6.jpg" alt="创享派" /></a></div>
-            <div class="partnersimg"><a href="http://www.smallseashell.com" title="techweb" target="_blank"><img src="http://img.ikanchai.com/templates/ikanchai/html/images/link_logo8.jpg" alt="techweb" /></a></div>
+            <div class="partnersimg"><a href="http://www.smallseashell.com" title="今日头条" target="_blank"><img
+                            src="http://img.ikanchai.com/templates/ikanchai/html/images/link_logo7.jpg" alt="今日头条"/></a>
+            </div>
+            <div class="partnersimg"><a href="http://www.smallseashell.com" title="创业家" target="_blank"><img
+                            src="http://img.ikanchai.com/templates/ikanchai/html/images/link_logo5.jpg" alt="创业家"/></a>
+            </div>
+            <div class="partnersimg"><a href="http://www.smallseashell.com" title="创享派" target="_blank"><img
+                            src="http://img.ikanchai.com/templates/ikanchai/html/images/link_logo6.jpg" alt="创享派"/></a>
+            </div>
+            <div class="partnersimg"><a href="http://www.smallseashell.com" title="techweb" target="_blank"><img
+                            src="http://img.ikanchai.com/templates/ikanchai/html/images/link_logo8.jpg" alt="techweb"/></a>
+            </div>
 
 
         </div>
@@ -327,9 +362,13 @@
 </div>
 <div class="footer">
     <div class="wrapper">
-        <div class="lft">© 2013-2015 砍柴网（www.ikanchai.com）版权所有  备案：沪ICP备12040744号-3 </div>
+        <div class="lft">© 2013-2015 砍柴网（www.ikanchai.com）版权所有 备案：沪ICP备12040744号-3</div>
         <div class="rgt">
-            <a href="/aboutme/index.html" target="_blank"> 关于我们</a><span></span><a href="/aboutme/report.html" target="_blank">寻求报道</a><span></span><a href="/aboutme/submission.html" target="_blank">投稿须知</a><span></span><a href="/aboutme/cooperation.html" target="_blank">商务合作</a><span></span>	<a href="/aboutme/sitemap.html" target="_blank">网站地图</a>
+            <a href="/aboutme/index.html" target="_blank"> 关于我们</a><span></span><a href="/aboutme/report.html"
+                                                                                   target="_blank">寻求报道</a><span></span><a
+                    href="/aboutme/submission.html" target="_blank">投稿须知</a><span></span><a
+                    href="/aboutme/cooperation.html" target="_blank">商务合作</a><span></span> <a
+                    href="/aboutme/sitemap.html" target="_blank">网站地图</a>
             <span></span><a href="/baidunews.xml" target="_blank">百度新闻</a>
             <span></span><a href="/tags.html" target="_blank">标签云</a>
             <span></span>

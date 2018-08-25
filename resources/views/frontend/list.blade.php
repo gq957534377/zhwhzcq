@@ -191,14 +191,18 @@
                         <div class="list-title">
                             <a href="/articles/{{$article->id}}" target="_blank">{{$article->title}}</a>
                         </div>
-                        <div class="list-image">
-                            <a href="/articles/{{$article->id}}" target="_blank"><img src="{{$article->banner}}"></a>
-                        </div>
+                        @if(!empty($article->banner))
+                            <div class="list-image">
+                                <a href="/articles/{{$article->id}}" target="_blank"><img
+                                            src="{{$article->banner}}"></a>
+                            </div>
+                        @endif
                         <div class="list-content">
                             <p style="font-size: 16px;">
                                 {{$article->brief}}
                             </p>
-                            <span>{{$article->created_at}}</span>
+                            <span class="fst">{{$article->author}}&nbsp;&nbsp;{{$article->created_at}}</span>
+                            {{--<span>{{$article->created_at}}</span>--}}
                         </div>
                     </li>
                 @endforeach
@@ -325,9 +329,12 @@
                         html += '<div class="list-title">';
                         html += '<a href="/articles/' + res.id + '" target="_blank">' + res.title + '</a>';
                         html += '</div>';
-                        html += '<div class="list-image">';
-                        html += '<a href="/articles/' + res.id + '" target="_blank"><img src="' + res.banner + '"></a>';
-                        html += '</div>';
+                        if (!res.banner){
+                            html += '<div class="list-image">';
+                            html += '<a href="/articles/' + res.id + '" target="_blank"><img src="' + res.banner + '"></a>';
+                            html += '</div>';
+                        }
+
                         html += '<div class="list-content">';
                         html += '<p style="font-size: 16px;">';
                         html += res.brief;

@@ -61,10 +61,10 @@ class Article extends Model
 		</div>';
     }
 
-    public function getBannerAttribute()
-    {
-        return !empty($this->getAttributes()['banner'])?$this->getAttributes()['banner']:"/front/index/style/topic/mtopic.jpg";
-    }
+//    public function getBannerAttribute()
+//    {
+//        return !empty($this->getAttributes()['banner'])?$this->getAttributes()['banner']:"/front/index/style/topic/mtopic.jpg";
+//    }
 
     public function labels()
     {
