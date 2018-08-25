@@ -164,12 +164,14 @@
                 <div class="com-title"><span>新闻要点</span></div>
                 @foreach($newsPoints as $newsPoint)
                     <div class="chosenbox chosenbox-ml">
+                        @if(!empty($newsPoint->banner))
                         <div class="chosenimg">
                             <a href="{{ route('frontend.articles.show', ['article' => $newsPoint->id]) }}"
                                title="{{$newsPoint->title}}">
                                 <img src="{{$newsPoint->banner}}" alt="{{$newsPoint->title}}"/>
                             </a>
                         </div>
+                        @endif
                         <h3><a href="{{ route('frontend.articles.show', ['article' => $newsPoint->id]) }}"
                                title="{{$newsPoint->title}}" target="_blank">{{$newsPoint->title}}</a>
                         </h3>
@@ -186,15 +188,17 @@
                     @foreach($newsOut as $item)
 
                         <div class="hotbox">
+                            @if(!empty($item->banner))
                             <div class="hotimg">
                                 <a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}">
                                     <img src="{{$item->banner}}" alt="{{$item->title}}"/>
                                 </a>
                             </div>
+                            @endif
                             <h3>
                                 <a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}">{{$item->title}}</a>
                             </h3>
-                            <p style="height: 40px">
+                            <p style="height: 40px;line-height: 20px;">
                                 {{str_limit($item->brief,150,'...')}}
                             </p>
                             <span class="fst">{{$item->source}}</span> · <span><time class="timeago"
