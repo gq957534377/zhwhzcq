@@ -30,20 +30,20 @@
         <div class="language">
             <ul>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81#" target="_self">English</a>
+                    <a href="javascript:;" target="_self">English</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81#" target="_self">Español</a>
+                    <a href="javascript:;" target="_self">Español</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81#" target="_self">Français</a>
+                    <a href="javascript:;" target="_self">Français</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81#"
+                    <a href="javascript:;"
                        target="_self">日本語</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81#"
+                    <a href="javascript:;"
                        target="_self">한국어</a>
                 </li>
                 <li class="more-li">
@@ -77,35 +77,35 @@
         <div class="city">
             <ul>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81#"
+                    <a href="javascript:;"
                        target="_self">北京</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81#"
+                    <a href="javascript:;"
                        target="_self">天津</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81#"
+                    <a href="javascript:;"
                        target="_self">河北</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81#"
+                    <a href="javascript:;"
                        target="_self">山西</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81#"
+                    <a href="javascript:;"
                        target="_self">陕西</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81#"
+                    <a href="javascript:;"
                        target="_self">辽宁</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81#"
+                    <a href="javascript:;"
                        target="_self">吉林</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81#"
+                    <a href="javascript:;"
                        target="_self">上海</a>
                 </li>
                 <li class="more-li">
@@ -158,7 +158,7 @@
 <div class="header box-shadow min-width1200">
     <div class="width1200 clear topbar">
         <div class="logo">
-            <a href="JavaScript:;" target="_blank"><img src="{{asset('front/index/style/logo/logo_new.png')}}"></a>
+            <a href="/" target="_blank"><img style="margin-top: 3%" src="{{asset('front/index/style/logo/logo_new.png')}}"></a>
         </div>
         <div class="menu" style=" width:67%">
             <ul>
