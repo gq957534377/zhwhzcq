@@ -40,7 +40,7 @@ class HomeController extends Controller
         // 实时要闻
         $newsTime = $this->articlesByPositionId(42, 5);
         // 本月焦点
-        $monthPoints = $this->articlesByPositionId(43, 4);
+        $monthPoints = $this->articlesByPositionId(43, 1);
         // 文化投资
         $culturalInvestment = $this->articlesByPositionId(44, 4);
 
@@ -61,12 +61,11 @@ class HomeController extends Controller
         $position = Position::find($positionId);
         if (empty($position)) return [];
 
-        $articleIds = ArticleRelLabel::whereIn('label_id', $position
-            ->labels
-            ->pluck('id')
-            ->toArray())
+        $lableIds = $position->labels->pluck('id')->unique()->toArray();
+        $articleIds = ArticleRelLabel::whereIn('label_id', $lableIds)
             ->pluck('article_id')
             ->toArray();
+        $articleIds = array_keys(array_count_values($articleIds), count($lableIds));
 
         return Article::whereIn('id', $articleIds)
             ->orderBy('sort', 'desc')

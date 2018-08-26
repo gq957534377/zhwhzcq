@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Requests\Backend\ArticleRequest;
-use App\Models\Article;
-use App\Models\ArticleRelLabel;
+use App\Http\Requests\Backend\ArticleForAtlasRequest;
+use App\Models\ArticleForAtlas;
+use App\Models\ArticleHasAtlas;
+use App\Models\ArticleHasLabel;
 use App\Models\Label;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Storage;
 
-class ArticleController extends Controller
+class ArticleForAtlasController extends Controller
 {
     /**
-     * 说明: 文章管理列表页
+     * 说明: 图集文章管理列表页
      *
      * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -23,7 +23,7 @@ class ArticleController extends Controller
     {
         $where = [];
 
-        $query = Article::where($where);
+        $query = ArticleForAtlas::where($where);
 
         if (!empty($request->title)) {
             $query = $query->where('title', 'like', '%' . $request->title . '%');
@@ -35,11 +35,11 @@ class ArticleController extends Controller
             ->paginate(15)
             ->appends($request->all());
 
-        return view('backend.article.index', ['articles' => $result]);
+        return view('backend.article_atlas.index', ['articles' => $result]);
     }
 
     /**
-     * 说明: 创建文章视图
+     * 说明: 创建图集文章视图
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      * @author 郭庆
@@ -47,33 +47,31 @@ class ArticleController extends Controller
     public function create()
     {
         $labels = Label::get();
-        return view('backend.article.create', ['labels' => $labels]);
+        return view('backend.article_atlas.create', ['labels' => $labels]);
     }
 
     /**
-     * 说明: 添加文章
+     * 说明: 添加图集文章
      *
-     * @param ArticleRequest $request
+     * @param ArticleForAtlasRequest $request
      * @return mixed
      * @author 郭庆
      */
-    public function store(ArticleRequest $request)
+    public function store(ArticleForAtlasRequest $request)
     {
         \DB::beginTransaction();
         try {
-            $article = Article::create([
+            $article = ArticleForAtlas::create([
                 'title' => $request->title,
                 'source' => $request->source,
-                'banner' => $request->banner,
                 'brief' => $request->brief,
                 'url' => $request->url,
                 'author' => $request->author,
                 'sort' => $request->sort??0,
-                'content' => $request->get('content'),
             ]);
 
             foreach ($request->labels as $labelId) {
-                ArticleRelLabel::create([
+                ArticleHasLabel::create([
                     'article_id' => $article->id,
                     'label_id' => $labelId
                 ]);
@@ -81,54 +79,55 @@ class ArticleController extends Controller
             \DB::commit();
         } catch (\Exception $e) {
             \DB::rollBack();
-            return redirect()->route('admin.articles.index')->withFlashError('添加文章失败');
+            return redirect()->route('admin.article_atlas.index')->withFlashDanger('添加图集文章失败' . $e->getMessage());
         }
 
-        return redirect()->route('admin.articles.index')->withFlashSuccess('添加文章成功');
+        return redirect()->route('admin.article_atlas.index')->withFlashSuccess('添加图集文章成功');
     }
 
     /**
      * 说明: 修改视图
      *
-     * @param Article $article
+     * @param $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      * @author 郭庆
      */
-    public function edit(Article $article)
+    public function edit($id)
     {
+        $article = ArticleForAtlas::findOrFail($id);
         $labels = Label::get();
-        return view('backend.article.edit', ['labels' => $labels, 'article' => $article]);
+
+        return view('backend.article_atlas.edit', ['labels' => $labels, 'article' => $article]);
     }
 
     /**
-     * 说明: 修改文章
+     * 说明: 修改图集文章
      *
-     * @param Article $article
-     * @param ArticleRequest $request
+     * @param $id
+     * @param ArticleForAtlasRequest $request
      * @return mixed
      * @author 郭庆
      */
-    public function update(Article $article, ArticleRequest $request)
+    public function update($id, ArticleForAtlasRequest $request)
     {
+        $article = ArticleForAtlas::findOrFail($id);
+
         \DB::beginTransaction();
         try {
-            Article::where(['id' => $article->id])->update([
+            ArticleForAtlas::where(['id' => $article->id])->update([
                 'title' => $request->title,
                 'source' => $request->source,
-                'banner' => $request->banner,
                 'brief' => $request->brief,
                 'url' => $request->url,
                 'author' => $request->author,
                 'sort' => $request->sort??0,
-                'content' => $request->get('content'),
             ]);
 
-            ArticleRelLabel::whereIn('label_id', $article->labels->pluck('id')->toArray())
+            ArticleHasLabel::whereIn('label_id', $article->labels->pluck('id')->toArray())
                 ->where('article_id', $article->id)
                 ->delete();
-
             foreach ($request->labels as $labelId) {
-                ArticleRelLabel::create([
+                ArticleHasLabel::create([
                     'article_id' => $article->id,
                     'label_id' => $labelId
                 ]);
@@ -136,32 +135,24 @@ class ArticleController extends Controller
             \DB::commit();
         } catch (\Exception $e) {
             \DB::rollBack();
-            return redirect()->route('admin.articles.index')->withFlashError('添加文章失败');
+            return redirect()->route('admin.article_atlas.index')->withFlashDanger('添加图集文章失败' . $e->getMessage());
         }
 
-        return redirect()->route('admin.articles.index')->withFlashSuccess('修改文章成功');
+        return redirect()->route('admin.article_atlas.index')->withFlashSuccess('修改图集文章成功');
     }
 
     /**
-     * 说明: 删除文章
+     * 说明: 删除图集文章
      *
-     * @param Article $article
-     * @return mixed
+     * @param $id
      * @author 郭庆
      */
-    public function destroy(Article $article)
+    public function destroy($id)
     {
+        $article = ArticleForAtlas::findOrFail($id);
+
         $article->delete();
 
-        return redirect()->route('admin.articles.index')->withFlashSuccess('删除文章成功');
-    }
-
-    public function uploadBanner(Request $request)
-    {
-        if ($request->hasFile('banner')) {
-            $path = $request->file('banner')->store('public/banners');
-            return response()->json(['StatusCode' => 200, 'ResultData' => Storage::url($path)]);
-        }
-        return response()->json(['StatusCode' => 400, 'ResultData' => '请上传缩略图']);
+        return redirect()->route('admin.article_atlas.index')->withFlashSuccess('删除图集文章成功');
     }
 }

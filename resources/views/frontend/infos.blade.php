@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>{{$article->title}}</title>
+    <title></title>
 
     <meta name="keywords" content="资讯中心，滚动，时政，国际，财经，军事，娱乐，华人，图片，政权，房产，汽车，廉政，互联网，新媒体，教育，电视剧，电影，视频，访谈，直播，专题，旅游，广播，科技">
     <meta name="description" content="向世界展示中华文化独特魅力">
@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="/front/info/detail.css">
     <link rel="stylesheet" href="/front/info/sidebar.css">
     <link rel="stylesheet" href="/front/info/footer.css">
+    <link rel="stylesheet" href="/front/info/info.css">
+    <link rel="stylesheet" href="/front/info/common.css">
     <style>
         @media screen and (max-width: 1270px) {
             body, .friendship-link, .footer, .div-mask {
@@ -21,7 +23,6 @@
 </head>
 <body>
 
-<link rel="stylesheet" href="/front/info/common.css">
 <div class="nav">
     <div class="width1200">
         <div class="language">
@@ -43,28 +44,6 @@
                 </li>
                 <li class="more-li">
                     <img src="/front/info/more.png">
-                    <!--                    <div class="language-more display-none">-->
-                    <!--                        <div>-->
-                    <!--                            <p>-->
-                    <!--                                <a href="#" target="_self">한국어</a>-->
-                    <!--                            </p>-->
-                    <!--                            <p>-->
-                    <!--                                <a href="#" target="_self">한국어</a>-->
-                    <!--                            </p>-->
-                    <!--                            <p>-->
-                    <!--                                <a href="#" target="_self">한국어</a>-->
-                    <!--                            </p>-->
-                    <!--                            <p>-->
-                    <!--                                <a href="#" target="_self">한국어</a>-->
-                    <!--                            </p>-->
-                    <!--                            <p>-->
-                    <!--                                <a href="#" target="_self">한국어</a>-->
-                    <!--                            </p>-->
-                    <!--                            <p>-->
-                    <!--                                <a href="#" target="_self">한국어</a>-->
-                    <!--                            </p>-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
                 </li>
             </ul>
         </div>
@@ -106,38 +85,7 @@
                 <li class="more-li">
                     <img src="/front/info/more.png">
                     <div class="city-more display-none">
-                        <!--                        <div>-->
-                        <!--                            <p>-->
-                        <!--                                <a href="#" target="_self">上海</a>-->
-                        <!--                            </p>-->
-                        <!--                            <p>-->
-                        <!--                                <a href="#" target="_self">上海</a>-->
-                        <!--                            </p>-->
-                        <!--                            <p>-->
-                        <!--                                <a href="#" target="_self">上海</a>-->
-                        <!--                            </p>-->
-                        <!--                            <p>-->
-                        <!--                                <a href="#" target="_self">上海</a>-->
-                        <!--                            </p>-->
-                        <!--                            <p>-->
-                        <!--                                <a href="#" target="_self">上海</a>-->
-                        <!--                            </p>-->
-                        <!--                            <p>-->
-                        <!--                                <a href="#" target="_self">上海</a>-->
-                        <!--                            </p>-->
-                        <!--                            <p>-->
-                        <!--                                <a href="#" target="_self">上海</a>-->
-                        <!--                            </p>-->
-                        <!--                            <p>-->
-                        <!--                                <a href="#" target="_self">哈尔滨</a>-->
-                        <!--                            </p>-->
-                        <!--                            <p>-->
-                        <!--                                <a href="#" target="_self">上海</a>-->
-                        <!--                            </p>-->
-                        <!--                            <p>-->
-                        <!--                                <a href="#" target="_self">上海</a>-->
-                        <!--                            </p>-->
-                        <!--                        </div>-->
+
                     </div>
                 </li>
             </ul>
@@ -151,94 +99,130 @@
     </div>
 </div>
 <div class="header box-shadow min-width1200">
-    <div class="width1200 clear">
+    <div class="width1200 clear topbar">
         <div class="logo">
-            <a href="javascript:;" target="_blank"><img src="{{asset('front/index/style/logo/logo_new.png')}}"></a>
+            <a href="javascript:;" target="_blank">
+                <img src="{{asset('front/index/style/logo/logo_new.png')}}">
+            </a>
         </div>
         <div class="menu" style="width: 67%">
             <ul>
-                @foreach($labels as $label)
-                    <li>
-                        <p>
-                            <a href="{{url('/articles?position_id='.$label->id)}}"
-                               target="_blank">{{$label->name}}</a>
-                        </p>
-                    </li>
 
-                @endforeach
             </ul>
         </div>
     </div>
 </div>
-
-
 <div class="main clear">
     <div class="position"><img src="/front/info/home.png">
         <a href="http://www.vxinghe.com/" target="_self">首页</a><span>&gt;</span>
-        <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81"
-           target="_self">新闻</a><span>&gt;</span>{{$article->title}}&nbsp;&nbsp;正文
+        <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81" target="_self">新闻</a><span>&gt;</span>政府工作报告学习问答&nbsp;&nbsp;正文
     </div>
-    <div class="left">
-        <div class="article box-shadow">
-            <div class="article-title">{{$article->title}}</div>
-            <div class="article-about clear">
-                <div class="float-left">
-                    <span class="article-time">发布时间：{{$article->created_at}}</span>
-                    <span class="article-from">来源：                            <a
-                                href="http://www.taiwan.cn/31t/wh31/201804/t20180423_11947430.htm" target="_blank"
-                                rel="nofollow">{{$article->source}}</a>
-                        </span>
+    <div class="detail">
+        <h2 class="">政府工作报告学习问答</h2>
+        <p class="title-p clear"><span class="float-left">2018.08.10</span><span class="float-right">支持 ← → 键翻阅图片️</span></p>
+        <div class="banner one-row">
+            <div class="clear list-nav" style="width: 400%;position: relative;left: 0;top: 0;">
+                <div class="innerwraper">
+                    <a>
+                        <img src="/front/info/prod-1.jpg"/>
+                    </a>
                 </div>
-                <div class="float-right">
-                    <!--                    <span class="article-commit"><img src="--><!--" />评论&nbsp;(111)</span>-->
-                    <!--                    <span class="article-collect"><img src="--><!--" />收藏&nbsp;(35)</span>-->
+                <div class="innerwraper">
+                    <a>
+                        <img src="/front/info/prod-2.jpg"/>
+                    </a>
+                </div>
+                <div class="innerwraper">
+                    <a>
+                        <img src="/front/info/prod-3.jpg" />
+                    </a>
+                </div>
+                <div class="innerwraper">
+                    <a>
+                        <img src="/front/info/prod-4.jpg" />
+                    </a>
                 </div>
             </div>
-            <div class="split-line"></div>
-            <!--            <div class="article-title-old">原标题：饿了么等三大外卖平台被诉破坏环境</div>-->
-            <div class="article-content" id="con">
-                {!! $article->content !!}
-            </div>
+            <span class="img-prev" ></span>
+            <span class="img-next"></span>
         </div>
-    </div>
-    <div class="right">
-        <div class="hot">
-            <div class="hot-title clear">
-                <div>热点排行</div>
-            </div>
-            <ul>
-                @foreach($hotArticles as  $k => $hotArticle)
-                    <li>
-                        <div>{{$k+1}}</div>
-                        <a href="/articles/{{$hotArticle->id}}"
-                           target="_blank">{{$hotArticle->title}}</a>
-                    </li>
-                @endforeach
+        <div class="display-none atlas">
+            <h3 class="atlas-title">图集推荐 <span class="float-right">X</span></h3>
+            <ul class="atlas-list clear" id="buttons">
+                <li>
+                    <img src="/front/info/prod-1.jpg"/>
+                    <p class="recommend-list-li-p">中国成功发射两个北斗导航卫星</p>
+                </li>
+                <li>
+                    <img src="/front/info/prod-1.jpg"/>
+                    <p class="recommend-list-li-p">中国成功发射两个北斗导航卫星</p>
+                </li>
+                <li>
+                    <img src="/front/info/prod-1.jpg"/>
+                    <p class="recommend-list-li-p">中国成功发射两个北斗导航卫星</p>
+                </li>
+                <li>
+                    <img src="/front/info/prod-1.jpg"/>
+                    <p class="recommend-list-li-p">中国成功发射两个北斗导航卫星</p>
+                </li>
+                <li>
+                    <img src="/front/info/prod-1.jpg"/>
+                    <p class="recommend-list-li-p">中国成功发射两个北斗导航卫星</p>
+                </li>
+                <li>
+                    <img src="/front/info/prod-1.jpg"/>
+                    <p class="recommend-list-li-p">中国成功发射两个北斗导航卫星</p>
+                </li>
+                <li>
+                    <img src="/front/info/prod-1.jpg"/>
+                    <p class="recommend-list-li-p">中国成功发射两个北斗导航卫星</p>
+                </li>
+                <li>
+                    <img src="/front/info/prod-1.jpg"/>
+                    <p class="recommend-list-li-p">中国成功发射两个北斗导航卫星</p>
+                </li>
+
             </ul>
         </div>
-        <div class="recommand">
-            <div class="hot-title clear">
-                <div>精彩推荐</div>
+        <div class="clear info-nav">
+            <p class="float-left info-nav-left"><span>1</span> / 9</p>
+            <div class="float-right info-nav-right">
+                <p class="display-none">奥术大师大所多奥术大师大所大所大所多奥术大师大所多奥术大师大所大所大所多奥术大师大所多奥术大师大所大所大所多奥术大师大所多奥术大师大所大所大所多奥术大师大所多奥术大师大所大所大所多</p>
+                <p class="display-none">奥术大师大所多奥术大师大所大所大所多</p>
+                <p class="display-none">asdasdasasdsa</p>
+                <p class="display-none">kjhbjknkjnkj</p>
             </div>
-            <ul>
-                @foreach($pointArticles as  $pointArticle)
-                    <li>
-                        <div class="xinwen-right-image">
-                            <a href="/articles/{{$pointArticle->id}}"
-                               target="_blank">
-                                <img style="width: 360px;height: 210px" src="{{$pointArticle->banner}}">
-                            </a>
-                        </div>
-                        <div class="xinwen-right-title">
-                            <a href="/articles/{{$pointArticle->id}}"
-                               target="_blank">{{$pointArticle->title}}</a>
-                        </div>
-                    </li>
-                @endforeach
-            </ul>
         </div>
+    </div>
+    <div class="recommend">
+        <h1><span>相关推荐</span></h1>
+
+        <ul class="recommend-list clear">
+            <li>
+                <img src="/front/info/prod-1.jpg"/>
+                <p class="recommend-list-li-p">中国成功发射两个北斗导航卫星</p>
+            </li>
+            <li>
+                <img src="/front/info/prod-1.jpg"/>
+                <p>中国成功发射两个北斗导航卫星</p>
+            </li>
+            <li>
+                <img src="/front/info/prod-1.jpg"/>
+                <p>中国成功发射两个北斗导航卫星</p>
+            </li>
+            <li>
+                <img src="/front/info/prod-1.jpg"/>
+                <p>中国成功发射两个北斗导航卫星</p>
+            </li>
+            <li>
+                <img src="/front/info/prod-1.jpg"/>
+                <p>中国成功发射两个北斗导航卫星</p>
+            </li>
+        </ul>
     </div>
 </div>
+
+
 <div class="friendship-link">
     <div class="link-center">
         <div class="link-five">

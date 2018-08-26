@@ -1,22 +1,21 @@
 @extends ('backend.layouts.app')
 
-@section ('title',  '文章管理 | 编辑文章')
+@section ('title',  '图集管理 | 编辑图集')
 
 @section('breadcrumb-links')
-    @include('backend.article.includes.breadcrumb-links')
+    @include('backend.article_atlas.includes.breadcrumb-links')
 @endsection
 
 @section('content')
-    @include('vendor.ueditor.assets')
 
-    {{ html()->modelForm($article, 'PATCH', route('admin.articles.update', $article->id))->class('form-horizontal')->open() }}
+    {{ html()->modelForm($article, 'PATCH', route('admin.article_atlas.update', $article->id))->class('form-horizontal')->open() }}
     <div class="card">
         <div class="card-body">
             <div class="row">
                 <div class="col-sm-5">
                     <h4 class="card-title mb-0">
-                        文章管理
-                        <small class="text-muted">编辑文章</small>
+                        图集管理
+                        <small class="text-muted">编辑图集</small>
                     </h4>
                 </div><!--col-->
             </div><!--row-->
@@ -76,25 +75,13 @@
                         </div><!--col-->
                     </div><!--form-group-->
 
-                    {{--缩略图--}}
                     <div class="form-group row">
-                        {{ html()->label('缩略图')->class('col-md-2 form-control-label')->for('banner') }}
-
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                            <a href="javascript:void(0);" id="banner"><img id="banner_up-img"
-                                                                           src="{{$article->banner??'/upLoad.jpg'}}" onerror='this.src="/upLoad.jpg"'/></a>
-                        </div>
-                        <input required type="hidden" name="banner" value="{{$article->banner}}"
-                               id="banner_up">
-                    </div><!--form-group-->
-
-                    <div class="form-group row">
-                        {{ html()->label('文章链接')->class('col-md-2 form-control-label')->for('url') }}
+                        {{ html()->label('图集文章链接')->class('col-md-2 form-control-label')->for('url') }}
 
                         <div class="col-md-10">
                             {{ html()->text('url')
                                 ->class('form-control')
-                                ->placeholder('文章链接')
+                                ->placeholder('图集文章链接')
                                 ->attribute('maxlength', 255)
                                 ->attribute('type','url')
                                 ->autofocus() }}
@@ -113,17 +100,6 @@
                         </div><!--col-->
                     </div><!--form-group-->
 
-                    <div class="form-group row">
-                        {{ html()->label('内容')->class('col-md-2 form-control-label')->for('content') }}
-
-                        <div class="col-md-10">
-                            {{ html()->textarea('content')
-                                ->placeholder('内容')
-                                ->attribute('id','content')
-                                ->style(['height'=>'300px'])
-                                ->autofocus() }}
-                        </div><!--col-->
-                    </div><!--form-group-->
                     <div class="form-group row">
                         <label class="col-md-2 form-control-label">标签</label>
 
@@ -150,7 +126,7 @@
         <div class="card-footer">
             <div class="row">
                 <div class="col">
-                    {{ form_cancel(route('admin.articles.index'), __('buttons.general.cancel')) }}
+                    {{ form_cancel(route('admin.article_atlas.index'), __('buttons.general.cancel')) }}
                 </div><!--col-->
 
                 <div class="col text-right">
@@ -160,87 +136,7 @@
         </div><!--card-footer-->
     </div><!--card-->
 {{ html()->closeModelForm() }}
-<div id="zxzApp"></div>
-{{--缩略图--}}
-<div id="banner_up_modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
-     aria-labelledby="myLargeModalLabel">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" id="close-model" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">上传缩略图</h4>
-            </div>
-            <div class="modal-body">
-                <div class="container_crop">
-                    <div class="imageBox">
-                        <div class="thumbBox"></div>
-                        <div class="spinner" style="display: none"><span class="font-18" style="">Loading...</span>
-                        </div>
-                    </div>
-                    <div class="action">
-                        <!-- <input type="file" id="file" style=" width: 200px">-->
-                        <div class="new-contentarea tc">
-                            <a href="javascript:void(0)" class="upload-img"> <label
-                                        for="upload-file">选择图像</label>
-                            </a> <input type="file" class="" name="upload-file" id="upload-file"/>
-                        </div>
-                        <input type="button" id="btnCrop" class="Btnsty_peyton" value="裁切">
-                        <input type="button" id="btnZoomIn" class="Btnsty_peyton" value="+">
-                        <input type="button" id="btnZoomOut" class="Btnsty_peyton"
-                               value="-">
-                    </div>
-                    {{--<div class="cropped"></div>--}}
-                </div>
-                <div class="view-mail">
-                    <br>
-                    <p id="show-content"></p>
-                </div>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
 @endsection
 @section('scripts')
-    <script type="text/javascript">
-        var ue = UE.getEditor('content', {
-            autoHeightEnabled: false,
-            minFrameHeight: 500,
-            scaleEnabled: true,
-            autoFloatEnabled: true,
-        });
-        ue.ready(function () {
-            ue.execCommand('serverparam', '_token', '{{ csrf_token() }}'); // 设置 CSRF token.
-        });
-        window.zxzIsGood = function(data, field){
-            if (data.StatusCode===200){
-                $('#banner_up-img').attr('src',data.ResultData);
-                $('#banner_up').val(data.ResultData);
-                $('.vicp-icon4').trigger('click');
-            }else{
-                alert(data.ResultData);
-            }
-        }
-    </script>
 
-    <script type="text/javascript">
-        var ue = UE.getEditor('content', {
-            autoHeightEnabled: true,
-            autoFloatEnabled: true,
-        });
-        ue.ready(function () {
-            ue.execCommand('serverparam', '_token', '{{ csrf_token() }}'); // 设置 CSRF token.
-        });
-        window.zxzIsGood = function(data, field){
-            if (data.StatusCode===200){
-                $('#banner_up-img').attr('src',data.ResultData);
-                $('#banner_up').val(data.ResultData);
-                $('.vicp-icon4').trigger('click');
-            }else{
-                alert(data.ResultData);
-            }
-        }
-    </script>
-
-    <script src="/crop.min.js"></script>
 @endsection

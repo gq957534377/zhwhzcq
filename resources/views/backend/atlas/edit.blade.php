@@ -1,19 +1,19 @@
 @extends ('backend.layouts.app')
 
-@section ('title',  '轮播图管理 | 编辑轮播图')
+@section ('title',  '图集管理 | 编辑图集')
 
 @section('breadcrumb-links')
-    @include('backend.banner.includes.breadcrumb-links')
+    @include('backend.atlas.includes.breadcrumb-links')
 @endsection
 
 @section('content')
-{{ html()->modelForm($banner, 'PATCH', route('admin.banners.update', $banner->id))->class('form-horizontal')->open() }}
+{{ html()->modelForm($atlas, 'PATCH', route('admin.article_has_atlas.update', $atlas->id))->class('form-horizontal')->open() }}
     <div class="card">
         <div class="card-body">
             <div class="row">
                 <div class="col-sm-5">
                     <h4 class="card-title mb-0">
-                        轮播图管理
+                        图集管理
                         <small class="text-muted">编辑</small>
                     </h4>
                 </div><!--col-->
@@ -22,14 +22,15 @@
             <hr />
 
             <div class="row mt-4 mb-4">
+                <input type="hidden" name="article_id" value="{{Request::get('article_id')}}">
                 <div class="col">
                     <div class="form-group row">
-                        {{ html()->label('标题')->class('col-md-2 form-control-label')->for('title') }}
+                        {{ html()->label('简述')->class('col-md-2 form-control-label')->for('brief') }}
 
                         <div class="col-md-10">
-                            {{ html()->text('title')
+                            {{ html()->text('brief')
                                 ->class('form-control')
-                                ->placeholder('标题')
+                                ->placeholder('简述')
                                 ->attribute('maxlength', 125)
                                 ->required()
                                 ->autofocus() }}
@@ -37,11 +38,11 @@
                     </div><!--form-group-->
 
                     <div class="form-group row">
-                        {{ html()->label('轮播图链接')->class('col-md-2 form-control-label')->for('url') }}
+                        {{ html()->label('图集链接')->class('col-md-2 form-control-label')->for('url') }}
                         <div class="col-md-10">
                             {{ html()->text('url')
                                 ->class('form-control')
-                                ->placeholder('轮播图链接')
+                                ->placeholder('图集链接')
                                 ->attribute('maxlength', 255)
                                 ->attribute('type','url')
                                 ->autofocus() }}
@@ -54,9 +55,9 @@
 
                         <div class="col-md-9 col-sm-9 col-xs-12">
                             <a href="javascript:void(0);" id="banner"><img id="banner_up-img"
-                                                                           src="{{$banner->file??'/upLoad.jpg'}}"/></a>
+                                                                           src="{{$atlas->banner??'/upLoad.jpg'}}"/></a>
                         </div>
-                        <input required type="hidden" name="file" value="{{$banner->file}}"
+                        <input required type="hidden" value="{{$atlas->banner}}" name="banner"
                                id="banner_up">
                     </div><!--form-group-->
 

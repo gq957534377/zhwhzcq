@@ -30,20 +30,20 @@
         <div class="language">
             <ul>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81#" target="_self">English</a>
+                    <a href="javascript:;" target="_self">English</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81#" target="_self">Español</a>
+                    <a href="javascript:;" target="_self">Español</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81#" target="_self">Français</a>
+                    <a href="javascript:;" target="_self">Français</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81#"
+                    <a href="javascript:;"
                        target="_self">日本語</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81#"
+                    <a href="javascript:;"
                        target="_self">한국어</a>
                 </li>
                 <li class="more-li">
@@ -77,35 +77,35 @@
         <div class="city">
             <ul>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81#"
+                    <a href="javascript:;"
                        target="_self">北京</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81#"
+                    <a href="javascript:;"
                        target="_self">天津</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81#"
+                    <a href="javascript:;"
                        target="_self">河北</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81#"
+                    <a href="javascript:;"
                        target="_self">山西</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81#"
+                    <a href="javascript:;"
                        target="_self">陕西</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81#"
+                    <a href="javascript:;"
                        target="_self">辽宁</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81#"
+                    <a href="javascript:;"
                        target="_self">吉林</a>
                 </li>
                 <li>
-                    <a href="http://www.vxinghe.com/portal/index.php?c=home&amp;a=lists&amp;id=81#"
+                    <a href="javascript:;"
                        target="_self">上海</a>
                 </li>
                 <li class="more-li">
@@ -156,11 +156,11 @@
     </div>
 </div>
 <div class="header box-shadow min-width1200">
-    <div class="width1200 clear">
+    <div class="width1200 clear topbar">
         <div class="logo">
-            <a href="/" target="_blank"><img src="/front/list/logo_red.png"></a>
+            <a href="/" target="_blank"><img style="margin-top: 3%" src="{{asset('front/index/style/logo/logo_new.png')}}"></a>
         </div>
-        <div class="menu" style=" width:69%">
+        <div class="menu" style=" width:67%">
             <ul>
                 @foreach($labels as $label)
                     <li>
@@ -191,14 +191,18 @@
                         <div class="list-title">
                             <a href="/articles/{{$article->id}}" target="_blank">{{$article->title}}</a>
                         </div>
-                        <div class="list-image">
-                            <a href="/articles/{{$article->id}}" target="_blank"><img src="{{$article->banner}}"></a>
-                        </div>
+                        @if(!empty($article->banner))
+                            <div class="list-image">
+                                <a href="/articles/{{$article->id}}" target="_blank"><img
+                                            src="{{$article->banner}}"></a>
+                            </div>
+                        @endif
                         <div class="list-content">
                             <p style="font-size: 16px;">
                                 {{$article->brief}}
                             </p>
-                            <span>{{$article->created_at}}</span>
+                            <span class="fst">{{$article->author}}&nbsp;&nbsp;{{$article->created_at}}</span>
+                            {{--<span>{{$article->created_at}}</span>--}}
                         </div>
                     </li>
                 @endforeach
@@ -320,19 +324,21 @@
             success: function (data) {
                 if (data.StatusCode === 200) {
                     var html = data.ResultData.data.map(function (res) {
-                        console.log(res);
                         html = '<li>';
                         html += '<div class="list-title">';
                         html += '<a href="/articles/' + res.id + '" target="_blank">' + res.title + '</a>';
                         html += '</div>';
-                        html += '<div class="list-image">';
-                        html += '<a href="/articles/' + res.id + '" target="_blank"><img src="' + res.banner + '"></a>';
-                        html += '</div>';
+                        if (res.banner) {
+                            html += '<div class="list-image">';
+                            html += '<a href="/articles/' + res.id + '" target="_blank"><img src="' + res.banner + '"></a>';
+                            html += '</div>';
+                        }
+
                         html += '<div class="list-content">';
                         html += '<p style="font-size: 16px;">';
                         html += res.brief;
                         html += '</p>';
-                        html += '<span>' + res.created_at + '</span>';
+                        html += '<span class="fst">' + res.author + '&nbsp;&nbsp;' + res.created_at + '</span>';
                         html += '</div>';
                         html += '</li>';
                         return html;

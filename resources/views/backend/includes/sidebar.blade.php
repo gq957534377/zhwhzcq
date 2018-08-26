@@ -25,6 +25,11 @@
                 <a class="nav-link {{ active_class(Active::checkUriPattern('admin/articles')) }}" href="{{ route('admin.articles.index') }}"><i class="icon-speedometer"></i> 文章</a>
             </li>
 
+            {{--图集管理--}}
+            <li class="nav-item">
+                <a class="nav-link {{ active_class(Active::checkUriPattern('admin/article_atlas')) }}" href="{{ route('admin.article_atlas.index') }}"><i class="icon-speedometer"></i> 图集</a>
+            </li>
+
             {{--轮播图管理--}}
             <li class="nav-item">
                 <a class="nav-link {{ active_class(Active::checkUriPattern('admin/banners')) }}" href="{{ route('admin.banners.index') }}"><i class="icon-speedometer"></i> 轮播</a>

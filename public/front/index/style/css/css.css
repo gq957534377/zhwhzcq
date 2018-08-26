@@ -68,7 +68,7 @@ a:hover{text-decoration:none;color:#e60000}
 .nav dl{background:#a00;position:absolute;height:auto;left:0px;top:0px;padding:32px 0px 0px 0px;text-align:center;display:none;z-index:2;}
 .nav dl a{font-size:14px; color:#fff;}
 .nav dl em{width:12px;height:7px;position:absolute;top:-7px;left:35px;}
-.nav dl li{width:80px;height:35px;float:left; display:block;margin:0px;padding:0px;overflow: hidden;}
+.nav dl li{width:94px;height:35px;float:left; display:block;margin:0px;padding:0px;overflow: hidden;}
 .nav dl li a{ display:block; line-height:35px; height:35px;}
 .nav dl li a:hover{ background:#3E3E3E;}
 .nav li.selected dl{display:block;}

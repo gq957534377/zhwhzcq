@@ -1,0 +1,125 @@
+.detail{
+    position: relative;
+}
+.detail h2{
+    padding-top: 30px;
+}
+.detail .title-p{
+    color: #999;
+    padding: 20px 0;
+}
+.detail .banner{
+    position: relative;
+    border:1px solid #999;
+    height:720px;
+}
+
+.detail .banner .list-nav div{
+    text-align: center;
+    float: left;
+    width:1198px;
+}
+.detail .list-nav img{
+    width:100%;
+}
+.detail .info-nav .info-nav-left{
+    width:10%;
+    padding:30px;
+}
+.detail .info-nav .info-nav-left span{
+    color: red;
+    font-size: 30px;
+}
+.detail .info-nav .info-nav-right{
+    width:90%;
+    padding:30px 30px 0 0;
+}
+.detail .banner .img-next {
+    position: absolute;
+    right: 1%;
+    top: 50%;
+    cursor: pointer;
+    margin: -85px 0 0 -18px;
+    width: 50px;
+    height: 85px;
+    background:  url(./arrows.png) no-repeat -86px 10px;
+}
+.detail .banner .img-prev {
+    position: absolute;
+    left: 2%;
+    top: 50%;
+    cursor: pointer;
+    margin: -85px 0 0 -18px;
+    width: 50px;
+    height: 85px;
+    background:  url(./arrows.png) no-repeat -86px -80px;
+}
+.detail .banner .img-next:hover{
+    background: #c6c8ca url(./arrows.png) no-repeat -40px 7px;
+}
+.detail .banner .img-prev:hover{
+    background: #c6c8ca url(./arrows.png) no-repeat -40px -80px;
+}
+
+.recommend h1{
+    border-bottom: 1px solid #ccc;
+}
+.recommend h1 span{
+    border-bottom: 3px solid red;
+}
+.recommend .recommend-list li{
+    position: relative;
+    float: left;
+    margin: 18px;
+    width:17%;
+}
+.recommend .recommend-list li img{
+    width:100%;
+}
+.recommend .recommend-list li p{
+    position: absolute;
+    width:100%;
+    height:35%;
+    bottom: 0;
+    background: #000000;
+    color: #fff;
+    opacity: 0.6;
+    font-size: 16px;
+    padding: 10px;
+}
+/*图集推荐*/
+.atlas{
+    position: absolute;
+    top: 25%;
+    left: 12%;
+    width: 75%;
+    padding:10px 20px 20px 0;
+    border:1px solid #000;
+    background: #fff;
+}
+.atlas .atlas-title{
+    font-size:20px;
+    padding-left: 20px;
+}
+.atlas .atlas-title span{
+    cursor:pointer;
+}
+.atlas .atlas-list li {
+    position: relative;
+    float: left;
+    width:25%;
+    padding:20px 0 0 20px;
+}
+.atlas .atlas-list li img{
+    width:100%;
+}
+.atlas .atlas-list li p{
+    position: absolute;
+    bottom: 0;
+    background: #000000;
+    color: #fff;
+    opacity: 0.6;
+    font-size: 16px;
+    padding: 10px;
+}
+

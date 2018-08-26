@@ -75,7 +75,7 @@
 .mainnews .newsl .m-slide #ifocus_tx { position:absolute; left:15px; bottom:10px; color:#FFF; }
 .mainnews .newsl .m-slide #ifocus_tx ul li{ display:none;  }
 .mainnews .newsl .m-slide #ifocus_tx ul li a{ color:#fff; font-size:24px; font-weight: bold;}
-			/*动态CSS-图片新闻轮播-end*/
+/*动态CSS-图片新闻轮播-end*/
 
 .mainnews .newsl .leftbanber { margin-top: 20px; }
 .mainnews .newsl .leftbanber img { width: 820px; height: 90px;}
@@ -85,7 +85,7 @@
 .mainnews .newsl .chosenbox-ml { margin-left:9px;}
 .mainnews .newsl .chosenbox .chosenimg { float: left; margin-right: 10px; display: inline; width: 130px; height: 85px;}
 .mainnews .newsl .chosenbox .chosenimg img{ width: 130px; height: 85px;}
-.mainnews .newsl .chosenbox h3 { font-size: 16px; margin-left: 140px; text-align: left;font-weight:normal; height: 22px; overflow: hidden; word-break:break-all; word-wrap:break-word;}
+.mainnews .newsl .chosenbox h3 { font-size: 16px; text-align: left;font-weight:normal; height: 22px; overflow: hidden; word-break:break-all; word-wrap:break-word;}
 .mainnews .newsl .chosenbox h3:hover { color: #e60000;}
 .mainnews .newsl .chosenbox h3:hover a { color: #e60000; text-decoration:none;}
 .mainnews .newsl .chosenbox p { color: #676666; margin-bottom: 5px; height: 66px; overflow: hidden; word-break:break-all; word-wrap:break-word;}
@@ -113,7 +113,7 @@
 
 
 
-		/*右侧*/
+/*右侧*/
 .main .mainnews .newsr { float: left; width: 320px; margin-left: 20px; display: inline; margin-top: 10px;}
 .mainnews .newsr .topnews { height: 365px;}
 .mainnews .newsr .topnews .sideMenu { padding: 15px 0;}
@@ -174,7 +174,7 @@
 .main .mainnews .mt-15 {margin-top:-15px;}
 .main .mainnews .mt-25 {margin-top:-25px;}
 
-	 /*合作伙伴、友情链接*/
+/*合作伙伴、友情链接*/
 .main .mainother { width: 1150px; padding: 0 25px; background-color: #fff; margin: 0 auto; overflow: hidden; padding-bottom: 20px; margin-top: 15px;}
 .mainother .partners, .mainother .links { overflow: hidden; }
 .mainother .partners .partnerstitle { background: url(../images/partnertitle_new.png) no-repeat; width: 1150px; height: 51px; margin-top: 15px; }
@@ -221,7 +221,7 @@
 
 /*列表页-Start*/
 .newslist { width: 1150px; padding: 0 25px; background-color: #fff; margin: 0 auto; overflow: hidden; padding-bottom: 20px; margin-top: 80px;}
-	/*左侧*/
+/*左侧*/
 .main .listl { float: left; width: 770px; position: relative; padding-top: 60px; padding-right: 30px; border-right: 1px solid #E5E5E5; *padding-right: 0px; *width: 730px;}
 .main .listl .inner{ padding:0 10px 0 15px;}
 .listl .listview { float: left; width:100%; height: 32px; line-height: 32px; position: absolute; top:5px;  border-bottom:#eee solid 1px;font-size: 18px; text-align:left; }
@@ -239,7 +239,7 @@
 .main .list2  ul li  span { background: url(../images/symbol-9.png) no-repeat 0 4px;  display: inline-block; text-indent: 20px; color: #3e3e3e;margin-right:10px;}
 .main .list2  ul li span.timeago{ background: url(../images/symbol-11.png) no-repeat 0 4px;}
 
-	/*右侧*/
+/*右侧*/
 .main .listr { float: right; display: inline; width: 320px;}
 .listr .adimg { margin-top:20px;}
 .listr .adimg img { width: 320px; height: 250px;}
@@ -376,7 +376,7 @@
 
 /*内容页-End*/
 
-	/*侧边栏按钮*/
+/*侧边栏按钮*/
 .main .mreturn {}
 .main .mshare { position: fixed; top: 130px; right: 50%; margin-right: 600px; width: 40px; height: 170px; }
 .main .mshare a { width: 40px; height: 40px; display: block; margin:1px 0px 0px 0px;}

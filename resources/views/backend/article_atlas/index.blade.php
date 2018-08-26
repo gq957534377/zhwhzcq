@@ -1,9 +1,9 @@
 @extends ('backend.layouts.app')
 
-@section ('title', app_name() . ' | 文章管理')
+@section ('title', app_name() . ' | 图集文章管理')
 
 @section('breadcrumb-links')
-    @include('backend.article.includes.breadcrumb-links')
+    @include('backend.article_atlas.includes.breadcrumb-links')
 @endsection
 
 @section('content')
@@ -12,13 +12,13 @@
             <div class="row">
                 <div class="col-sm-5">
                     <h4 class="card-title mb-0">
-                        文章管理
-                        <small class="text-muted">文章列表</small>
+                        图集文章管理
+                        <small class="text-muted">图集文章列表</small>
                     </h4>
                 </div><!--col-->
 
                 <div class="col-sm-7">
-                    @include('backend.article.includes.header-buttons')
+                    @include('backend.article_atlas.includes.header-buttons')
                 </div><!--col-->
             </div><!--row-->
             <div class="row mt-4">
@@ -27,7 +27,6 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th>ID</th>
                                 <th>标题</th>
                                 <th>来源</th>
                                 <th>缩略图</th>
@@ -42,11 +41,10 @@
                             <tbody>
                             @foreach ($articles as $article)
                                 <tr>
-                                    <td>{{ $article->id}}</td>
                                     <td>{{ $article->title}}</td>
                                     <td>{{ $article->source}}</td>
                                     <td>
-                                        <img src="{{$article->banner}}" style="width: 70px;height: 30px;">
+                                        <img src="{{$article->Atlas->first()->banner??''}}" style="width: 70px;height: 30px;">
                                     </td>
                                     <td title="{{$article->brief}}">{{str_limit($article->brief,10,'...')}}</td>
                                     <td>{{ $article->author}}</td>
@@ -64,7 +62,7 @@
             <div class="row">
                 <div class="col-7">
                     <div class="float-left">
-                        {!! $articles->total() !!} 文章总计
+                        {!! $articles->total() !!} 图集文章总计
                     </div>
                 </div><!--col-->
 

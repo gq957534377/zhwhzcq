@@ -1,3 +1,14 @@
+.topbar .logo{
+	float:left;
+	overflow:hidden;
+	width:378px;
+	margin: 15px 5px 15px 5px;
+}
+.topbar .logo a{ display:block; height:auto; width:100%;}
+.topbar .logo a img {
+	width:100%;
+	height:auto;
+}
 .main {
 	width: 1200px;
 	margin: auto;
@@ -69,6 +80,7 @@
 	bottom: 30px;
 	color: #999;
 	font-size: 12px;
+	background: url(../images/symbol-9.png) no-repeat 0 4px;
 }
 
 .grayborder {

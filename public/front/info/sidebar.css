@@ -1,4 +1,14 @@
-
+.header .logo{
+	float:left;
+	overflow:hidden;
+	width:378px;
+	margin: 15px 5px 15px 5px;
+}
+.header .logo a{ display:block; height:auto; width:100%;}
+.header .logo a img {
+	width:100%;
+	height:auto;
+}
 .hot-title {
 	color: #666;
 	height: 40px;
