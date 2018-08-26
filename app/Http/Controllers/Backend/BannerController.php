@@ -6,6 +6,7 @@ use App\Http\Requests\Backend\BannerRequest;
 use App\Models\Banner;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class BannerController extends Controller
 {
@@ -46,6 +47,9 @@ class BannerController extends Controller
      */
     public function store(BannerRequest $request)
     {
+        if ($request->hasFile('file')) {
+            $request->file = Storage::url($request->file('file')->store('public/banners'));
+        }
         Banner::create([
             'title' => $request->title,
             'file' => $request->file,

@@ -28,7 +28,7 @@ class BannerRequest extends FormRequest
             case 'update':
                 return [
                     'title'=> 'required|string|min:6|max:125',
-                    'file'=> 'required|string|max:255',
+                    'file'=> 'required',
                     'sort'=> 'required|numeric',
                     'url'=> 'nullable|url',
                 ];
