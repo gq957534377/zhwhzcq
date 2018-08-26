@@ -23,7 +23,9 @@ class PositionRelLabelController extends Controller
     {
         \DB::beginTransaction();
         try {
-            PositionRelLabel::whereIn('label_id', $position->labels->pluck('id')->toArray())->delete();
+            PositionRelLabel::whereIn('label_id', $position->labels->pluck('id')->toArray())
+                ->where('position_id', $position->id)
+                ->delete();
 
             foreach ($request->labels as $labelId) {
                 PositionRelLabel::create([

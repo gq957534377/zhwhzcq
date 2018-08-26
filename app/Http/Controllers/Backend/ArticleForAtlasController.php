@@ -79,7 +79,7 @@ class ArticleForAtlasController extends Controller
             \DB::commit();
         } catch (\Exception $e) {
             \DB::rollBack();
-            return redirect()->route('admin.article_atlas.index')->withFlashDanger('添加图集文章失败'.$e->getMessage());
+            return redirect()->route('admin.article_atlas.index')->withFlashDanger('添加图集文章失败' . $e->getMessage());
         }
 
         return redirect()->route('admin.article_atlas.index')->withFlashSuccess('添加图集文章成功');
@@ -94,7 +94,7 @@ class ArticleForAtlasController extends Controller
      */
     public function edit($id)
     {
-        $article=ArticleForAtlas::findOrFail($id);
+        $article = ArticleForAtlas::findOrFail($id);
         $labels = Label::get();
 
         return view('backend.article_atlas.edit', ['labels' => $labels, 'article' => $article]);
@@ -110,7 +110,7 @@ class ArticleForAtlasController extends Controller
      */
     public function update($id, ArticleForAtlasRequest $request)
     {
-        $article=ArticleForAtlas::findOrFail($id);
+        $article = ArticleForAtlas::findOrFail($id);
 
         \DB::beginTransaction();
         try {
@@ -123,7 +123,9 @@ class ArticleForAtlasController extends Controller
                 'sort' => $request->sort??0,
             ]);
 
-            ArticleHasLabel::whereIn('label_id', $article->labels->pluck('id')->toArray())->delete();
+            ArticleHasLabel::whereIn('label_id', $article->labels->pluck('id')->toArray())
+                ->where('article_id', $article->id)
+                ->delete();
             foreach ($request->labels as $labelId) {
                 ArticleHasLabel::create([
                     'article_id' => $article->id,
@@ -133,7 +135,7 @@ class ArticleForAtlasController extends Controller
             \DB::commit();
         } catch (\Exception $e) {
             \DB::rollBack();
-            return redirect()->route('admin.article_atlas.index')->withFlashDanger('添加图集文章失败'.$e->getMessage());
+            return redirect()->route('admin.article_atlas.index')->withFlashDanger('添加图集文章失败' . $e->getMessage());
         }
 
         return redirect()->route('admin.article_atlas.index')->withFlashSuccess('修改图集文章成功');
@@ -147,7 +149,7 @@ class ArticleForAtlasController extends Controller
      */
     public function destroy($id)
     {
-        $article=ArticleForAtlas::findOrFail($id);
+        $article = ArticleForAtlas::findOrFail($id);
 
         $article->delete();
 

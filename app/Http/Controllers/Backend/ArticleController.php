@@ -123,7 +123,9 @@ class ArticleController extends Controller
                 'content' => $request->get('content'),
             ]);
 
-            ArticleRelLabel::whereIn('label_id', $article->labels->pluck('id')->toArray())->delete();
+            ArticleRelLabel::whereIn('label_id', $article->labels->pluck('id')->toArray())
+                ->where('article_id', $article->id)
+                ->delete();
 
             foreach ($request->labels as $labelId) {
                 ArticleRelLabel::create([
