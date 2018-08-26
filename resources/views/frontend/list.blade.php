@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="format-detection" content="telephone=no">
 
-    <title>中华文化走出去网-{{$key}}</title>
+    <title>中华文化走出去网 - 首页</title>
 
     <meta name="keywords" content="资讯中心，滚动，时政，国际，财经，军事，娱乐，华人，图片，政权，房产，汽车，廉政，互联网，新媒体，教育，电视剧，电影，视频，访谈，直播，专题，旅游，广播，科技">
     <meta name="description" content="向世界展示中华文化独特魅力">
