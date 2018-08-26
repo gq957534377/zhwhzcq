@@ -235,7 +235,7 @@ transform:rotate(90deg);
 
 .menu {
 	float: right;
-	margin: 36px 0;
+	margin: 36px 0 10px 0;
 }
 
 .menu ul {
