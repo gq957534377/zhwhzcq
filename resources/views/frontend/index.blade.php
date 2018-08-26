@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=8"/>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
-    <title></title>
+    <title>中华文化走出去网 - 首页</title>
     <link rel="stylesheet" type="text/css" href="/front/index/style/css/css.css"/>
     <link rel="stylesheet" type="text/css" href="/front/index/style/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="/front/info/footer.css"/>
