@@ -6,7 +6,7 @@
         <div class="footer-word">
             <ul>
                 <li>
-                    联系电话：010-67867905 <span></span> 联系邮箱：news@vxinghe.com
+                    联系电话：010-67867905 <span></span> 联系邮箱：news@cicic.org.cn
                 </li>
                 <li>
                     京ICP备18040577号-1<span></span>|<span></span>京公网安备 11010202007426号<span></span>|<span></span>增值电信业务经营许可证（京B2-20170698）
