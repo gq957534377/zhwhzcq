@@ -29,7 +29,7 @@ class ArticleRequest extends FormRequest
                 return [
                     'title' => 'required|string|min:6|max:125',
                     'source' => 'nullable|string|max:32',
-                    'banner' => 'required|string|max:125',
+                    'banner' => 'nullable|string|max:125',
                     'brief' => 'required|string|max:125|min:6',
                     'sort' => 'nullable|numeric',
                     'content' => 'required|string',
