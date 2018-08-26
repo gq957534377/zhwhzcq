@@ -145,15 +145,14 @@
 <div class="header box-shadow min-width1200">
     <div class="width1200 clear">
         <div class="logo">
-            <a href="/" target="_blank"><img style="margin-top: 3%;" src="{{asset('front/index/style/logo/logo_new.png')}}"></a>
+            <a href="/"><img style="margin-top: 3%;" src="{{asset('front/index/style/logo/logo_new.png')}}"></a>
         </div>
         <div class="menu" style="width: 67%">
             <ul>
                 @foreach($labels as $label)
                     <li>
                         <p>
-                            <a href="{{url('/articles?position_id='.$label->id)}}"
-                               target="_blank">{{$label->name}}</a>
+                            <a href="{{url('/articles?position_id='.$label->id)}}">{{$label->name}}</a>
                         </p>
                     </li>
 
@@ -171,10 +170,12 @@
             <div class="article-about clear">
                 <div class="float-left">
                     <span class="article-time">发布时间：{{$article->created_at->format('Y-m-d')}}</span>
-                    <span class="article-from">来源：                            <a
-                                href="http://www.taiwan.cn/31t/wh31/201804/t20180423_11947430.htm" target="_blank"
+                    @if($article->url)
+                    <span class="article-from">来源：
+                        <a href="{{ $article->url }}" target="_blank"
                                 rel="nofollow">{{$article->source}}</a>
                         </span>
+                    @endif
                 </div>
                 <div class="float-right">
                     <!--                    <span class="article-commit"><img src="--><!--" />评论&nbsp;(111)</span>-->
@@ -197,8 +198,7 @@
                 @foreach($hotArticles as  $k => $hotArticle)
                     <li>
                         <div>{{$k+1}}</div>
-                        <a href="/articles/{{$hotArticle->id}}"
-                           target="_blank">{{$hotArticle->title}}</a>
+                        <a href="/articles/{{$hotArticle->id}}">{{$hotArticle->title}}</a>
                     </li>
                 @endforeach
             </ul>
@@ -211,14 +211,12 @@
                 @foreach($pointArticles as  $pointArticle)
                     <li>
                         <div class="xinwen-right-image">
-                            <a href="/articles/{{$pointArticle->id}}"
-                               target="_blank">
+                            <a href="/articles/{{$pointArticle->id}}">
                                 <img style="width: 360px;height: 210px" src="{{$pointArticle->banner}}">
                             </a>
                         </div>
                         <div class="xinwen-right-title">
-                            <a href="/articles/{{$pointArticle->id}}"
-                               target="_blank">{{$pointArticle->title}}</a>
+                            <a href="/articles/{{$pointArticle->id}}">{{$pointArticle->title}}</a>
                         </div>
                     </li>
                 @endforeach
