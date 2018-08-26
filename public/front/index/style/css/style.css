@@ -102,7 +102,7 @@
 .mainnews .newsl .hot .hotbox .hotimg:hover .zzsz { background: url(../images/symbol-26.png) no-repeat;}
 .mainnews .newsl .hot .hotbox .hotimg .standpoint { position: absolute; top: 0px; left: 0px; width: 68px; height: 30px; font-size: 14px; color: #fff; background-color: #00AA98; text-align: center; line-height: 30px; display: none;}
 .mainnews .newsl .hot .hotbox .hotimg img { width: 200px; height: 115px; }
-.mainnews .newsl .hot .hotbox h3 { font-size: 24px; font-weight: bold; height: 35px; line-height: 35px; margin-bottom: 5px; margin-top: 20px; padding:0px 5px; white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.mainnews .newsl .hot .hotbox h3 { font-size: 18px; font-weight: bold; height: 35px; line-height: 35px; margin-bottom: 5px; margin-top: 20px; padding:0px 5px; white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
 .mainnews .newsl .hot .hotbox h3:hover { color: #e60000;}
 .mainnews .newsl .hot .hotbox h3:hover a { color: #e60000; text-decoration:none;}
 .mainnews .newsl .hot .hotbox p { color: #3e3e3e; font-size: 14px; height: 102px; line-height: 26px;}
