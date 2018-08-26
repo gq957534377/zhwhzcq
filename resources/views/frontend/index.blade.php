@@ -93,7 +93,7 @@
                 <ul class="img">
                     @foreach($banners as $banner)
                         <li>
-                            <a href="{{ route('frontend.articles.show', ['article' => $banner->id]) }}"
+                            <a href="{{ $banner->url }}"
                                title="{{$banner->title}}">
                                 <img src="{{$banner->file}}" alt="{{$banner->title}}"/>
                             </a>
@@ -104,7 +104,7 @@
                 <div id="ifocus_tx">
                     <ul>
                         @foreach($banners as $banner)
-                            <li><a href="{{ route('frontend.articles.show', ['article' => $banner->id]) }}"
+                            <li><a href="{{ $banner->url}}"
                                    title="{{$banner->title}}">{{$banner->title}}</a></li>
                         @endforeach
                     </ul>
