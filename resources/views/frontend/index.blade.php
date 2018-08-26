@@ -196,10 +196,10 @@
                                 </a>
                             </div>
                             @endif
-                            <h3>
+                            <h3 style="margin-top: 0">
                                 <a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}">{{$item->title}}</a>
                             </h3>
-                            <p style="height: 40px;line-height: 20px;">
+                            <p style="height: 55px">
                                 {{str_limit($item->brief,150,'...')}}
                             </p>
                             <span class="fst">{{$item->source}}</span> · <span><time class="timeago"
