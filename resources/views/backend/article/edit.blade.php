@@ -82,7 +82,7 @@
 
                         <div class="col-md-9 col-sm-9 col-xs-12">
                             <a href="javascript:void(0);" id="banner"><img id="banner_up-img"
-                                                                           src="{{$article->banner??'/upLoad.jpg'}}"/></a>
+                                                                           src="{{$article->banner??'/upLoad.jpg'}}" onerror='this.src="/upLoad.jpg"'/></a>
                         </div>
                         <input required type="hidden" name="banner" value="{{$article->banner}}"
                                id="banner_up">
