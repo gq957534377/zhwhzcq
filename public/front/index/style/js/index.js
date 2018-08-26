@@ -87,7 +87,7 @@ $(function () {
 	 	setInterval(function () {
 	 		var num = (activeNum+1)%4;
 	 		if (isAct) tabLi.eq(num).trigger("mouseenter");
-	 	},2000);
+	 	},4000);
 	 })();
 	/**
 	 * 首页 今日头条
