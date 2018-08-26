@@ -46,7 +46,6 @@
                                 ->class('form-control')
                                 ->placeholder('来源')
                                 ->attribute('maxlength', 32)
-                                ->required()
                                 ->autofocus() }}
                         </div><!--col-->
                     </div><!--form-group-->
