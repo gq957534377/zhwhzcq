@@ -162,7 +162,7 @@
         <div class="newsl mt-25">
             <!--新闻要点-->
             <div class="chosen">
-                <div class="com-title"><span>新闻要点</span><a href="/articles?position_id=41">MORE</a></div>
+                <div class="com-title"><span>新闻要点</span></div>
                 @foreach($newsPoints as $newsPoint)
                     <div class="chosenbox chosenbox-ml">
                         @if(!empty($newsPoint->banner))
@@ -184,7 +184,7 @@
         <!--@精选导读-->
             <!--外宣媒体-->
             <div class="hot">
-                <div class="com-title"><span>外宣媒体</span><a href="/articles?position_id=15">MORE</a></div>
+                <div class="com-title"><span>外宣媒体</span></div>
                 <div id="content_list">
                     @foreach($newsOut as $item)
 
@@ -196,10 +196,10 @@
                                 </a>
                             </div>
                             @endif
-                            <h3 style="margin-top: 0">
+                            <h3>
                                 <a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}">{{$item->title}}</a>
                             </h3>
-                            <p style="height: 55px">
+                            <p style="height: 40px;line-height: 20px;">
                                 {{str_limit($item->brief,150,'...')}}
                             </p>
                             <span class="fst">{{$item->source}}</span> · <span><time class="timeago"
@@ -217,7 +217,7 @@
 
             <!--专题活动-->
             <div class="hot">
-                <div class="com-title"><span>专题活动</span><a href="/articles?position_id=7">MORE</a></div>
+                <div class="com-title"><span>专题活动</span></div>
                 <div id="content_list">
                     @foreach($thematicActivities as $thematicActivity)
                         <div class="hotbox">
@@ -232,7 +232,7 @@
                                         href="{{ route('frontend.articles.show', ['article' => $thematicActivity->id]) }}">{{$thematicActivity->title}}</a>
                             </h3>
                             <p style="height: 55px">
-                                {{str_limit($thematicActivity->brief,150,'...')}}
+                                {{str_limit($thematicActivity->brief,200,'...')}}
                             </p>
 
                             <span class="fst">{{$thematicActivity->source}}</span> · <span><time class="timeago"
@@ -266,7 +266,7 @@
             <!--本月焦点-->
 
             <div class="read">
-                <div class="com-title"><span>本月焦点</span><a href="/articles?position_id=43">MORE</a></div>
+                <div class="com-title"><span>本月焦点</span></div>
                 @foreach($monthPoints as $item)
                     <a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}"><img
                                 src="{{$item->banner}}" alt="{{$item->title}}"/></a>
@@ -317,7 +317,7 @@
             </div>-->
             <!--文化投资-->
             <div class="newsletter">
-                <div class="com-title"><span>文化投资</span><a href="/articles?position_id=44">MORE</a></div>
+                <div class="com-title"><span>文化投资</span></div>
                 <ul>
                     @foreach($culturalInvestment as $item)
                         <li><a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}"
@@ -403,23 +403,6 @@
 </div>
 <div id="erweipic" class="erweipic">
 </div>
-<!--
-<div class="footer">
-    <div class="wrapper">
-        <div class="lft">©</div>
-        <div class="rgt">
-            <a href="/aboutme/index.html" target="_blank"> 关于我们</a><span></span><a href="/aboutme/report.html"
-                                                                                   target="_blank">寻求报道</a><span></span><a
-                    href="/aboutme/submission.html" target="_blank">投稿须知</a><span></span><a
-                    href="/aboutme/cooperation.html" target="_blank">商务合作</a><span></span> <a
-                    href="/aboutme/sitemap.html" target="_blank">网站地图</a>
-            <span></span><a href="/baidunews.xml" target="_blank">百度新闻</a>
-            <span></span><a href="/tags.html" target="_blank">标签云</a>
-            <span></span>
-        </div>
-    </div>
-</div>
--->
 
 <div class="footer">
     <div class="footer-center">
