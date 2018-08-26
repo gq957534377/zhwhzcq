@@ -10,6 +10,7 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="/front/index/style/css/css.css"/>
     <link rel="stylesheet" type="text/css" href="/front/index/style/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/front/info/footer.css"/>
     <link rel="shortcut icon" href="/favicon.ico"/>
     <script type="text/javascript" src="/front/index/style/js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="/front/index/style/js/jquery.timeago.js"></script>
@@ -161,7 +162,7 @@
         <div class="newsl mt-25">
             <!--新闻要点-->
             <div class="chosen">
-                <div class="com-title"><span>新闻要点</span><a href="/articles?position_id=41">MORE</a></div>
+                <div class="com-title"><span>新闻要点</span></div>
                 @foreach($newsPoints as $newsPoint)
                     <div class="chosenbox chosenbox-ml">
                         @if(!empty($newsPoint->banner))
@@ -183,7 +184,7 @@
         <!--@精选导读-->
             <!--外宣媒体-->
             <div class="hot">
-                <div class="com-title"><span>外宣媒体</span><a href="/articles?position_id=15">MORE</a></div>
+                <div class="com-title"><span>外宣媒体</span></div>
                 <div id="content_list">
                     @foreach($newsOut as $item)
 
@@ -195,10 +196,10 @@
                                 </a>
                             </div>
                             @endif
-                            <h3 style="margin-top: 0">
+                            <h3>
                                 <a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}">{{$item->title}}</a>
                             </h3>
-                            <p style="height: 55px">
+                            <p style="height: 40px;line-height: 20px;">
                                 {{str_limit($item->brief,150,'...')}}
                             </p>
                             <span class="fst">{{$item->source}}</span> · <span><time class="timeago"
@@ -216,7 +217,7 @@
 
             <!--专题活动-->
             <div class="hot">
-                <div class="com-title"><span>专题活动</span><a href="/articles?position_id=7">MORE</a></div>
+                <div class="com-title"><span>专题活动</span></div>
                 <div id="content_list">
                     @foreach($thematicActivities as $thematicActivity)
                         <div class="hotbox">
@@ -231,7 +232,7 @@
                                         href="{{ route('frontend.articles.show', ['article' => $thematicActivity->id]) }}">{{$thematicActivity->title}}</a>
                             </h3>
                             <p style="height: 55px">
-                                {{str_limit($thematicActivity->brief,150,'...')}}
+                                {{str_limit($thematicActivity->brief,200,'...')}}
                             </p>
 
                             <span class="fst">{{$thematicActivity->source}}</span> · <span><time class="timeago"
@@ -265,7 +266,7 @@
             <!--本月焦点-->
 
             <div class="read">
-                <div class="com-title"><span>本月焦点</span><a href="/articles?position_id=43">MORE</a></div>
+                <div class="com-title"><span>本月焦点</span></div>
                 @foreach($monthPoints as $item)
                     <a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}"><img
                                 src="{{$item->banner}}" alt="{{$item->title}}"/></a>
@@ -316,7 +317,7 @@
             </div>-->
             <!--文化投资-->
             <div class="newsletter">
-                <div class="com-title"><span>文化投资</span><a href="/articles?position_id=44">MORE</a></div>
+                <div class="com-title"><span>文化投资</span></div>
                 <ul>
                     @foreach($culturalInvestment as $item)
                         <li><a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}"
@@ -335,29 +336,66 @@
         <!-- 合作伙伴 -->
         <div class="partners">
             <div class="partnerstitle"></div>
-            <div class="partnersimg"><a href="http://www.smallseashell.com" title="今日头条" target="_blank"><img
-                            src="http://img.ikanchai.com/templates/ikanchai/html/images/link_logo7.jpg" alt="今日头条"/></a>
-            </div>
-            <div class="partnersimg"><a href="http://www.smallseashell.com" title="创业家" target="_blank"><img
-                            src="http://img.ikanchai.com/templates/ikanchai/html/images/link_logo5.jpg" alt="创业家"/></a>
-            </div>
-            <div class="partnersimg"><a href="http://www.smallseashell.com" title="创享派" target="_blank"><img
-                            src="http://img.ikanchai.com/templates/ikanchai/html/images/link_logo6.jpg" alt="创享派"/></a>
-            </div>
-            <div class="partnersimg"><a href="http://www.smallseashell.com" title="techweb" target="_blank"><img
-                            src="http://img.ikanchai.com/templates/ikanchai/html/images/link_logo8.jpg" alt="techweb"/></a>
+
+            <div class="partnersimg" style="background-color:#4998FD;">
+                <a href="http://www.yidaiyilu.gov.cn" title="中国一带一路网" target="_blank">
+                    <img src="{{ asset('front/index/d/a/link_logo_ydyl.png') }}" style="height:auto;margin-top:15px;" alt="中国一带一路网"/>
+                </a>
             </div>
 
+            <div class="partnersimg">
+                <a href="http://www.xinhuanet.com" title="新华网" target="_blank">
+                    <img src="{{ asset('front/index/d/a/link_logo_xinhua.png') }}" alt="新华网"/>
+                </a>
+            </div>
 
+            <div class="partnersimg">
+                <a href="http://www.wenming.cn" title="中国文明网" target="_blank">
+                    <img src="{{ asset('front/index/d/a/link_logo_zgwmw.png') }}" alt="中国文明网"/>
+                </a>
+            </div>
+
+            <div class="partnersimg">
+                <a href="http://www.people.com.cn" title="人民网" target="_blank">
+                    <img src="{{ asset('front/index/d/a/link_logo_rmw.png') }}" alt="人民网"/>
+                </a>
+            </div>
+
+            <div class="partnersimg">
+                <a href="http://www.chinadaily.com.cn" title="中国日报网" target="_blank">
+                    <img src="{{ asset('front/index/d/a/link_logo_zgrbw.jpg') }}" alt="中国日报网"/>
+                </a>
+            </div>
         </div>
     <!-- @合作伙伴 -->
         <!-- 友情链接 -->
         <div class="links">
             <div class="linkstitle"></div>
             <ul class="ulfix">
-                <li><a href="http://www.smallseashell.com" title="源码" target="_blank">源码</a></li>
-                <li><a href="http://www.smallseashell.com" title="站长精品源码" target="_blank">站长精品源码</a></li>
-
+                <li><a href="http://www.ccdi.gov.cn/" title="中央纪委" target="_blank">中央纪委</a></li>
+                <li><a href="http://www.zgg.gov.cn/" title="紫光阁" target="_blank">紫光阁</a></li>
+                <li><a href="http://www.idcpc.org.cn/" title="中联部" target="_blank">中联部</a></li>
+                <li><a href="http://www.zytzb.org.cn/" title="统战部" target="_blank">统战部</a></li>
+                <li><a href="http://www.scopsr.gov.cn/" title="中编办" target="_blank">中编办</a></li>
+                <li><a href="http://www.scio.gov.cn/" title="新闻办" target="_blank">新闻办</a></li>
+                <li><a href="http://www.locpg.hk/index.htm" title="香港中联办" target="_blank">香港中联办</a></li>
+                <li><a href="http://www.zlb.gov.cn/index.htm" title="澳门中联办" target="_blank">澳门中联办</a></li>
+                <li><a href="http://www.cflac.org.cn/" title="中国文联" target="_blank">中国文联</a></li>
+                <li><a href="http://www.tibet.cn/" title="中国西藏网" target="_blank">中国西藏网</a></li>
+                <li><a href="http://rencai.people.com.cn/" title="中国人才网" target="_blank">中国人才网</a></li>
+                <li><a href="http://www.people.com.cn/" title="人民网" target="_blank">人民网</a></li>
+                <li><a href="http://www.china.com.cn/" title="中国网" target="_blank">中国网</a></li>
+                <li><a href="http://www.cntv.cn/" title="CNTV" target="_blank">CNTV</a></li>
+                <li><a href="http://www.chinadaily.com.cn/" title="中国日报" target="_blank">中国日报</a></li>
+                <li><a href="http://www.cri.cn/" title="国际在线" target="_blank">国际在线</a></li>
+                <li><a href="http://www.youth.cn/" title="中青网" target="_blank">中青网</a></li>
+                <li><a href="http://www.ce.cn/" title="中经网" target="_blank">中经网</a></li>
+                <li><a href="http://www.taiwan.cn/" title="中国台湾网" target="_blank">中国台湾网</a></li>
+                <li><a href="http://www.cnr.cn/" title="央广网" target="_blank">央广网</a></li>
+                <li><a href="http://www.gmw.cn/" title="光明网" target="_blank">光明网</a></li>
+                <li><a href="http://www.chinanews.com/" title="中新网" target="_blank">中新网</a></li>
+                <li><a href="http://www.dangjian.cn/" title="党建网" target="_blank">党建网</a></li>
+                <li><a href="http://www.gov.cn/index.htm" title="中国政府网" target="_blank">中国政府网</a></li>
             </ul>
         </div>
     <!-- @友情链接 -->
@@ -365,20 +403,30 @@
 </div>
 <div id="erweipic" class="erweipic">
 </div>
+
 <div class="footer">
-    <div class="wrapper">
-        <div class="lft">© 2013-2015 砍柴网（www.ikanchai.com）版权所有 备案：沪ICP备12040744号-3</div>
-        <div class="rgt">
-            <a href="/aboutme/index.html" target="_blank"> 关于我们</a><span></span><a href="/aboutme/report.html"
-                                                                                   target="_blank">寻求报道</a><span></span><a
-                    href="/aboutme/submission.html" target="_blank">投稿须知</a><span></span><a
-                    href="/aboutme/cooperation.html" target="_blank">商务合作</a><span></span> <a
-                    href="/aboutme/sitemap.html" target="_blank">网站地图</a>
-            <span></span><a href="/baidunews.xml" target="_blank">百度新闻</a>
-            <span></span><a href="/tags.html" target="_blank">标签云</a>
-            <span></span>
+    <div class="footer-center">
+        <div class="footer-logo">
+            <img src="{{ asset('front/index/style/logo/footer_logo.png') }}" alt="">
+        </div>
+        <div class="footer-word">
+            <ul>
+                <li>
+                    联系电话：010-67867905 <span></span> 联系邮箱：news@vxinghe.com
+                </li>
+                <li>
+                    京ICP备17002707号-1<span></span>|<span></span>京公网安备 11010202007426号<span></span>|<span></span>增值电信业务经营许可证（京B2-20170698）
+                </li>
+                <li>
+                    网络传播视听节目许可证号:0310548<span></span>|<span></span>视听节目制作许可证（京）字第08992号
+                </li>
+                <li>
+                    五洲融媒体科技股份有限公司版权所有，未经书面授权禁止使用
+                </li>
+            </ul>
         </div>
     </div>
+    <div class="div-mask"></div>
 </div>
 <script type="text/javascript" src="/front/index/style/js/common.js"></script>
 <script type="text/javascript" src="/front/index/style/js/index.js"></script>
