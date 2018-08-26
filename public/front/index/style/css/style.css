@@ -177,12 +177,12 @@
 
 /*合作伙伴、友情链接*/
 .main .mainother { width: 1150px; padding: 0 25px; background-color: #fff; margin: 0 auto; overflow: hidden; padding-bottom: 20px; margin-top: 15px;}
-.mainother .partners, .mainother .links { overflow: hidden; }
+.mainother .partners, .mainother .links { overflow: hidden; text-align: center;}
 .mainother .partners .partnerstitle { background: url(../images/partnertitle_new.png) no-repeat; width: 1150px; height: 51px; margin-top: 15px; }
-.mainother .partners .partnersimg { float: left; border: 1px solid #EEEDED; width: 129px; height: 54px; margin: 20px 6px;}
+.mainother .partners .partnersimg { display:inline-block; border: 1px solid #EEEDED; width: 129px; height: 54px; margin: 20px 6px;}
 .mainother .partners .partnersimg img { width: 129px; height: 54px;}
 .mainother .links .linkstitle { background: url(../images/linkstitle_new.png) no-repeat; width: 1150px; height: 51px; margin-top: 15px; }
-.mainother .links ul li { float: left; font-size: 14px; margin: 5px 10px; *width: 80px;}
+.mainother .links ul li { display:inline-block; font-size: 14px; margin: 5px 10px; *width: 80px;}
 
 /*首页-End*/
 

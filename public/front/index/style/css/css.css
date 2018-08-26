@@ -51,7 +51,7 @@ a:hover{text-decoration:none;color:#e60000}
 .bk15{height:15px}
 .bk20{height:20px}
 .floatfix { clear: both; width: 0; height: 0px; margin: 0; padding: 0; border: none; overflow: hidden; font-size: 0px;}
-.ulfix { overflow: auto; zoom: 1; }
+.ulfix { overflow: auto; zoom: 1; text-align:center;}
 .blue{color:#01a998}
 /** 整体宽度 */
 .wrapper{ width:1200px; margin: 0 auto; clear: both; height: auto; position: relative;}
