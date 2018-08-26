@@ -9,6 +9,9 @@ Route::get('contact', 'ContactController@index')->name('contact');
 Route::post('contact/send', 'ContactController@send')->name('contact.send');
 Route::resource('articles', 'ArticleController');
 Route::get('article_pages', 'ArticleController@pages');
+Route::get('infos', function(){
+    return view('frontend.infos');
+});
 
 /*
  * These frontend controllers require the user to be logged in

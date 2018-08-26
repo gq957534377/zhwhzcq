@@ -1,3 +1,14 @@
+.topbar .logo{
+	float:left;
+	overflow:hidden;
+	width:378px;
+	margin: 15px 5px 15px 5px;
+}
+.topbar .logo a{ display:block; height:auto; width:100%;}
+.topbar .logo a img {
+	width:100%;
+	height:auto;
+}
 .main {
 	width: 1200px;
 	margin: auto;

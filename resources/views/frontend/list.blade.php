@@ -156,11 +156,11 @@
     </div>
 </div>
 <div class="header box-shadow min-width1200">
-    <div class="width1200 clear">
+    <div class="width1200 clear topbar">
         <div class="logo">
-            <a href="/" target="_blank"><img src="/front/list/logo_red.png"></a>
+            <a href="JavaScript:;" target="_blank"><img src="{{asset('front/index/style/logo/logo_new.png')}}"></a>
         </div>
-        <div class="menu" style=" width:69%">
+        <div class="menu" style=" width:67%">
             <ul>
                 @foreach($labels as $label)
                     <li>
