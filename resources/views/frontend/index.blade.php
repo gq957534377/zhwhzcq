@@ -148,7 +148,7 @@
             </div>
             <!-- 首页-标语02 -->
             <div class="rightbanber">
-                <a href="/articles?position_id=49"><img src="/front/index/style/images/ent.png"/></a>
+                <a href="javascript:;"><img src="/front/index/style/images/ent.png"/></a>
             </div>
         <!-- @首页-标语02 -->
         </div>
