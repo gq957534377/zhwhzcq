@@ -28,6 +28,7 @@
 	width: 360px;
 	margin-left: 40px;
 	margin-bottom: 40px;
+	margin-top:12px;
 }
 
 .position {
@@ -55,7 +56,6 @@
 
 .article {
 	padding: 20px;
-	border: 1px solid #ccc;
 }
 
 .article-title-1{

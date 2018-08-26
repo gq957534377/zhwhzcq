@@ -145,7 +145,7 @@
 <div class="header box-shadow min-width1200">
     <div class="width1200 clear">
         <div class="logo">
-            <a href="/" target="_blank"><img src="{{asset('front/index/style/logo/logo_new.png')}}"></a>
+            <a href="/" target="_blank"><img style="margin-top: 3%;" src="{{asset('front/index/style/logo/logo_new.png')}}"></a>
         </div>
         <div class="menu" style="width: 67%">
             <ul>
