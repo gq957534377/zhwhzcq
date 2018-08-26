@@ -94,7 +94,7 @@
                 <ul class="img">
                     @foreach($banners as $banner)
                         <li>
-                            <a href="{{ route('frontend.articles.show', ['article' => $banner->id]) }}"
+                            <a href="{{ $banner->url }}"
                                title="{{$banner->title}}">
                                 <img src="{{$banner->file}}" alt="{{$banner->title}}"/>
                             </a>
@@ -105,7 +105,7 @@
                 <div id="ifocus_tx">
                     <ul>
                         @foreach($banners as $banner)
-                            <li><a href="{{ route('frontend.articles.show', ['article' => $banner->id]) }}"
+                            <li><a href="{{ $banner->url}}"
                                    title="{{$banner->title}}">{{$banner->title}}</a></li>
                         @endforeach
                     </ul>
@@ -162,7 +162,7 @@
         <div class="newsl mt-25">
             <!--新闻要点-->
             <div class="chosen">
-                <div class="com-title"><span>新闻要点</span></div>
+                <div class="com-title"><span>新闻要点</span><a href="/articles?position_id=41">MORE</a></div>
                 @foreach($newsPoints as $newsPoint)
                     <div class="chosenbox chosenbox-ml">
                         @if(!empty($newsPoint->banner))
@@ -184,7 +184,7 @@
         <!--@精选导读-->
             <!--外宣媒体-->
             <div class="hot">
-                <div class="com-title"><span>外宣媒体</span></div>
+                <div class="com-title"><span>外宣媒体</span><a href="/articles?position_id=15">MORE</a></div>
                 <div id="content_list">
                     @foreach($newsOut as $item)
 
@@ -196,10 +196,10 @@
                                 </a>
                             </div>
                             @endif
-                            <h3>
+                            <h3 style="margin-top: 0">
                                 <a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}">{{$item->title}}</a>
                             </h3>
-                            <p style="height: 40px;line-height: 20px;">
+                            <p style="height: 55px">
                                 {{str_limit($item->brief,150,'...')}}
                             </p>
                             <span class="fst">{{$item->source}}</span> · <span><time class="timeago"
@@ -217,7 +217,7 @@
 
             <!--专题活动-->
             <div class="hot">
-                <div class="com-title"><span>专题活动</span></div>
+                <div class="com-title"><span>专题活动</span><a href="/articles?position_id=7">MORE</a></div>
                 <div id="content_list">
                     @foreach($thematicActivities as $thematicActivity)
                         <div class="hotbox">
@@ -232,7 +232,7 @@
                                         href="{{ route('frontend.articles.show', ['article' => $thematicActivity->id]) }}">{{$thematicActivity->title}}</a>
                             </h3>
                             <p style="height: 55px">
-                                {{str_limit($thematicActivity->brief,200,'...')}}
+                                {{str_limit($thematicActivity->brief,150,'...')}}
                             </p>
 
                             <span class="fst">{{$thematicActivity->source}}</span> · <span><time class="timeago"
@@ -266,7 +266,7 @@
             <!--本月焦点-->
 
             <div class="read">
-                <div class="com-title"><span>本月焦点</span></div>
+                <div class="com-title"><span>本月焦点</span><a href="/articles?position_id=43">MORE</a></div>
                 @foreach($monthPoints as $item)
                     <a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}"><img
                                 src="{{$item->banner}}" alt="{{$item->title}}"/></a>
@@ -317,7 +317,7 @@
             </div>-->
             <!--文化投资-->
             <div class="newsletter">
-                <div class="com-title"><span>文化投资</span></div>
+                <div class="com-title"><span>文化投资</span><a href="/articles?position_id=44">MORE</a></div>
                 <ul>
                     @foreach($culturalInvestment as $item)
                         <li><a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}"
@@ -404,30 +404,8 @@
 <div id="erweipic" class="erweipic">
 </div>
 
-<div class="footer">
-    <div class="footer-center">
-        <div class="footer-logo">
-            <img src="{{ asset('front/index/style/logo/footer_logo.png') }}" alt="">
-        </div>
-        <div class="footer-word">
-            <ul>
-                <li>
-                    联系电话：010-67867905 <span></span> 联系邮箱：news@vxinghe.com
-                </li>
-                <li>
-                    京ICP备17002707号-1<span></span>|<span></span>京公网安备 11010202007426号<span></span>|<span></span>增值电信业务经营许可证（京B2-20170698）
-                </li>
-                <li>
-                    网络传播视听节目许可证号:0310548<span></span>|<span></span>视听节目制作许可证（京）字第08992号
-                </li>
-                <li>
-                    五洲融媒体科技股份有限公司版权所有，未经书面授权禁止使用
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="div-mask"></div>
-</div>
+@include('frontend.includes.footer')
+
 <script type="text/javascript" src="/front/index/style/js/common.js"></script>
 <script type="text/javascript" src="/front/index/style/js/index.js"></script>
 </body>
