@@ -50,7 +50,7 @@ class BannerController extends Controller
             'title' => $request->title,
             'file' => $request->file,
             'url' => $request->url,
-            'sort' => $request->sort,
+            'sort' => $request->sort??0,
         ]);
 
         return redirect()->route('admin.banners.index')->withFlashSuccess('添加缩略图成功');
@@ -82,7 +82,7 @@ class BannerController extends Controller
             'title' => $request->title,
             'file' => $request->file,
             'url' => $request->url,
-            'sort' => $request->sort,
+            'sort' => $request->sort??0,
         ]);
 
         return redirect()->route('admin.banners.index')->withFlashSuccess('修改缩略图成功');
