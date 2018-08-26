@@ -43,7 +43,7 @@
                 @endforeach
         </ul>
         <div class="mtopic">
-            <a href="/articles?position_id=47"><img
+            <a href="/articles?position_id=50"><img
                         src="{{ asset('/front/index/style/topic/mtopic-201808242159.jpg') }}"/></a>
         </div>
         <div class="msearch">
