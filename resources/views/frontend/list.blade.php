@@ -201,7 +201,7 @@
                             <p style="font-size: 16px;">
                                 {{$article->brief}}
                             </p>
-                            <span class="fst">{{$article->author}}&nbsp;&nbsp;{{$article->created_at}}</span>
+                            <span class="fst">{{$article->author}}&nbsp;&nbsp;{{$article->created_at->format('Y-m-d')}}</span>
                             {{--<span>{{$article->created_at}}</span>--}}
                         </div>
                     </li>

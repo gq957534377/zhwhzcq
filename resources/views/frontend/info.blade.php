@@ -145,7 +145,7 @@
 <div class="header box-shadow min-width1200">
     <div class="width1200 clear">
         <div class="logo">
-            <a href="javascript:;" target="_blank"><img src="{{asset('front/index/style/logo/logo_new.png')}}"></a>
+            <a href="/" target="_blank"><img src="{{asset('front/index/style/logo/logo_new.png')}}"></a>
         </div>
         <div class="menu" style="width: 67%">
             <ul>
@@ -170,7 +170,7 @@
             <div class="article-title">{{$article->title}}</div>
             <div class="article-about clear">
                 <div class="float-left">
-                    <span class="article-time">发布时间：{{$article->created_at}}</span>
+                    <span class="article-time">发布时间：{{$article->created_at->format('Y-m-d')}}</span>
                     <span class="article-from">来源：                            <a
                                 href="http://www.taiwan.cn/31t/wh31/201804/t20180423_11947430.htm" target="_blank"
                                 rel="nofollow">{{$article->source}}</a>
