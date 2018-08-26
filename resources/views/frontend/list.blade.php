@@ -158,15 +158,14 @@
 <div class="header box-shadow min-width1200">
     <div class="width1200 clear topbar">
         <div class="logo">
-            <a href="/" target="_blank"><img style="margin-top: 3%" src="{{asset('front/index/style/logo/logo_new.png')}}"></a>
+            <a href="/"><img style="margin-top: 3%" src="{{asset('front/index/style/logo/logo_new.png')}}"></a>
         </div>
         <div class="menu" style=" width:67%">
             <ul>
                 @foreach($labels as $label)
                     <li>
                         <p>
-                            <a href="{{url('/articles?position_id='.$label->id)}}"
-                               target="_blank">{{$label->name}}</a>
+                            <a href="{{url('/articles?position_id='.$label->id)}}">{{$label->name}}</a>
                         </p>
                     </li>
 
@@ -189,12 +188,11 @@
                 @foreach($articles as $article)
                     <li>
                         <div class="list-title">
-                            <a href="/articles/{{$article->id}}" target="_blank">{{$article->title}}</a>
+                            <a href="/articles/{{$article->id}}">{{$article->title}}</a>
                         </div>
                         @if(!empty($article->banner))
                             <div class="list-image">
-                                <a href="/articles/{{$article->id}}" target="_blank"><img
-                                            src="{{$article->banner}}"></a>
+                                <a href="/articles/{{$article->id}}"><img src="{{$article->banner}}"></a>
                             </div>
                         @endif
                         <div class="list-content">
@@ -223,8 +221,7 @@
                 @foreach($hotArticles as  $k => $hotArticle)
                     <li>
                         <div>{{$k+1}}</div>
-                        <a href="/articles/{{$hotArticle->id}}"
-                           target="_blank">{{$hotArticle->title}}</a>
+                        <a href="/articles/{{$hotArticle->id}}">{{$hotArticle->title}}</a>
                     </li>
                 @endforeach
             </ul>
@@ -237,14 +234,12 @@
                 @foreach($pointArticles as  $pointArticle)
                     <li>
                         <div class="xinwen-right-image">
-                            <a href="/articles/{{$pointArticle->id}}"
-                               target="_blank">
+                            <a href="/articles/{{$pointArticle->id}}">
                                 <img style="width: 360px;height: 210px" src="{{$pointArticle->banner}}">
                             </a>
                         </div>
                         <div class="xinwen-right-title">
-                            <a href="/articles/{{$pointArticle->id}}"
-                               target="_blank">{{$pointArticle->title}}</a>
+                            <a href="/articles/{{$pointArticle->id}}">{{$pointArticle->title}}</a>
                         </div>
                     </li>
                 @endforeach
@@ -303,11 +298,11 @@
                     var html = data.ResultData.data.map(function (res) {
                         html = '<li>';
                         html += '<div class="list-title">';
-                        html += '<a href="/articles/' + res.id + '" target="_blank">' + res.title + '</a>';
+                        html += '<a href="/articles/' + res.id + '">' + res.title + '</a>';
                         html += '</div>';
                         if (res.banner) {
                             html += '<div class="list-image">';
-                            html += '<a href="/articles/' + res.id + '" target="_blank"><img src="' + res.banner + '"></a>';
+                            html += '<a href="/articles/' + res.id + '"><img src="' + res.banner + '"></a>';
                             html += '</div>';
                         }
 

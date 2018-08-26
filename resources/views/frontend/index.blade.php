@@ -174,7 +174,7 @@
                         </div>
                         @endif
                         <h3><a href="{{ route('frontend.articles.show', ['article' => $newsPoint->id]) }}"
-                               title="{{$newsPoint->title}}" target="_blank">{{$newsPoint->title}}</a>
+                               title="{{$newsPoint->title}}">{{$newsPoint->title}}</a>
                         </h3>
                         <p>{{$newsPoint->brief}}…</p>
                     </div>
