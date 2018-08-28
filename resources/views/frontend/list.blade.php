@@ -206,7 +206,16 @@
                             </div>
                         </li>
                     @else
-
+                        <li>
+                            <div class="list-title">
+                                <a href="/articles/{{$article->id}}}">{{$article->title}}</a>
+                            </div>
+                            @foreach($article->atlas as $item)
+                                <div class="list-image" style="margin-right: 25px;">
+                                    <img src="{{$item->banner}}">
+                                </div>
+                            @endforeach
+                        </li>
                     @endif
                 @endforeach
             </ul>
@@ -301,23 +310,27 @@
             success: function (data) {
                 if (data.StatusCode === 200) {
                     var html = data.ResultData.data.map(function (res) {
-                        html = '<li>';
-                        html += '<div class="list-title">';
-                        html += '<a href="/articles/' + res.id + '">' + res.title + '</a>';
-                        html += '</div>';
-                        if (res.banner) {
-                            html += '<div class="list-image">';
-                            html += '<a href="/articles/' + res.id + '"><img src="' + res.banner + '"></a>';
+                        if (res.type == 1) {
+                            html = '<li>';
+                            html += '<div class="list-title">';
+                            html += '<a href="/articles/' + res.id + '">' + res.title + '</a>';
                             html += '</div>';
-                        }
+                            if (res.banner) {
+                                html += '<div class="list-image">';
+                                html += '<a href="/articles/' + res.id + '"><img src="' + res.banner + '"></a>';
+                                html += '</div>';
+                            }
 
-                        html += '<div class="list-content">';
-                        html += '<p style="font-size: 16px;">';
-                        html += res.brief;
-                        html += '</p>';
-                        html += '<span class="fst">' + res.author + '&nbsp;&nbsp;' + res.created_at + '</span>';
-                        html += '</div>';
-                        html += '</li>';
+                            html += '<div class="list-content">';
+                            html += '<p style="font-size: 16px;">';
+                            html += res.brief;
+                            html += '</p>';
+                            html += '<span class="fst">' + res.author + '&nbsp;&nbsp;' + res.created_at + '</span>';
+                            html += '</div>';
+                            html += '</li>';
+                        } else {
+html+='';
+                        }
                         return html;
                     });
                     console.log(html);

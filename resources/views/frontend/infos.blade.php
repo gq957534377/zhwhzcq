@@ -175,8 +175,8 @@
 
 <div class="main clear">
     <div class="detail">
-        <h2 class="">政府工作报告学习问答</h2>
-        <p class="title-p clear"><span class="float-left">2018.08.10</span><span
+        <h2 class="">{{$article->title}}}</h2>
+        <p class="title-p clear"><span class="float-left">{{$article->created_at}}</span><span
                     class="float-right">支持 ← → 键翻阅图片️</span></p>
         <div class="banner one-row">
             <div class="clear list-nav" style="width: 400%;position: relative;left: 0;top: 0;">
@@ -230,7 +230,7 @@
             </ul>
         </div>
         <div class="clear info-nav">
-            <p class="float-left info-nav-left"><span>1</span> / 9</p>
+            <p class="float-left info-nav-left"><span>1</span> / {{count($article->atlas)}}</p>
             <div class="float-right info-nav-right">
                 @foreach($article->atlas as $item)
                     <p class="display-none">
