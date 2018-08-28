@@ -202,31 +202,7 @@
 @endsection
 @section('scripts')
     <script type="text/javascript">
-        var ue = UE.getEditor('content', {
-            autoHeightEnabled: false,
-            minFrameHeight: 500,
-            scaleEnabled: true,
-            autoFloatEnabled: true,
-        });
-        ue.ready(function () {
-            ue.execCommand('serverparam', '_token', '{{ csrf_token() }}'); // 设置 CSRF token.
-        });
-        window.zxzIsGood = function(data, field){
-            if (data.StatusCode===200){
-                $('#banner_up-img').attr('src',data.ResultData);
-                $('#banner_up').val(data.ResultData);
-                $('.vicp-icon4').trigger('click');
-            }else{
-                alert(data.ResultData);
-            }
-        }
-    </script>
-
-    <script type="text/javascript">
-        var ue = UE.getEditor('content', {
-            autoHeightEnabled: true,
-            autoFloatEnabled: true,
-        });
+        var ue = UE.getEditor('content', {});
         ue.ready(function () {
             ue.execCommand('serverparam', '_token', '{{ csrf_token() }}'); // 设置 CSRF token.
         });

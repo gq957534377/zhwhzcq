@@ -11,17 +11,28 @@
     <link rel="stylesheet" href="/front/info/detail.css">
     <link rel="stylesheet" href="/front/info/sidebar.css">
     <link rel="stylesheet" href="/front/info/footer.css">
+    <link rel="stylesheet" href="/vendor/ueditor/third-party/video-js/video-js.css">
+    <link rel="stylesheet" href="/front/info/common.css">
     <style>
         @media screen and (max-width: 1270px) {
             body, .friendship-link, .footer, .div-mask {
                 width: 1270px;
             }
         }
+
+        .vjs-default-skin .vjs-big-play-button {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        .vjs-paused .vjs-big-play-button,
+        .vjs-paused.vjs-has-started .vjs-big-play-button {
+            display: block;
+        }
     </style>
 </head>
 <body>
-
-<link rel="stylesheet" href="/front/info/common.css">
 <div class="nav">
     <div class="width1200">
         <div class="language">
@@ -258,5 +269,6 @@
 
 </body>
 <script src="/front/info/jquery-1.12.4.min.js" type="text/javascript"></script>
+<script src="/vendor/ueditor/third-party/video-js/video.js" type="text/javascript"></script>
 <script type="application/javascript" src="/front/info/common.js"></script>
 </html>
