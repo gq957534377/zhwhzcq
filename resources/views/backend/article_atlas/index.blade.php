@@ -27,6 +27,7 @@
                         <table class="table">
                             <thead>
                             <tr>
+                                <th>ID</th>
                                 <th>标题</th>
                                 <th>来源</th>
                                 <th>缩略图</th>
@@ -41,6 +42,7 @@
                             <tbody>
                             @foreach ($articles as $article)
                                 <tr>
+                                    <td>{{ $article->id}}</td>
                                     <td>{{ $article->title}}</td>
                                     <td>{{ $article->source}}</td>
                                     <td>

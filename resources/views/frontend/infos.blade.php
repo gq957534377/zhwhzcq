@@ -180,26 +180,13 @@
                     class="float-right">支持 ← → 键翻阅图片️</span></p>
         <div class="banner one-row">
             <div class="clear list-nav" style="width: 400%;position: relative;left: 0;top: 0;">
-                <div class="innerwraper">
-                    <a>
-                        <img src="/front/info/prod-1.jpg"/>
-                    </a>
-                </div>
-                <div class="innerwraper">
-                    <a>
-                        <img src="/front/info/prod-2.jpg"/>
-                    </a>
-                </div>
-                <div class="innerwraper">
-                    <a>
-                        <img src="/front/info/prod-3.jpg"/>
-                    </a>
-                </div>
-                <div class="innerwraper">
-                    <a>
-                        <img src="/front/info/prod-4.jpg"/>
-                    </a>
-                </div>
+                @foreach($article->atlas as $item)
+                    <div class="innerwraper">
+                        <a>
+                            <img src="{{$item->banner}}"/>
+                        </a>
+                    </div>
+                @endforeach
             </div>
             <span class="img-prev"></span>
             <span class="img-next"></span>
@@ -245,23 +232,23 @@
         <div class="clear info-nav">
             <p class="float-left info-nav-left"><span>1</span> / 9</p>
             <div class="float-right info-nav-right">
-                <p class="display-none">
-                    奥术大师大所多奥术大师大所大所大所多奥术大师大所多奥术大师大所大所大所多奥术大师大所多奥术大师大所大所大所多奥术大师大所多奥术大师大所大所大所多奥术大师大所多奥术大师大所大所大所多</p>
-                <p class="display-none">奥术大师大所多奥术大师大所大所大所多</p>
-                <p class="display-none">asdasdasasdsa</p>
-                <p class="display-none">kjhbjknkjnkj</p>
+                @foreach($article->atlas as $item)
+                    <p class="display-none">
+                        {{$item->brief}}</p>
+                @endforeach
             </div>
         </div>
     </div>
     <div class="recommend">
         <h1><span>相关推荐</span></h1>
-
         <ul class="recommend-list clear">
             @foreach($hotArticles as $hotArticle)
-                <li>
-                    <img src="{{$hotArticle->Atlas->first()->banner??''}}"/>
-                    <p class="recommend-list-li-p">{{$hotArticle->title}}</p>
-                </li>
+                <a href="/articles/{{$hotArticle->id}}">
+                    <li>
+                        <img src="{{$hotArticle->Atlas->first()->banner??''}}"/>
+                        <p class="recommend-list-li-p">{{$hotArticle->title}}</p>
+                    </li>
+                </a>
             @endforeach
         </ul>
     </div>
