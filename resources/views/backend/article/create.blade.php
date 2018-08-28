@@ -7,6 +7,14 @@
 @endsection
 @section('styles')
     <link rel="stylesheet" type="text/css" href="/admin_crop.min.css"/>
+    <style type="text/css">
+        /*.edui-default .edui-editor {*/
+        .edui-default .edui-editor-iframeholder {
+            background-image: url(/img/backend/col-dot.png);
+            background-position-x: 765px;
+            background-repeat: repeat-y;
+        }
+    </style>
 @endsection
 
 @section('content')
