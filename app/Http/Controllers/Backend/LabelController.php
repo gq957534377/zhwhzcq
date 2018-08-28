@@ -33,9 +33,7 @@ class LabelController extends Controller
      */
     public function create()
     {
-        $labels = Label::where(['stage' => 1])->get();
-
-        return view('backend.label.create', ['labels' => $labels]);
+        return view('backend.label.create');
     }
 
     /**

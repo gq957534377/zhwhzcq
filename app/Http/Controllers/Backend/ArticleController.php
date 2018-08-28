@@ -21,7 +21,7 @@ class ArticleController extends Controller
      */
     public function index(Request $request)
     {
-        $where = [];
+        $where = ['type' => 1];
 
         $query = Article::where($where);
 
@@ -70,12 +70,13 @@ class ArticleController extends Controller
                 'author' => $request->author,
                 'sort' => $request->sort??0,
                 'content' => $request->get('content'),
+                'type' => 1,
             ]);
 
             foreach ($request->labels as $labelId) {
                 ArticleRelLabel::create([
                     'article_id' => $article->id,
-                    'label_id' => $labelId
+                    'label_id' => $labelId,
                 ]);
             }
             \DB::commit();
@@ -123,15 +124,15 @@ class ArticleController extends Controller
                 'content' => $request->get('content'),
             ]);
 
-            ArticleRelLabel::whereIn('label_id', $article->labels->pluck('id')->toArray())
-                ->where('article_id', $article->id)
-                ->delete();
+            if ($request->labels != $article->labels->pluck('id')->toArray()) {
+                ArticleRelLabel::where('article_id', $article->id)->delete();
 
-            foreach ($request->labels as $labelId) {
-                ArticleRelLabel::create([
-                    'article_id' => $article->id,
-                    'label_id' => $labelId
-                ]);
+                foreach ($request->labels as $labelId) {
+                    ArticleRelLabel::create([
+                        'article_id' => $article->id,
+                        'label_id' => $labelId
+                    ]);
+                }
             }
             \DB::commit();
         } catch (\Exception $e) {

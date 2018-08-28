@@ -74,4 +74,13 @@ class Article extends Model
             'article_id', 'label_id'
         );
     }
+
+    public function Atlas()
+    {
+        return $this->belongsToMany(
+            Atlas::class,
+            'article_has_atlas',
+            'article_id', 'atlas_id'
+        );
+    }
 }

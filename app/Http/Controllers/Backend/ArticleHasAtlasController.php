@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Models\ArticleForAtlas;
+use App\Models\Article;
 use App\Models\ArticleHasAtlas;
 use App\Models\Atlas;
 use Illuminate\Http\Request;
@@ -14,7 +14,7 @@ class ArticleHasAtlasController extends Controller
 
     public function __construct(Request $request)
     {
-        if (empty($request->article_id) || empty($article = ArticleForAtlas::find($request->article_id))) abort('404');
+        if (empty($request->article_id) || empty($article = Article::find($request->article_id))) abort('404');
         $this->article = $article;
     }
 

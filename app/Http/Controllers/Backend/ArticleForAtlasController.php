@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Requests\Backend\ArticleForAtlasRequest;
-use App\Models\ArticleForAtlas;
-use App\Models\ArticleHasAtlas;
-use App\Models\ArticleHasLabel;
+use App\Models\Article;
+use App\Models\ArticleRelLabel;
 use App\Models\Label;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -21,9 +20,9 @@ class ArticleForAtlasController extends Controller
      */
     public function index(Request $request)
     {
-        $where = [];
+        $where = ['type' => 2];
 
-        $query = ArticleForAtlas::where($where);
+        $query = Article::where($where);
 
         if (!empty($request->title)) {
             $query = $query->where('title', 'like', '%' . $request->title . '%');
@@ -61,17 +60,18 @@ class ArticleForAtlasController extends Controller
     {
         \DB::beginTransaction();
         try {
-            $article = ArticleForAtlas::create([
+            $article = Article::create([
                 'title' => $request->title,
                 'source' => $request->source,
                 'brief' => $request->brief,
                 'url' => $request->url,
                 'author' => $request->author,
                 'sort' => $request->sort??0,
+                'type' => 2,
             ]);
 
             foreach ($request->labels as $labelId) {
-                ArticleHasLabel::create([
+                ArticleRelLabel::create([
                     'article_id' => $article->id,
                     'label_id' => $labelId
                 ]);
@@ -94,7 +94,7 @@ class ArticleForAtlasController extends Controller
      */
     public function edit($id)
     {
-        $article = ArticleForAtlas::findOrFail($id);
+        $article = Article::findOrFail($id);
         $labels = Label::get();
 
         return view('backend.article_atlas.edit', ['labels' => $labels, 'article' => $article]);
@@ -110,11 +110,11 @@ class ArticleForAtlasController extends Controller
      */
     public function update($id, ArticleForAtlasRequest $request)
     {
-        $article = ArticleForAtlas::findOrFail($id);
+        $article = Article::findOrFail($id);
 
         \DB::beginTransaction();
         try {
-            ArticleForAtlas::where(['id' => $article->id])->update([
+            Article::where(['id' => $article->id])->update([
                 'title' => $request->title,
                 'source' => $request->source,
                 'brief' => $request->brief,
@@ -123,15 +123,17 @@ class ArticleForAtlasController extends Controller
                 'sort' => $request->sort??0,
             ]);
 
-            ArticleHasLabel::whereIn('label_id', $article->labels->pluck('id')->toArray())
-                ->where('article_id', $article->id)
-                ->delete();
-            foreach ($request->labels as $labelId) {
-                ArticleHasLabel::create([
-                    'article_id' => $article->id,
-                    'label_id' => $labelId
-                ]);
+            if ($request->labels != $article->labels->pluck('id')->toArray()) {
+                ArticleRelLabel::where('article_id', $article->id)->delete();
+
+                foreach ($request->labels as $labelId) {
+                    ArticleRelLabel::create([
+                        'article_id' => $article->id,
+                        'label_id' => $labelId
+                    ]);
+                }
             }
+
             \DB::commit();
         } catch (\Exception $e) {
             \DB::rollBack();
@@ -149,7 +151,7 @@ class ArticleForAtlasController extends Controller
      */
     public function destroy($id)
     {
-        $article = ArticleForAtlas::findOrFail($id);
+        $article = Article::findOrFail($id);
 
         $article->delete();
 
