@@ -14,6 +14,12 @@
             background-position-x: 765px;
             background-repeat: repeat-y;
         }
+
+        .edui-default .edui-editor {
+            background-image: url(/img/backend/col-dot.png);
+            background-repeat: repeat-y;
+            background-position-x: calc(50% + 385px);
+        }
     </style>
 @endsection
 
