@@ -13,9 +13,9 @@ class UpdateArticle extends Migration
      */
     public function up()
     {
-//        Schema::table('articles', function (Blueprint $table) {
-//            $table->unsignedTinyInteger('type')->default(1)->comment('文章类型');
-//        });
+        Schema::table('articles', function (Blueprint $table) {
+            $table->unsignedTinyInteger('type')->default(1)->comment('文章类型');
+        });
         \App\Models\ArticleForAtlas::where([])->get()->map(function ($item) {
             $articleId = \App\Models\Article::insertGetId([
                 'type' => 2,
