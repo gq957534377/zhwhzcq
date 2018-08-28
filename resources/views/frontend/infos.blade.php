@@ -194,39 +194,14 @@
         <div class="display-none atlas">
             <h3 class="atlas-title">图集推荐 <span class="float-right">X</span></h3>
             <ul class="atlas-list clear" id="buttons">
-                <li>
-                    <img src="/front/info/prod-1.jpg"/>
-                    <p class="recommend-list-li-p">中国成功发射两个北斗导航卫星</p>
-                </li>
-                <li>
-                    <img src="/front/info/prod-1.jpg"/>
-                    <p class="recommend-list-li-p">中国成功发射两个北斗导航卫星</p>
-                </li>
-                <li>
-                    <img src="/front/info/prod-1.jpg"/>
-                    <p class="recommend-list-li-p">中国成功发射两个北斗导航卫星</p>
-                </li>
-                <li>
-                    <img src="/front/info/prod-1.jpg"/>
-                    <p class="recommend-list-li-p">中国成功发射两个北斗导航卫星</p>
-                </li>
-                <li>
-                    <img src="/front/info/prod-1.jpg"/>
-                    <p class="recommend-list-li-p">中国成功发射两个北斗导航卫星</p>
-                </li>
-                <li>
-                    <img src="/front/info/prod-1.jpg"/>
-                    <p class="recommend-list-li-p">中国成功发射两个北斗导航卫星</p>
-                </li>
-                <li>
-                    <img src="/front/info/prod-1.jpg"/>
-                    <p class="recommend-list-li-p">中国成功发射两个北斗导航卫星</p>
-                </li>
-                <li>
-                    <img src="/front/info/prod-1.jpg"/>
-                    <p class="recommend-list-li-p">中国成功发射两个北斗导航卫星</p>
-                </li>
-
+                @foreach($hotArticles as $hotArticle)
+                    <a href="/articles/{{$hotArticle->id}}">
+                        <li>
+                            <img src="{{$hotArticle->Atlas->first()->banner??''}}"/>
+                            <p class="recommend-list-li-p">{{$hotArticle->title}}</p>
+                        </li>
+                    </a>
+                @endforeach
             </ul>
         </div>
         <div class="clear info-nav">
@@ -242,13 +217,18 @@
     <div class="recommend">
         <h1><span>相关推荐</span></h1>
         <ul class="recommend-list clear">
-            @foreach($hotArticles as $hotArticle)
+            @foreach($hotArticles as $k=>$hotArticle)
                 <a href="/articles/{{$hotArticle->id}}">
                     <li>
                         <img src="{{$hotArticle->Atlas->first()->banner??''}}"/>
                         <p class="recommend-list-li-p">{{$hotArticle->title}}</p>
                     </li>
                 </a>
+                <?php
+                if ($k == 3) {
+                    break;
+                }
+                ?>
             @endforeach
         </ul>
     </div>

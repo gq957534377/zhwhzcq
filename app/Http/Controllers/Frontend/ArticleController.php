@@ -112,7 +112,7 @@ class ArticleController extends Controller
                 'labels' => $labels,
                 'hotArticles' => Article::where('type', 2)
                     ->orderBy('updated_at', 'desc')
-                    ->take(4)
+                    ->take(8)
                     ->get(),
             ]);
         }

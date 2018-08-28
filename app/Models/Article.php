@@ -14,7 +14,7 @@ class Article extends Model
 
     protected $dates = ['deleted_at'];
 
-    protected $appends=['banner_url'];
+    protected $appends=['atlas'];
 
     /**
      * 说明: 返回轮播图拼装好的地址
@@ -75,12 +75,12 @@ class Article extends Model
         );
     }
 
-    public function Atlas()
+    public function getAtlasAttribute()
     {
         return $this->belongsToMany(
             Atlas::class,
             'article_has_atlas',
             'article_id', 'atlas_id'
-        );
+        )->get();
     }
 }

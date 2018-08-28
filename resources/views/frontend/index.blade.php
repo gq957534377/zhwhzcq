@@ -14,6 +14,16 @@
     <link rel="shortcut icon" href="/favicon.ico"/>
     <script type="text/javascript" src="/front/index/style/js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="/front/index/style/js/jquery.timeago.js"></script>
+    <style>
+        .list-image {
+            overflow: hidden;
+            width: 240px;
+            height: 135px;
+            float: left;
+            margin-right: 30px;
+            box-shadow: 0 0 1px #000;
+        }
+    </style>
 </head>
 <body>
 <!--网站公共头部-->
@@ -164,20 +174,33 @@
             <div class="chosen">
                 <div class="com-title"><span>新闻要点</span><a href="/articles?position_id=41">MORE</a></div>
                 @foreach($newsPoints as $newsPoint)
-                    <div class="chosenbox chosenbox-ml">
-                        @if(!empty($newsPoint->banner))
-                        <div class="chosenimg">
-                            <a href="{{ route('frontend.articles.show', ['article' => $newsPoint->id]) }}"
-                               title="{{$newsPoint->title}}">
-                                <img src="{{$newsPoint->banner}}" alt="{{$newsPoint->title}}"/>
-                            </a>
+                    @if($newsPoint->type==1)
+                        <div class="chosenbox chosenbox-ml">
+                            @if(!empty($newsPoint->banner))
+                                <div class="chosenimg">
+                                    <a href="{{ route('frontend.articles.show', ['article' => $newsPoint->id]) }}"
+                                       title="{{$newsPoint->title}}">
+                                        <img src="{{$newsPoint->banner}}" alt="{{$newsPoint->title}}"/>
+                                    </a>
+                                </div>
+                            @endif
+                            <h3><a href="{{ route('frontend.articles.show', ['article' => $newsPoint->id]) }}"
+                                   title="{{$newsPoint->title}}">{{$newsPoint->title}}</a>
+                            </h3>
+                            <p>{{$newsPoint->brief}}…</p>
                         </div>
-                        @endif
-                        <h3><a href="{{ route('frontend.articles.show', ['article' => $newsPoint->id]) }}"
-                               title="{{$newsPoint->title}}">{{$newsPoint->title}}</a>
-                        </h3>
-                        <p>{{$newsPoint->brief}}…</p>
-                    </div>
+                    @else
+                        <div>
+                            <div class="list-title">
+                                <a href="/articles/{{$newsPoint->id}}">{{$newsPoint->title}}</a>
+                            </div>
+                            @foreach($newsPoint->atlas as $tempAtlas)
+                                <div class="list-image">
+                                    <img style="width: 100%" src="{{$tempAtlas->banner}}">
+                                </div>
+                            @endforeach
+                        </div>
+                    @endif
                 @endforeach
                 <div class="floatfix"></div>
             </div>
@@ -187,24 +210,36 @@
                 <div class="com-title"><span>外宣媒体</span><a href="/articles?position_id=15">MORE</a></div>
                 <div id="content_list">
                     @foreach($newsOut as $item)
-
-                        <div class="hotbox">
-                            @if(!empty($item->banner))
-                            <div class="hotimg">
-                                <a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}">
-                                    <img src="{{$item->banner}}" alt="{{$item->title}}"/>
-                                </a>
+                        @if($item->type==1)
+                            <div class="hotbox">
+                                @if(!empty($item->banner))
+                                    <div class="hotimg">
+                                        <a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}">
+                                            <img src="{{$item->banner}}" alt="{{$item->title}}"/>
+                                        </a>
+                                    </div>
+                                @endif
+                                <h3 style="margin-top: 0">
+                                    <a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}">{{$item->title}}</a>
+                                </h3>
+                                <p style="height: 55px">
+                                    {{str_limit($item->brief,150,'...')}}
+                                </p>
+                                <span class="fst">{{$item->source}}</span> · <span><time class="timeago"
+                                                                                         datetime="{{$item->created_at}}"></time></span>
                             </div>
-                            @endif
-                            <h3 style="margin-top: 0">
-                                <a href="{{ route('frontend.articles.show', ['article' => $item->id]) }}">{{$item->title}}</a>
-                            </h3>
-                            <p style="height: 55px">
-                                {{str_limit($item->brief,150,'...')}}
-                            </p>
-                            <span class="fst">{{$item->source}}</span> · <span><time class="timeago"
-                                                                                     datetime="{{$item->created_at}}"></time></span>
-                        </div>
+                        @else
+                            <li>
+                                <div class="list-title">
+                                    <a href="/articles/{{$item->id}}">{{$item->title}}</a>
+                                </div>
+                                @foreach($item->atlas as $atlas)
+                                    <div class="list-image">
+                                        <img style="width: 100%" src="{{$atlas->banner}}">
+                                    </div>
+                                @endforeach
+                            </li>
+                        @endif
                     @endforeach
 
                 </div>
@@ -220,24 +255,38 @@
                 <div class="com-title"><span>专题活动</span><a href="/articles?position_id=7">MORE</a></div>
                 <div id="content_list">
                     @foreach($thematicActivities as $thematicActivity)
-                        <div class="hotbox">
-                            @if(!empty($thematicActivity->banner))
-                                <div class="hotimg">
-                                    <a href="{{ route('frontend.articles.show', ['article' => $thematicActivity->id]) }}"><img
-                                                src="{{$thematicActivity->banner}}" alt="{{$thematicActivity->title}}"/></a>
+                        @if($thematicActivity->type==1)
+                            <div class="hotbox">
+                                @if(!empty($thematicActivity->banner))
+                                    <div class="hotimg">
+                                        <a href="{{ route('frontend.articles.show', ['article' => $thematicActivity->id]) }}"><img
+                                                    src="{{$thematicActivity->banner}}"
+                                                    alt="{{$thematicActivity->title}}"/></a>
+                                    </div>
+                                @endif
+
+                                <h3 style="margin-top: 0"><a
+                                            href="{{ route('frontend.articles.show', ['article' => $thematicActivity->id]) }}">{{$thematicActivity->title}}</a>
+                                </h3>
+                                <p style="height: 55px">
+                                    {{str_limit($thematicActivity->brief,150,'...')}}
+                                </p>
+
+                                <span class="fst">{{$thematicActivity->source}}</span> · <span><time class="timeago"
+                                                                                                     datetime="{{$thematicActivity->created_at}}"></time></span>
+                            </div>
+                        @else
+                            <li>
+                                <div class="list-title">
+                                    <a href="/articles/{{$thematicActivity->id}}">{{$thematicActivity->title}}</a>
                                 </div>
-                            @endif
-
-                            <h3 style="margin-top: 0"><a
-                                        href="{{ route('frontend.articles.show', ['article' => $thematicActivity->id]) }}">{{$thematicActivity->title}}</a>
-                            </h3>
-                            <p style="height: 55px">
-                                {{str_limit($thematicActivity->brief,150,'...')}}
-                            </p>
-
-                            <span class="fst">{{$thematicActivity->source}}</span> · <span><time class="timeago"
-                                                                                                 datetime="{{$thematicActivity->created_at}}"></time></span>
-                        </div>
+                                @foreach($thematicActivity->atlas as $temp)
+                                    <div class="list-image">
+                                        <img style="width: 100%" src="{{$temp->banner}}">
+                                    </div>
+                                @endforeach
+                            </li>
+                        @endif
                     @endforeach
 
                 </div>
@@ -339,7 +388,8 @@
 
             <div class="partnersimg" style="background-color:#4998FD;">
                 <a href="http://www.yidaiyilu.gov.cn" title="中国一带一路网" target="_blank">
-                    <img src="{{ asset('front/index/d/a/link_logo_ydyl.png') }}" style="height:auto;margin-top:15px;" alt="中国一带一路网"/>
+                    <img src="{{ asset('front/index/d/a/link_logo_ydyl.png') }}" style="height:auto;margin-top:15px;"
+                         alt="中国一带一路网"/>
                 </a>
             </div>
 

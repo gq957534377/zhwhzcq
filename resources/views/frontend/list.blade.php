@@ -329,7 +329,14 @@
                             html += '</div>';
                             html += '</li>';
                         } else {
-html+='';
+                            html += '<li>';
+                            html += '<div class="list-title">';
+                            html += '<a href = "/articles/' + res.id + '">' + res.title + '</a>';
+                            html += '</div>';
+                            html += res.atlas.map(function (img) {
+                                return '<div class="list-image" style="margin-right: 25px;"><img src="' + img.banner + '"></div>';
+                            });
+                            html += '</li>';
                         }
                         return html;
                     });
