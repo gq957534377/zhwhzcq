@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Requests\Backend\ArticleForAtlasRequest;
 use App\Models\ArticleForAtlas;
 use App\Models\ArticleHasAtlas;
-use App\Models\ArticleHasLabel;
+use App\Models\ArticleRelLabel;
 use App\Models\Label;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -71,9 +71,10 @@ class ArticleForAtlasController extends Controller
             ]);
 
             foreach ($request->labels as $labelId) {
-                ArticleHasLabel::create([
-                    'article_id' => $article->id,
-                    'label_id' => $labelId
+                ArticleRelLabel::create([
+                    'model_id' => $article->id,
+                    'label_id' => $labelId,
+                    'model_type' => 'App\Models\ArticleForAtlas'
                 ]);
             }
             \DB::commit();
@@ -123,13 +124,15 @@ class ArticleForAtlasController extends Controller
                 'sort' => $request->sort??0,
             ]);
 
-            ArticleHasLabel::whereIn('label_id', $article->labels->pluck('id')->toArray())
+            ArticleRelLabel::whereIn('label_id', $article->labels->pluck('id')->toArray())
+                ->where('model_type', 'App\Models\ArticleForAtlas')
                 ->where('article_id', $article->id)
                 ->delete();
             foreach ($request->labels as $labelId) {
-                ArticleHasLabel::create([
+                ArticleRelLabel::create([
                     'article_id' => $article->id,
-                    'label_id' => $labelId
+                    'label_id' => $labelId,
+                    'model_type' => 'App\Models\ArticleForAtlas'
                 ]);
             }
             \DB::commit();
@@ -152,6 +155,11 @@ class ArticleForAtlasController extends Controller
         $article = ArticleForAtlas::findOrFail($id);
 
         $article->delete();
+
+        ArticleRelLabel::whereIn('label_id', $article->labels->pluck('id')->toArray())
+            ->where('model_type', 'App\Models\ArticleForAtlas')
+            ->where('article_id', $article->id)
+            ->delete();
 
         return redirect()->route('admin.article_atlas.index')->withFlashSuccess('删除图集文章成功');
     }

@@ -74,8 +74,9 @@ class ArticleController extends Controller
 
             foreach ($request->labels as $labelId) {
                 ArticleRelLabel::create([
-                    'article_id' => $article->id,
-                    'label_id' => $labelId
+                    'model_id' => $article->id,
+                    'label_id' => $labelId,
+                    'label_type' => 'App\Models\Article',
                 ]);
             }
             \DB::commit();
@@ -124,13 +125,15 @@ class ArticleController extends Controller
             ]);
 
             ArticleRelLabel::whereIn('label_id', $article->labels->pluck('id')->toArray())
+                ->where('model_type', 'App\Models\Article')
                 ->where('article_id', $article->id)
                 ->delete();
 
             foreach ($request->labels as $labelId) {
                 ArticleRelLabel::create([
                     'article_id' => $article->id,
-                    'label_id' => $labelId
+                    'label_id' => $labelId,
+                    'model_type' => 'App\Models\Article'
                 ]);
             }
             \DB::commit();
@@ -152,6 +155,10 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
         $article->delete();
+        ArticleRelLabel::whereIn('label_id', $article->labels->pluck('id')->toArray())
+            ->where('model_type', 'App\Models\Article')
+            ->where('article_id', $article->id)
+            ->delete();
 
         return redirect()->route('admin.articles.index')->withFlashSuccess('删除文章成功');
     }
