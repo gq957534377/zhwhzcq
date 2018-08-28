@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title></title>
+    <title>{{$article->title}}</title>
 
     <meta name="keywords" content="资讯中心，滚动，时政，国际，财经，军事，娱乐，华人，图片，政权，房产，汽车，廉政，互联网，新媒体，教育，电视剧，电影，视频，访谈，直播，专题，旅游，广播，科技">
     <meta name="description" content="向世界展示中华文化独特魅力">
@@ -19,10 +19,20 @@
                 width: 1270px;
             }
         }
+
+        .vjs-default-skin .vjs-big-play-button {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .vjs-paused .vjs-big-play-button,
+        .vjs-paused.vjs-has-started .vjs-big-play-button {
+            display: block;
+        }
     </style>
 </head>
 <body>
-
 <div class="nav">
     <div class="width1200">
         <div class="language">
@@ -44,6 +54,28 @@
                 </li>
                 <li class="more-li">
                     <img src="/front/info/more.png">
+                    <!--                    <div class="language-more display-none">-->
+                    <!--                        <div>-->
+                    <!--                            <p>-->
+                    <!--                                <a href="#" target="_self">한국어</a>-->
+                    <!--                            </p>-->
+                    <!--                            <p>-->
+                    <!--                                <a href="#" target="_self">한국어</a>-->
+                    <!--                            </p>-->
+                    <!--                            <p>-->
+                    <!--                                <a href="#" target="_self">한국어</a>-->
+                    <!--                            </p>-->
+                    <!--                            <p>-->
+                    <!--                                <a href="#" target="_self">한국어</a>-->
+                    <!--                            </p>-->
+                    <!--                            <p>-->
+                    <!--                                <a href="#" target="_self">한국어</a>-->
+                    <!--                            </p>-->
+                    <!--                            <p>-->
+                    <!--                                <a href="#" target="_self">한국어</a>-->
+                    <!--                            </p>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
                 </li>
             </ul>
         </div>
@@ -51,41 +83,64 @@
         <div class="city">
             <ul>
                 <li>
-                    <a href="#"
-                       target="_self">北京</a>
+                    <a href="#" target="_self">北京</a>
                 </li>
                 <li>
-                    <a href="#"
-                       target="_self">天津</a>
+                    <a href="#" target="_self">天津</a>
                 </li>
                 <li>
-                    <a href="#"
-                       target="_self">河北</a>
+                    <a href="#" target="_self">河北</a>
                 </li>
                 <li>
-                    <a href="#"
-                       target="_self">山西</a>
+                    <a href="#" target="_self">山西</a>
                 </li>
                 <li>
-                    <a href="#"
-                       target="_self">陕西</a>
+                    <a href="#" target="_self">陕西</a>
                 </li>
                 <li>
-                    <a href="#"
-                       target="_self">辽宁</a>
+                    <a href="#" target="_self">辽宁</a>
                 </li>
                 <li>
-                    <a href="#"
-                       target="_self">吉林</a>
+                    <a href="#" target="_self">吉林</a>
                 </li>
                 <li>
-                    <a href="#"
-                       target="_self">上海</a>
+                    <a href="#" target="_self">上海</a>
                 </li>
                 <li class="more-li">
                     <img src="/front/info/more.png">
                     <div class="city-more display-none">
-
+                        <!--                        <div>-->
+                        <!--                            <p>-->
+                        <!--                                <a href="#" target="_self">上海</a>-->
+                        <!--                            </p>-->
+                        <!--                            <p>-->
+                        <!--                                <a href="#" target="_self">上海</a>-->
+                        <!--                            </p>-->
+                        <!--                            <p>-->
+                        <!--                                <a href="#" target="_self">上海</a>-->
+                        <!--                            </p>-->
+                        <!--                            <p>-->
+                        <!--                                <a href="#" target="_self">上海</a>-->
+                        <!--                            </p>-->
+                        <!--                            <p>-->
+                        <!--                                <a href="#" target="_self">上海</a>-->
+                        <!--                            </p>-->
+                        <!--                            <p>-->
+                        <!--                                <a href="#" target="_self">上海</a>-->
+                        <!--                            </p>-->
+                        <!--                            <p>-->
+                        <!--                                <a href="#" target="_self">上海</a>-->
+                        <!--                            </p>-->
+                        <!--                            <p>-->
+                        <!--                                <a href="#" target="_self">哈尔滨</a>-->
+                        <!--                            </p>-->
+                        <!--                            <p>-->
+                        <!--                                <a href="#" target="_self">上海</a>-->
+                        <!--                            </p>-->
+                        <!--                            <p>-->
+                        <!--                                <a href="#" target="_self">上海</a>-->
+                        <!--                            </p>-->
+                        <!--                        </div>-->
                     </div>
                 </li>
             </ul>
@@ -99,23 +154,30 @@
     </div>
 </div>
 <div class="header box-shadow min-width1200">
-    <div class="width1200 clear topbar">
+    <div class="width1200 clear">
         <div class="logo">
-            <a href="javascript:;" target="_blank">
-                <img src="{{asset('front/index/style/logo/logo_new.png')}}">
-            </a>
+            <a href="/"><img style="margin-top: 3%;" src="{{asset('front/index/style/logo/logo_new.png')}}"></a>
         </div>
         <div class="menu" style="width: 67%">
             <ul>
+                @foreach($labels as $label)
+                    <li>
+                        <p>
+                            <a href="{{url('/articles?position_id='.$label->id)}}">{{$label->name}}</a>
+                        </p>
+                    </li>
 
+                @endforeach
             </ul>
         </div>
     </div>
 </div>
+
 <div class="main clear">
     <div class="detail">
         <h2 class="">政府工作报告学习问答</h2>
-        <p class="title-p clear"><span class="float-left">2018.08.10</span><span class="float-right">支持 ← → 键翻阅图片️</span></p>
+        <p class="title-p clear"><span class="float-left">2018.08.10</span><span
+                    class="float-right">支持 ← → 键翻阅图片️</span></p>
         <div class="banner one-row">
             <div class="clear list-nav" style="width: 400%;position: relative;left: 0;top: 0;">
                 <div class="innerwraper">
@@ -130,16 +192,16 @@
                 </div>
                 <div class="innerwraper">
                     <a>
-                        <img src="/front/info/prod-3.jpg" />
+                        <img src="/front/info/prod-3.jpg"/>
                     </a>
                 </div>
                 <div class="innerwraper">
                     <a>
-                        <img src="/front/info/prod-4.jpg" />
+                        <img src="/front/info/prod-4.jpg"/>
                     </a>
                 </div>
             </div>
-            <span class="img-prev" ></span>
+            <span class="img-prev"></span>
             <span class="img-next"></span>
         </div>
         <div class="display-none atlas">
@@ -183,7 +245,8 @@
         <div class="clear info-nav">
             <p class="float-left info-nav-left"><span>1</span> / 9</p>
             <div class="float-right info-nav-right">
-                <p class="display-none">奥术大师大所多奥术大师大所大所大所多奥术大师大所多奥术大师大所大所大所多奥术大师大所多奥术大师大所大所大所多奥术大师大所多奥术大师大所大所大所多奥术大师大所多奥术大师大所大所大所多</p>
+                <p class="display-none">
+                    奥术大师大所多奥术大师大所大所大所多奥术大师大所多奥术大师大所大所大所多奥术大师大所多奥术大师大所大所大所多奥术大师大所多奥术大师大所大所大所多奥术大师大所多奥术大师大所大所大所多</p>
                 <p class="display-none">奥术大师大所多奥术大师大所大所大所多</p>
                 <p class="display-none">asdasdasasdsa</p>
                 <p class="display-none">kjhbjknkjnkj</p>
@@ -194,30 +257,15 @@
         <h1><span>相关推荐</span></h1>
 
         <ul class="recommend-list clear">
-            <li>
-                <img src="/front/info/prod-1.jpg"/>
-                <p class="recommend-list-li-p">中国成功发射两个北斗导航卫星</p>
-            </li>
-            <li>
-                <img src="/front/info/prod-1.jpg"/>
-                <p>中国成功发射两个北斗导航卫星</p>
-            </li>
-            <li>
-                <img src="/front/info/prod-1.jpg"/>
-                <p>中国成功发射两个北斗导航卫星</p>
-            </li>
-            <li>
-                <img src="/front/info/prod-1.jpg"/>
-                <p>中国成功发射两个北斗导航卫星</p>
-            </li>
-            <li>
-                <img src="/front/info/prod-1.jpg"/>
-                <p>中国成功发射两个北斗导航卫星</p>
-            </li>
+            @foreach($hotArticles as $hotArticle)
+                <li>
+                    <img src="{{$hotArticle->Atlas->first()->banner??''}}"/>
+                    <p class="recommend-list-li-p">{{$hotArticle->title}}</p>
+                </li>
+            @endforeach
         </ul>
     </div>
 </div>
-
 
 <div class="friendship-link">
     <div class="link-center">

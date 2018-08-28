@@ -186,23 +186,28 @@
         <div class="list">
             <ul>
                 @foreach($articles as $article)
-                    <li>
-                        <div class="list-title">
-                            <a href="/articles/{{$article->id}}">{{$article->title}}</a>
-                        </div>
-                        @if(!empty($article->banner))
-                            <div class="list-image">
-                                <a href="/articles/{{$article->id}}"><img src="{{$article->banner}}"></a>
+                    @if($article->type==1)
+                        <li>
+                            <div class="list-title">
+                                <a href="/articles/{{$article->id}}">{{$article->title}}</a>
                             </div>
-                        @endif
-                        <div class="list-content">
-                            <p style="font-size: 16px;">
-                                {{$article->brief}}
-                            </p>
-                            <span class="fst">{{$article->author}}&nbsp;&nbsp;{{$article->created_at->format('Y-m-d')}}</span>
-                            {{--<span>{{$article->created_at}}</span>--}}
-                        </div>
-                    </li>
+                            @if(!empty($article->banner))
+                                <div class="list-image">
+                                    <a href="/articles/{{$article->id}}"><img src="{{$article->banner}}"></a>
+                                </div>
+                            @endif
+                            <div class="list-content">
+                                <p style="font-size: 16px;">
+                                    {{$article->brief}}
+                                </p>
+                                <span class="fst">{{$article->author}}
+                                    &nbsp;&nbsp;{{$article->created_at->format('Y-m-d')}}</span>
+                                {{--<span>{{$article->created_at}}</span>--}}
+                            </div>
+                        </li>
+                    @else
+
+                    @endif
                 @endforeach
             </ul>
         </div>

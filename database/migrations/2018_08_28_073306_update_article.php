@@ -13,9 +13,9 @@ class UpdateArticle extends Migration
      */
     public function up()
     {
-        Schema::table('articles', function (Blueprint $table) {
-            $table->unsignedTinyInteger('type')->default(1)->comment('文章类型');
-        });
+//        Schema::table('articles', function (Blueprint $table) {
+//            $table->unsignedTinyInteger('type')->default(1)->comment('文章类型');
+//        });
         \App\Models\ArticleForAtlas::where([])->get()->map(function ($item) {
             $articleId = \App\Models\Article::insertGetId([
                 'type' => 2,
@@ -28,7 +28,10 @@ class UpdateArticle extends Migration
                 'created_at' => $item->created_at,
                 'updated_at' => $item->updated_at,
             ]);
-            $item->labels->pluck('label_id')->map(function ($label) use ($articleId) {
+
+            $labelIds = \App\Models\ArticleHasLabel::where('article_id', $item->id)->pluck('label_id')->unique();
+
+            $labelIds->map(function ($label) use ($articleId) {
                 \App\Models\ArticleRelLabel::create([
                     'article_id' => $articleId,
                     'label_id' => $label,

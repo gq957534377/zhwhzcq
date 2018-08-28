@@ -99,11 +99,22 @@ class ArticleController extends Controller
         // 精彩推荐
         $pointArticles = Article::orderBy('updated_at', 'desc')->take(2)->get();
 
-        return view('frontend.info', [
-            'article' => $article,
-            'labels' => $labels,
-            'hotArticles' => $hotArticles,
-            'pointArticles' => $pointArticles
-        ]);
+        if ($article->type == 1) {
+            return view('frontend.info', [
+                'article' => $article,
+                'labels' => $labels,
+                'hotArticles' => $hotArticles,
+                'pointArticles' => $pointArticles
+            ]);
+        } else {
+            return view('frontend.infos', [
+                'article' => $article,
+                'labels' => $labels,
+                'hotArticles' => Article::where('type', 2)
+                    ->orderBy('updated_at', 'desc')
+                    ->take(4)
+                    ->get(),
+            ]);
+        }
     }
 }
