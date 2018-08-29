@@ -207,6 +207,9 @@
                             @endforeach
                         </div>
                     @endif
+                    @if($item==5)
+                        @break
+                    @endif
                 @endforeach
                 <div class="floatfix"></div>
             </div>
@@ -235,9 +238,6 @@
                                                                                          datetime="{{$item->created_at}}"></time></span>
                             </div>
                         @else
-                            @if($news%2 == 1)
-                                <div class="hotbox"></div>
-                            @endif
                             <li class="clearfix">
                                 <div class="list-title">
                                     <a href="/articles/{{$item->id}}">{{$item->title}}</a>
@@ -288,9 +288,6 @@
                                                                                                      datetime="{{$thematicActivity->created_at}}"></time></span>
                             </div>
                         @else
-                            @if($thematic%2 == 1)
-                                <div class="hotbox"></div>
-                            @endif
                             <li class="clearfix">
                                 <div class="list-title">
                                     <a href="/articles/{{$thematicActivity->id}}">{{$thematicActivity->title}}</a>
@@ -302,7 +299,7 @@
 
                                     @if ($k1==2)
                                         @break
-                                   @endif
+                                    @endif
                                 @endforeach
                             </li>
                         @endif
