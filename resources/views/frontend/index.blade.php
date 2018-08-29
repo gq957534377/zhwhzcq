@@ -191,7 +191,7 @@
                         </div>
                     @else
                         @if($item%2 == 1)
-                            <div class="chosenbox chosenbox-ml"></div>
+                            <div class="chosenboxs chosenbox-ml"></div>
                         @endif
                         <div class="clearfix">
                             <div class="list-title">
