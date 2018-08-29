@@ -173,7 +173,7 @@
     </div>
 </div>
 
-<div class="main clear">
+<div class="detail-nav clear">
     <div class="detail">
         <h2 class="">{{$article->title}}}</h2>
         <p class="title-p clear"><span class="float-left">{{$article->created_at}}</span><span

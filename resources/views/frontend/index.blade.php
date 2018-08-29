@@ -173,7 +173,7 @@
             <!--新闻要点-->
             <div class="chosen">
                 <div class="com-title"><span>新闻要点</span><a href="/articles?position_id=41">MORE</a></div>
-                @foreach($newsPoints as $newsPoint)
+                @foreach($newsPoints as $item=>$newsPoint)
                     @if($newsPoint->type==1)
                         <div class="chosenbox chosenbox-ml">
                             @if(!empty($newsPoint->banner))
@@ -190,7 +190,10 @@
                             <p>{{$newsPoint->brief}}…</p>
                         </div>
                     @else
-                        <div>
+                        @if($item%2 == 1)
+                            <div class="chosenbox chosenbox-ml"></div>
+                        @endif
+                        <div class="clearfix">
                             <div class="list-title">
                                 <a href="/articles/{{$newsPoint->id}}">{{$newsPoint->title}}</a>
                             </div>
@@ -209,7 +212,7 @@
             <div class="hot">
                 <div class="com-title"><span>外宣媒体</span><a href="/articles?position_id=15">MORE</a></div>
                 <div id="content_list">
-                    @foreach($newsOut as $item)
+                    @foreach($newsOut as $news => $item)
                         @if($item->type==1)
                             <div class="hotbox">
                                 @if(!empty($item->banner))
@@ -229,7 +232,10 @@
                                                                                          datetime="{{$item->created_at}}"></time></span>
                             </div>
                         @else
-                            <li>
+                            @if($news%2 == 1)
+                                <div class="hotbox"></div>
+                            @endif
+                            <li class="clearfix">
                                 <div class="list-title">
                                     <a href="/articles/{{$item->id}}">{{$item->title}}</a>
                                 </div>
@@ -254,7 +260,7 @@
             <div class="hot">
                 <div class="com-title"><span>专题活动</span><a href="/articles?position_id=7">MORE</a></div>
                 <div id="content_list">
-                    @foreach($thematicActivities as $thematicActivity)
+                    @foreach($thematicActivities as $thematic=>$thematicActivity)
                         @if($thematicActivity->type==1)
                             <div class="hotbox">
                                 @if(!empty($thematicActivity->banner))
@@ -276,7 +282,10 @@
                                                                                                      datetime="{{$thematicActivity->created_at}}"></time></span>
                             </div>
                         @else
-                            <li>
+                            @if($thematic%2 == 1)
+                                <div class="hotbox"></div>
+                            @endif
+                            <li class="clearfix">
                                 <div class="list-title">
                                     <a href="/articles/{{$thematicActivity->id}}">{{$thematicActivity->title}}</a>
                                 </div>

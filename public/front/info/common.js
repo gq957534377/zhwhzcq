@@ -14,7 +14,7 @@ $(function() {
         clearInterval(timer);
         _index++;
         selectPic(_index);
-        if(_index==4){
+        if(_index==innerGroup.length){
             clearInterval(timer);
             flag = false;
             $('.atlas').show();
@@ -35,6 +35,11 @@ $(function() {
         }
         _index--;
         selectPic(_index);
+        if(_index==1){
+            clearInterval(timer);
+            flag = false;
+            $('.atlas').show();
+        }
     })
 
     $(".banner").hover(function() {
@@ -46,13 +51,13 @@ $(function() {
         timer = setInterval(go, 3000);
     });
 
-    function autoGo(bol) {
-        //自动行走
-        if (bol) {
-            timer = setInterval(go, 3000);
-        }
-    }
-    autoGo(flag);
+    // function autoGo(bol) {
+    //     //自动行走
+    //     if (bol) {
+    //         timer = setInterval(go, 3000);
+    //     }
+    // }
+    // autoGo(flag);
 
     function go() {
         //计时器的函数
