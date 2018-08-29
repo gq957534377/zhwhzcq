@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-    {{ html()->form('POST', route('admin.article_has_atlas.store'))->class('form-horizontal')->open() }}
+    {{ html()->form('POST', route('admin.article_has_atlas.store'))->class('form-horizontal')->attribute('enctype',"multipart/form-data")->open() }}
     <div class="card">
         <div class="card-body">
             <div class="row">
@@ -55,12 +55,14 @@
                     <div class="form-group row">
                         {{ html()->label('缩略图')->class('col-md-2 form-control-label')->for('banner') }}
 
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                            <a href="javascript:void(0);" id="banner"><img id="banner_up-img"
-                                                                           src="/upLoad.jpg"/></a>
-                        </div>
-                        <input required type="hidden" name="banner"
-                               id="banner_up">
+                        {{--<div class="col-md-9 col-sm-9 col-xs-12">--}}
+                            {{--<a href="javascript:void(0);" id="banner"><img id="banner_up-img"--}}
+                                                                           {{--src="/upLoad.jpg"/></a>--}}
+                        {{--</div>--}}
+                        {{--<input required type="hidden" name="banner"--}}
+                               {{--id="banner_up">--}}
+                        <input value="" type="file" name="banner">
+
                     </div><!--form-group-->
 
                     <div class="form-group row">

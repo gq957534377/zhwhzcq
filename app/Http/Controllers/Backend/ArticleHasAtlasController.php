@@ -7,6 +7,7 @@ use App\Models\ArticleHasAtlas;
 use App\Models\Atlas;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class ArticleHasAtlasController extends Controller
 {
@@ -56,6 +57,9 @@ class ArticleHasAtlasController extends Controller
      */
     public function store(Request $request)
     {
+        if ($request->hasFile('banner')) {
+            $request->banner = Storage::url($request->file('banner')->store('public/banners'));
+        }
         \DB::beginTransaction();
         try {
             $atlas = Atlas::create([
