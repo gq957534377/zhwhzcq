@@ -197,10 +197,13 @@
                             <div class="list-title">
                                 <a href="/articles/{{$newsPoint->id}}">{{$newsPoint->title}}</a>
                             </div>
-                            @foreach($newsPoint->atlas as $tempAtlas)
+                            @foreach($newsPoint->atlas as $k3=>$tempAtlas)
                                 <div class="list-image">
                                     <img style="width: 100%" src="{{$tempAtlas->banner}}">
                                 </div>
+                                @if ($k3==2)
+                                    @break
+                                @endif
                             @endforeach
                         </div>
                     @endif
@@ -239,10 +242,13 @@
                                 <div class="list-title">
                                     <a href="/articles/{{$item->id}}">{{$item->title}}</a>
                                 </div>
-                                @foreach($item->atlas as $atlas)
+                                @foreach($item->atlas as $k2=>$atlas)
                                     <div class="list-image">
                                         <img style="width: 100%" src="{{$atlas->banner}}">
                                     </div>
+                                    @if ($k2==2)
+                                        @break
+                                    @endif
                                 @endforeach
                             </li>
                         @endif
@@ -289,10 +295,14 @@
                                 <div class="list-title">
                                     <a href="/articles/{{$thematicActivity->id}}">{{$thematicActivity->title}}</a>
                                 </div>
-                                @foreach($thematicActivity->atlas as $temp)
+                                @foreach($thematicActivity->atlas as $k1=>$temp)
                                     <div class="list-image">
                                         <img style="width: 100%" src="{{$temp->banner}}">
                                     </div>
+
+                                    @if ($k1==2)
+                                        @break
+                                   @endif
                                 @endforeach
                             </li>
                         @endif
