@@ -114,7 +114,27 @@ class ArticleController extends Controller
                     ->orderBy('updated_at', 'desc')
                     ->take(8)
                     ->get(),
+                'recommends'=>$this->articlesByPositionId(51,4)
             ]);
         }
+    }
+
+    private function articlesByPositionId($positionId, $num)
+    {
+        $position = Position::find($positionId);
+        if (empty($position)) return [];
+
+        $lableIds = $position->labels->pluck('id')->unique()->toArray();
+        $articleIds = ArticleRelLabel::whereIn('label_id', $lableIds)
+            ->pluck('article_id')
+            ->toArray();
+        $articleIds = array_keys(array_count_values($articleIds), count($lableIds));
+
+        return Article::whereIn('id', $articleIds)
+            ->where('type',2)
+            ->orderBy('sort', 'desc')
+            ->orderBy('updated_at', 'desc')
+            ->take($num)
+            ->get();
     }
 }

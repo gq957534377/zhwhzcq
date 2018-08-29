@@ -40,6 +40,7 @@
                         <table class="table">
                             <thead>
                             <tr>
+                                <th>ID</th>
                                 <th>标签名</th>
                                 <th>所属级别</th>
                                 <th>父级id</th>
@@ -52,6 +53,7 @@
                             <tbody>
                             @foreach ($positions as $position)
                                 <tr>
+                                    <td>{{ $position->id}}</td>
                                     <td>{{ $position->name}}</td>
                                     <td>{{ $position->stage}}</td>
                                     <td>{{ $position->parentPosition->name??'无'}}</td>

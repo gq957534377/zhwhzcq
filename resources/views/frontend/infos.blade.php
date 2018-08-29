@@ -217,18 +217,14 @@
     <div class="recommend">
         <h1><span>相关推荐</span></h1>
         <ul class="recommend-list clear">
-            @foreach($hotArticles as $k=>$hotArticle)
-                <a href="/articles/{{$hotArticle->id}}">
+            @foreach($recommends as $k=>$recommend)
+                <a href="/articles/{{$recommend->id}}">
                     <li>
-                        <img src="{{$hotArticle->Atlas->first()->banner??''}}"/>
-                        <p class="recommend-list-li-p">{{$hotArticle->title}}</p>
+                        <img src="{{$recommend->Atlas->first()->banner??''}}"/>
+                        <p class="recommend-list-li-p">{{$recommend->title}}</p>
                     </li>
                 </a>
-                <?php
-                if ($k == 3) {
-                    break;
-                }
-                ?>
+                @if ($k == 3) @break @endif
             @endforeach
         </ul>
     </div>
