@@ -185,7 +185,7 @@
         </div>
         <div class="list">
             <ul>
-                @foreach($articles as $article)
+                @foreach($articles as $i=>$article)
                     @if($article->type==1)
                         <li>
                             <div class="list-title">
@@ -217,6 +217,7 @@
                             @endforeach
                         </li>
                     @endif
+                        @if ($i == 2) @break @endif
                 @endforeach
             </ul>
         </div>
