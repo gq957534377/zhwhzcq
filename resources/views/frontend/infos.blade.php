@@ -175,7 +175,7 @@
 
 <div class="detail-nav clear">
     <div class="detail">
-        <h2 class="">{{$article->title}}}</h2>
+        <h2 class="">{{$article->title}}</h2>
         <p class="title-p clear"><span class="float-left">{{$article->created_at}}</span><span
                     class="float-right">支持 ← → 键翻阅图片️</span></p>
         <div class="banner one-row">

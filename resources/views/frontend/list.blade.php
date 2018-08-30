@@ -208,7 +208,7 @@
                     @else
                         <li>
                             <div class="list-title">
-                                <a href="/articles/{{$article->id}}}">{{$article->title}}</a>
+                                <a href="/articles/{{$article->id}}">{{$article->title}}</a>
                             </div>
                             @foreach($article->atlas as $i=>$item)
                                 <div class="list-image" style="margin-right: 25px;">

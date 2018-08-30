@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <form action="{{'/admin/positions_saveLabels/'.$position->id}}}" method="post">
+    <form action="{{'/admin/positions_saveLabels/'.$position->id}}" method="post">
         {{csrf_field()}}
         <div class="card">
             <div class="card-body">
