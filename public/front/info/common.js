@@ -10,7 +10,7 @@ $(function() {
     var flag = true;
     $(".info-nav-right p").eq(_index).show();
     rightArrow.on("click", function() {
-        if(_index ==innerGroup.length) {
+        if(_index ==innerGroup.length-1) {
             $('.atlas').show();
             return false;
         }
