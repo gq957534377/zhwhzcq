@@ -216,7 +216,7 @@
                                 </div>
                             @endforeach
                             <div class="list-content">
-                                <span class="fst">{{$article->author}}
+                                <span style="bottom: 0px;" class="fst">{{$article->author}}
                                     &nbsp;&nbsp;{{$article->created_at->format('Y-m-d')}}</span>
                                 {{--<span>{{$article->created_at}}</span>--}}
                             </div>
