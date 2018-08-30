@@ -1,5 +1,6 @@
 $(function() {
     var innerGroup = $(".innerwraper");
+    $('.list-nav').css('width',innerGroup.length*1024+'px');
     var leftArrow = $(".img-prev");
     var rightArrow = $(".img-next");
     var imgWidth = $(".innerwraper").width();
@@ -9,37 +10,35 @@ $(function() {
     var flag = true;
     $(".info-nav-right p").eq(_index).show();
     rightArrow.on("click", function() {
-        //右箭头
-        flag = false;
-        clearInterval(timer);
-        _index++;
-        selectPic(_index);
-        if(_index==innerGroup.length){
-            clearInterval(timer);
-            flag = false;
+        if(_index ==innerGroup.length) {
             $('.atlas').show();
+            return false;
         }
-
+        $(".info-nav-right p").hide();
+        $(".info-nav-right p").eq(_index).show();
+        $(".info-nav-left").html();
+        $(".info-nav-left").html("<span>"+(parseInt($('.info-nav-left span').html())+1)+"</span> / "+innerGroup.length);
+        $(".list-nav").animate({
+            left: -(_index+1 * imgWidth),
+        }, 500);
+        _index++;
     })
     // 点击按钮隐藏
     $('.atlas h3 span').click(function(){
         $('.atlas').hide();
     });
     leftArrow.on("click", function() {
-        //左箭头
-        flag = false;
-        clearInterval(timer);
-        if (_index == 0) {
-            _index = innerGroup.length - 1;
-            $(".list-nav").css("left", -(innerGroup.length - 1) * imgWidth);
+        if(_index==0) {
+            return false;
         }
+        $(".info-nav-right p").hide();
+        $(".info-nav-right p").eq(_index-1).show();
+        $(".info-nav-left").html();
+        $(".info-nav-left").html("<span>"+(parseInt($('.info-nav-left span').html())-1)+"</span> / "+innerGroup.length);
+        $(".list-nav").animate({
+            left: -($(this).index()-1 * imgWidth),
+        }, 500);
         _index--;
-        selectPic(_index);
-        if(_index==1){
-            clearInterval(timer);
-            flag = false;
-            $('.atlas').show();
-        }
     })
 
     // $(".banner").hover(function() {
