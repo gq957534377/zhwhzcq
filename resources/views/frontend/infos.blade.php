@@ -180,10 +180,10 @@
                     class="float-right">支持 ← → 键翻阅图片️</span></p>
         <div class="banner one-row">
             <div class="clear list-nav" style="width: 400%;position: relative;left: 0;top: 0;">
-                @foreach($article->atlas as $item)
+                @foreach($article->atlas as $item1)
                     <div class="innerwraper">
                         <a>
-                            <img src="{{$item->banner}}"/>
+                            <img src="{{$item1->banner}}"/>
                         </a>
                     </div>
                 @endforeach
