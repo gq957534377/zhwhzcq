@@ -185,7 +185,7 @@
         </div>
         <div class="list">
             <ul>
-                @foreach($articles as $i=>$article)
+                @foreach($articles as $article)
                     @if($article->type==1)
                         <li>
                             <div class="list-title">
@@ -210,10 +210,11 @@
                             <div class="list-title">
                                 <a href="/articles/{{$article->id}}}">{{$article->title}}</a>
                             </div>
-                            @foreach($article->atlas as $item)
+                            @foreach($article->atlas as $i=>$item)
                                 <div class="list-image" style="margin-right: 25px;">
                                     <img src="{{$item->banner}}">
                                 </div>
+                                @if ($i == 2) @break @endif
                             @endforeach
                             <div class="list-content">
                                 <span style="bottom: 0px;" class="fst">{{$article->author}}
@@ -221,7 +222,6 @@
                             </div>
                         </li>
                     @endif
-                    @if ($i == 2) @break @endif
                 @endforeach
             </ul>
         </div>
