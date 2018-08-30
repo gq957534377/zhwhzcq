@@ -42,14 +42,14 @@ $(function() {
         }
     })
 
-    $(".banner").hover(function() {
-        //鼠标移入
-        clearInterval(timer);
-        flag = false;
-    }, function() {
-        flag = true;
-        timer = setInterval(go, 3000);
-    });
+    // $(".banner").hover(function() {
+    //     //鼠标移入
+    //     clearInterval(timer);
+    //     flag = false;
+    // }, function() {
+    //     flag = true;
+    //     timer = setInterval(go, 3000);
+    // });
 
     // function autoGo(bol) {
     //     //自动行走
@@ -65,7 +65,8 @@ $(function() {
         selectPic(_index);
     }
     function selectPic(num) {
-        var nums = num == innerGroup.length ? 0 : num
+        var nums = num == innerGroup.length ? 0 : num;
+
         $(".info-nav-right p").hide();
         $(".info-nav-right p").eq(nums).show();
         $(".info-nav-left").html();
