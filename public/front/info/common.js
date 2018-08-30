@@ -4,7 +4,6 @@ $(function() {
     var leftArrow = $(".img-prev");
     var rightArrow = $(".img-next");
     var imgWidth = $(".innerwraper").width();
-    $(".info-nav-left").html("<span>1</span> / "+innerGroup.length);
     var _index = 0;
     var timer = null;
     var flag = true;

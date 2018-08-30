@@ -205,7 +205,7 @@
             </ul>
         </div>
         <div class="clear info-nav">
-            <p class="float-left info-nav-left"><span>0</span> / {{count($article->atlas)}}</p>
+            <p class="float-left info-nav-left"><span>1</span> / {{count($article->atlas)}}</p>
             <div class="float-right info-nav-right">
                 @foreach($article->atlas as $item)
                     <p class="display-none">
