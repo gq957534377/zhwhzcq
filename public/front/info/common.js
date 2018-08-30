@@ -19,7 +19,7 @@ $(function() {
         $(".info-nav-left").html();
         $(".info-nav-left").html("<span>"+(parseInt($('.info-nav-left span').html())+1)+"</span> / "+innerGroup.length);
         $(".list-nav").animate({
-            left: -(_index+1 * imgWidth),
+            left: -((_index+1) * imgWidth),
         }, 500);
         _index++;
     })
@@ -36,7 +36,7 @@ $(function() {
         $(".info-nav-left").html();
         $(".info-nav-left").html("<span>"+(parseInt($('.info-nav-left span').html())-1)+"</span> / "+innerGroup.length);
         $(".list-nav").animate({
-            left: -($(this).index()-1 * imgWidth),
+            left: -((_index-1) * imgWidth),
         }, 500);
         _index--;
     })
