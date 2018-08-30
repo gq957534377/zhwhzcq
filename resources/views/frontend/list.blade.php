@@ -218,7 +218,6 @@
                             <div class="list-content">
                                 <span style="bottom: 0px;" class="fst">{{$article->author}}
                                     &nbsp;&nbsp;{{$article->created_at->format('Y-m-d')}}</span>
-                                {{--<span>{{$article->created_at}}</span>--}}
                             </div>
                         </li>
                     @endif
@@ -345,6 +344,10 @@
                                 }
                                 return '<div class="list-image" style="margin-right: 25px;"><img src="' + img.banner + '"></div>';
                             });
+                            html+=' <div class="list-content">';
+                            html+='<span style="bottom: 0px;" class="fst">'+res.author;
+                            html+='&nbsp;&nbsp;'+res.created_at+'</span>';
+                            html+='</div>';
                             html += '</li>';
                         }
                         return html;
