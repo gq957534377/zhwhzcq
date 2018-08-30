@@ -118,11 +118,11 @@
 }
 .atlas .atlas-list li img{
     width:100%;
-    height: 140px;
+    height: 120px;
 }
 .atlas .atlas-list li p{
     position: absolute;
-    bottom: 10px;
+    bottom: 0;
     background: #000000;
     color: #fff;
     opacity: 0.6;
