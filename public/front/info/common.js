@@ -15,7 +15,7 @@ $(function() {
             return false;
         }
         $(".info-nav-right p").hide();
-        $(".info-nav-right p").eq(_index).show();
+        $(".info-nav-right p").eq(_index+1).show();
         $(".info-nav-left").html();
         $(".info-nav-left").html("<span>"+(parseInt($('.info-nav-left span').html())+1)+"</span> / "+innerGroup.length);
         $(".list-nav").animate({
