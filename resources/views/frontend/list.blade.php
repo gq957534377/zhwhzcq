@@ -215,6 +215,11 @@
                                     <img src="{{$item->banner}}">
                                 </div>
                             @endforeach
+                            <div class="list-content">
+                                <span class="fst">{{$article->author}}
+                                    &nbsp;&nbsp;{{$article->created_at->format('Y-m-d')}}</span>
+                                {{--<span>{{$article->created_at}}</span>--}}
+                            </div>
                         </li>
                     @endif
                     @if ($i == 2) @break @endif
