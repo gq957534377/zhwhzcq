@@ -66,7 +66,7 @@
                                                     <a data-method="delete" data-trans-button-cancel="取消" data-trans-button-confirm="删除" data-trans-title="你确定这样做吗？" class="dropdown-item" style="cursor:pointer;" onclick="$(this).find(&quot;form&quot;).submit();">删除
                                                         <form action="/admin/article_atlas/{{$article->id}}" method="POST" name="delete_item" style="display:none">
                                                             <input type="hidden" name="_method" value="delete">
-                                                            <input type="hidden" name="_token" value="8TYs11CMRN1QJCCLZf5WvVJ61ePsFNViWfBLRHr4">
+                                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                         </form>
                                                     </a>
                                                 </div>
