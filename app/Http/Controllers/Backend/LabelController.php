@@ -20,6 +20,7 @@ class LabelController extends Controller
 
         $result = $query
             ->orderBy('updated_at', 'desc')
+            ->orderBy('id', 'desc')
             ->paginate(15)
             ->appends($request->all());
         return view('backend.label.index', ['labels' => $result]);

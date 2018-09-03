@@ -21,6 +21,7 @@ class BannerController extends Controller
     {
         $result = Banner::orderBy('updated_at', 'desc')
             ->orderBy('sort', 'desc')
+            ->orderBy('id', 'desc')
             ->paginate(15)
             ->appends($request->all());
 
