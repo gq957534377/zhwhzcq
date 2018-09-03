@@ -60,7 +60,7 @@
                                                         <form action="/admin/article_has_atlas/{{$atlas->id}}" method="POST" name="delete_item" style="display:none">
                                                             <input type="hidden" name="_method" value="delete">
                                                             <input type="hidden" name="article_id" value="{{Request::get('article_id')}}">
-                                                            <input type="hidden" name="_token" value="JNfwH9RE32aBUB9LhqDNhNo5mDXUg0puyrlcgfhm">
+                                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                         </form>
                                                     </a>
                                                 </div>

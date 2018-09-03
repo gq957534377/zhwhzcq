@@ -4,7 +4,6 @@ $(function() {
     var leftArrow = $(".img-prev");
     var rightArrow = $(".img-next");
     var imgWidth = $(".innerwraper").width();
-    $(".info-nav-left").html("<span>1</span> / "+innerGroup.length);
     var _index = 0;
     var timer = null;
     var flag = true;
@@ -15,7 +14,7 @@ $(function() {
             return false;
         }
         $(".info-nav-right p").hide();
-        $(".info-nav-right p").eq(_index).show();
+        $(".info-nav-right p").eq(_index+1).show();
         $(".info-nav-left").html();
         $(".info-nav-left").html("<span>"+(parseInt($('.info-nav-left span').html())+1)+"</span> / "+innerGroup.length);
         $(".list-nav").animate({
