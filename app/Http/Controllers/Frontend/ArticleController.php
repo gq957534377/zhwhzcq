@@ -83,8 +83,9 @@ class ArticleController extends Controller
         }
 
         $result = $query
-            ->orderBy('updated_at', 'desc')
             ->orderBy('sort', 'desc')
+            ->orderBy('updated_at', 'desc')
+            ->orderBy('id', 'desc')
             ->paginate(10);
         return response()->json(['StatusCode' => 200, 'ResultData' => $result]);
     }
