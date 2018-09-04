@@ -54,7 +54,7 @@
         </ul>
         <div class="mtopic">
             <a href="/articles?position_id=50"><img
-                        src="{{ asset('/front/index/style/topic/mtopic-201808242159.jpg') }}"/></a>
+                        src="{{ asset('/front/index/style/topic/mlbh.png') }}"/></a>
         </div>
         <div class="msearch">
             <form action="/articles" method="get" target="_blank">
