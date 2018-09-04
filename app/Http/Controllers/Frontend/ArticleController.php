@@ -35,7 +35,8 @@ class ArticleController extends Controller
 
         $query = $query
             ->orderBy('sort', 'desc')
-            ->orderBy('updated_at', 'desc');
+            ->orderBy('updated_at', 'desc')
+            ->orderBy('id', 'desc');
         $query2 = clone $query;
 
         $result = $query->paginate(10);
