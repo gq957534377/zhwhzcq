@@ -34,8 +34,8 @@ class ArticleController extends Controller
         }
 
         $query = $query
-            ->orderBy('updated_at', 'desc')
-            ->orderBy('sort', 'desc');
+            ->orderBy('sort', 'desc')
+            ->orderBy('updated_at', 'desc');
         $query2 = clone $query;
 
         $result = $query->paginate(10);
@@ -114,7 +114,7 @@ class ArticleController extends Controller
                     ->orderBy('updated_at', 'desc')
                     ->take(8)
                     ->get(),
-                'recommends'=>$this->articlesByPositionId(51,4)
+                'recommends' => $this->articlesByPositionId(51, 4)
             ]);
         }
     }
@@ -131,7 +131,7 @@ class ArticleController extends Controller
         $articleIds = array_keys(array_count_values($articleIds), count($lableIds));
 
         return Article::whereIn('id', $articleIds)
-            ->where('type',2)
+            ->where('type', 2)
             ->orderBy('sort', 'desc')
             ->orderBy('updated_at', 'desc')
             ->take($num)
