@@ -30,7 +30,7 @@ class ArticleHasAtlasController extends Controller
         $atlasIds = $this->article->atlas->pluck('id')->toArray();
         $result = Atlas::whereIn('id', $atlasIds)
             ->orderBy('sort', 'desc')
-            ->orderBy('updated_at', 'desc')
+            ->orderBy('created_at', 'desc')
             ->paginate(15)
             ->appends(['article_id' => $this->article->id]);
 

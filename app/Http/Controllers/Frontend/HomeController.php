@@ -69,7 +69,7 @@ class HomeController extends Controller
 
         return Article::whereIn('id', $articleIds)
             ->orderBy('sort', 'desc')
-            ->orderBy('updated_at', 'desc')
+            ->orderBy('created_at', 'desc')
             ->orderBy('id', 'desc')
             ->take($num)
             ->get();

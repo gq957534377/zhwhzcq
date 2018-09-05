@@ -30,7 +30,7 @@ class ArticleController extends Controller
         }
 
         $result = $query
-            ->orderBy('updated_at', 'desc')
+            ->orderBy('created_at', 'desc')
             ->orderBy('sort', 'desc')
             ->orderBy('id', 'desc')
             ->paginate(15)

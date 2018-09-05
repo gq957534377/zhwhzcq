@@ -35,7 +35,7 @@ class ArticleController extends Controller
 
         $query = $query
             ->orderBy('sort', 'desc')
-            ->orderBy('updated_at', 'desc')
+            ->orderBy('created_at', 'desc')
             ->orderBy('id', 'desc');
         $query2 = clone $query;
 
@@ -45,10 +45,10 @@ class ArticleController extends Controller
         $labels = Position::where(['stage' => 1, 'nav_show' => 1])->orderBy('sort')->get();
 
         // 热点排行
-        $hotArticles = $query2->orderBy('updated_at', 'desc')->take(4)->get();
+        $hotArticles = $query2->orderBy('created_at', 'desc')->take(4)->get();
 
         // 精彩推荐
-        $pointArticles = $query2->orderBy('updated_at', 'desc')->take(2)->get();
+        $pointArticles = $query2->orderBy('created_at', 'desc')->take(2)->get();
 
         empty($keys) && $keys[] = '全部';
         return view('frontend.list', [
@@ -84,7 +84,7 @@ class ArticleController extends Controller
 
         $result = $query
             ->orderBy('sort', 'desc')
-            ->orderBy('updated_at', 'desc')
+            ->orderBy('created_at', 'desc')
             ->orderBy('id', 'desc')
             ->paginate(10);
         return response()->json(['StatusCode' => 200, 'ResultData' => $result]);
@@ -113,7 +113,7 @@ class ArticleController extends Controller
                 'article' => $article,
                 'labels' => $labels,
                 'hotArticles' => Article::where('type', 2)
-                    ->orderBy('updated_at', 'desc')
+                    ->orderBy('created_at', 'desc')
                     ->take(8)
                     ->get(),
                 'recommends' => $this->articlesByPositionId(51, 4)
@@ -135,7 +135,7 @@ class ArticleController extends Controller
         return Article::whereIn('id', $articleIds)
             ->where('type', 2)
             ->orderBy('sort', 'desc')
-            ->orderBy('updated_at', 'desc')
+            ->orderBy('created_at', 'desc')
             ->take($num)
             ->get();
     }
