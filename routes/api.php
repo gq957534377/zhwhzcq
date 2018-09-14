@@ -16,3 +16,12 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group([
+    'middleware'    => ['api'],
+    'namespace'     => 'Frontend'
+], function () {
+    Route::get('article/{id}', [
+        'uses' => 'MobileController@article'
+    ])->where(['id' => '[0-9]+']);
+});
