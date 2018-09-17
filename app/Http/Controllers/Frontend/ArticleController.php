@@ -89,7 +89,9 @@ class ArticleController extends Controller
             ->paginate(10);
 
         foreach ($result as & $item) {
-            $item['banner'] = config('frontend.storage_base_url') . $item['banner'];
+            if (! empty($item['banner'])) {
+                $item['banner'] = config('frontend.storage_base_url') . $item['banner'];
+            }
         }
 
         return response()->json(['StatusCode' => 200, 'ResultData' => $result]);
