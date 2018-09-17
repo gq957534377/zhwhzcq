@@ -67,6 +67,10 @@ class ArticleController extends Controller
 
         $query = Article::where($where);
 
+        if (! empty($request->type)) {
+            $query = $query->where('type', (int) $request->type);
+        }
+
         if (!empty($request->position_id) && !empty($position = Position::find($request->position_id))) {
             $lableIds = $position->labels->pluck('id')->unique()->toArray();
             $articleIds = ArticleRelLabel::whereIn('label_id', $lableIds)
