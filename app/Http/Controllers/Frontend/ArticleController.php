@@ -87,6 +87,11 @@ class ArticleController extends Controller
             ->orderBy('created_at', 'desc')
             ->orderBy('id', 'desc')
             ->paginate(10);
+
+        foreach ($result as & $item) {
+            $item['banner'] = config('frontend.storage_base_url') . $item['banner'];
+        }
+
         return response()->json(['StatusCode' => 200, 'ResultData' => $result]);
     }
 
