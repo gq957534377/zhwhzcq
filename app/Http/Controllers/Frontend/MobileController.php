@@ -33,8 +33,12 @@ class MobileController extends Controller
             $article = $article->toArray();
             if (! empty($article['atlas'])) {
                 foreach ($article['atlas'] as & $atlas) {
-                    $atlas['banner'] = $atlas['banner'];
+                    $atlas['banner'] = config('frontend.storage_base_url') . $atlas['banner'];
                 }
+            }
+
+            if (! empty($article['banner'])) {
+                $article['banner'] = config('frontend.storage_base_url') . $article['banner'];
             }
 
             $resp['data'] = $article;
