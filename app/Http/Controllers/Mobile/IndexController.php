@@ -5,16 +5,15 @@
  * Date: 2018/9/14
  * Time: 17:45
  */
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\Mobile;
 
 use App\Http\Controllers\Controller;
-use App\Models\Article;
 use Illuminate\Http\Request;
 
-class MobileController extends Controller
+class IndexController extends Controller
 {
     public function index()
     {
-
+        return 1321234;
     }
 }
