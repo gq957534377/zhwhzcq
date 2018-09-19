@@ -31,18 +31,7 @@ class MobileController extends Controller
                 throw new \Exception('404 Not Found');
             }
 
-            $article = $article->toArray();
-            if (! empty($article['atlas'])) {
-                foreach ($article['atlas'] as & $atlas) {
-                    $atlas['banner'] = config('frontend.storage_base_url') . $atlas['banner'];
-                }
-            }
-
-            if (! empty($article['banner'])) {
-                $article['banner'] = config('frontend.storage_base_url') . $article['banner'];
-            }
-
-            $resp['data'] = $article;
+            $resp['data'] = $article->toArray();
 
         } catch (\Exception $e) {
             $resp['error'] = $e->getMessage();

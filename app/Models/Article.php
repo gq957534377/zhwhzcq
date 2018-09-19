@@ -14,7 +14,7 @@ class Article extends Model
 
     protected $dates = ['deleted_at'];
 
-    protected $appends=['atlas'];
+    protected $appends=['atlas', 'banner_url'];
 
     /**
      * 说明: 返回轮播图拼装好的地址
@@ -24,7 +24,7 @@ class Article extends Model
      */
     public function getBannerUrlAttribute()
     {
-        return $this->banner;
+        return config('frontend.storage_base_url') . $this->banner;
     }
 
 
