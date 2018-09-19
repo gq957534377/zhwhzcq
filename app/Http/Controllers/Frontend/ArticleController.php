@@ -67,6 +67,10 @@ class ArticleController extends Controller
 
         $query = Article::where($where);
 
+        if (! empty($request->type)) {
+            $query = $query->where('type', (int) $request->type);
+        }
+
         if (!empty($request->position_id) && !empty($position = Position::find($request->position_id))) {
             $lableIds = $position->labels->pluck('id')->unique()->toArray();
             $articleIds = ArticleRelLabel::whereIn('label_id', $lableIds)
@@ -87,6 +91,13 @@ class ArticleController extends Controller
             ->orderBy('created_at', 'desc')
             ->orderBy('id', 'desc')
             ->paginate(10);
+
+        foreach ($result as & $item) {
+            if (! empty($item['banner'])) {
+                $item['banner'] = config('frontend.storage_base_url') . $item['banner'];
+            }
+        }
+
         return response()->json(['StatusCode' => 200, 'ResultData' => $result]);
     }
 
