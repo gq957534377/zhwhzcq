@@ -18,10 +18,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group([
-    'middleware'    => ['api'],
+    'middleware'    => [],
     'namespace'     => 'Frontend'
 ], function () {
     Route::get('article/{id}', [
         'uses' => 'MobileController@article'
     ])->where(['id' => '[0-9]+']);
+    Route::get('article_pages', 'ArticleController@pages');
 });

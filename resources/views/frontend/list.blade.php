@@ -304,7 +304,7 @@
     var page = $("#more").data('next_page');
     $("#more").click(function () {
         var This = $(this);
-        var url = "/article_pages";
+        var url = "/api/article_pages";
         var data = JSON.parse($('#request-data').val());
         data.page = page;
 
