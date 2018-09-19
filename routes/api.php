@@ -22,7 +22,7 @@ Route::group([
     'namespace'     => 'Frontend'
 ], function () {
     Route::get('article/{id}', [
-        'uses' => 'MobileController@article'
+        'uses' => 'ArticleController@apiShow'
     ])->where(['id' => '[0-9]+']);
     Route::get('article_pages', 'ArticleController@pages');
 });

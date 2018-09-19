@@ -17,26 +17,4 @@ class MobileController extends Controller
     {
 
     }
-
-    public function article($id)
-    {
-        $resp = [
-            'data'  => null,
-            'error' => null,
-        ];
-
-        try {
-            $article = Article::find($id);
-            if (empty($article)) {
-                throw new \Exception('404 Not Found');
-            }
-
-            $resp['data'] = $article->toArray();
-
-        } catch (\Exception $e) {
-            $resp['error'] = $e->getMessage();
-        }
-
-        return $resp;
-    }
 }

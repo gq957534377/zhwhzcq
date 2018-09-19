@@ -126,6 +126,28 @@ class ArticleController extends Controller
         }
     }
 
+    public function apiShow($id)
+    {
+        $resp = [
+            'data'  => null,
+            'error' => null,
+        ];
+
+        try {
+            $article = Article::find($id);
+            if (empty($article)) {
+                throw new \Exception('404 Not Found');
+            }
+
+            $resp['data'] = $article->toArray();
+
+        } catch (\Exception $e) {
+            $resp['error'] = $e->getMessage();
+        }
+
+        return $resp;
+    }
+
     private function articlesByPositionId($positionId, $num)
     {
         $position = Position::find($positionId);
