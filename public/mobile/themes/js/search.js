@@ -55,7 +55,7 @@ $(document).ready(function() {
                         tpl += '<div class="aui-cell-text-fr aui-cell-text-fr-special aui-cell-arrow">查看更多</div>';
                         tpl += '</div></div></a>'
                     } else {
-                        tpl += '<a href="detail.html?articleId=' + listItem.id + '" class="aui-news-item">';
+                        tpl += '<a href="/article?articleId=' + listItem.id + '" class="aui-news-item">';
                         // 图文模式
                         if (listItem.banner) {
                             tpl += '<div class="aui-news-item-img"><img src="' + listItem.banner_url + '"></div>';
