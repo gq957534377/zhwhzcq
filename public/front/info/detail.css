@@ -179,13 +179,15 @@
 
 .article-content {
 	margin-bottom: 20px;
-	font-size: 16px;
+	font-size: 14pt;
+	font-family: "微软雅黑";
+	color:#000;
 }
 
 .article-content p {
-	/*text-indent: 2em;*/
+	text-indent: 2em;
 	margin: 10px 0px;
-	line-height: 2;
+	line-height: 200%;
 }
 
 .article-content img {
