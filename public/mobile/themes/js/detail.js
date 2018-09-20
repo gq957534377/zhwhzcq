@@ -7,6 +7,12 @@ $(document).ready(function() {
         method: 'get',
         success: function(result) {
             var detailData = result.data;
+
+            if (detailData.type == 2) {
+                location.href = '/gallery?articleId=' + articleId;
+                return;
+            }
+
             var tpl = '';
             tpl += '<div class="aui-special-head">';
             tpl += '<h1>' + detailData.title + '</h1>';
