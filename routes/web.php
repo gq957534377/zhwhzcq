@@ -8,6 +8,10 @@
 // Switch between the included languages
 Route::get('lang/{lang}', 'LanguageController');
 
+Route::group(['namespace' => 'Mobile', 'as' => 'mobile.', 'domain' => config('mobile.domain')], function () {
+    include_route_files(__DIR__.'/mobile/');
+});
+
 /*
  * Frontend Routes
  * Namespaces indicate folder structure
