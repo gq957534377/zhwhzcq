@@ -2,7 +2,7 @@
 <html>
 <head>
     @include('mobile.partials.page-metas')
-    <title>@yield('page_title') - 中华文化走出去网</title>
+    <title>中华文化走出去网</title>
     <link href="{{ asset('mobile/themes/css/base.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('mobile/themes/css/home.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('mobile/themes/css/icon.css') }}" rel="stylesheet" type="text/css" />
