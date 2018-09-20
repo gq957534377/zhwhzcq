@@ -370,4 +370,6 @@
         });
     });
 </script>
+
+@include('frontend.includes.stats')
 </html>
