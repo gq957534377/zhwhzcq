@@ -474,5 +474,7 @@
 
 <script type="text/javascript" src="/front/index/style/js/common.js"></script>
 <script type="text/javascript" src="/front/index/style/js/index.js"></script>
+
+@include('frontend.includes.stats')
 </body>
 </html>
