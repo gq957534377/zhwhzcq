@@ -71,5 +71,6 @@ class Kernel extends HttpKernel
         'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'mobile.nav' => \App\Http\Middleware\Mobile\HeaderNavigation::class,
     ];
 }

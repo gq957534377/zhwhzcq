@@ -46,4 +46,9 @@ class Banner extends Model
 		  </div>
 		</div>';
     }
+
+    public function getBannerUrlAttribute()
+    {
+        return config('frontend.storage_base_url') . $this->file;
+    }
 }
