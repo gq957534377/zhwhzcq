@@ -92,12 +92,6 @@ class ArticleController extends Controller
             ->orderBy('id', 'desc')
             ->paginate(10);
 
-        foreach ($result as & $item) {
-            if (! empty($item['banner'])) {
-                $item['banner'] = config('frontend.storage_base_url') . $item['banner'];
-            }
-        }
-
         return response()->json(['StatusCode' => 200, 'ResultData' => $result]);
     }
 
@@ -130,6 +124,28 @@ class ArticleController extends Controller
                 'recommends' => $this->articlesByPositionId(51, 4)
             ]);
         }
+    }
+
+    public function apiShow($id)
+    {
+        $resp = [
+            'data'  => null,
+            'error' => null,
+        ];
+
+        try {
+            $article = Article::find($id);
+            if (empty($article)) {
+                throw new \Exception('404 Not Found');
+            }
+
+            $resp['data'] = $article->toArray();
+
+        } catch (\Exception $e) {
+            $resp['error'] = $e->getMessage();
+        }
+
+        return $resp;
     }
 
     private function articlesByPositionId($positionId, $num)

@@ -8,7 +8,6 @@ Route::get('/', 'HomeController@index')->name('index');
 Route::get('contact', 'ContactController@index')->name('contact');
 Route::post('contact/send', 'ContactController@send')->name('contact.send');
 Route::resource('articles', 'ArticleController');
-Route::get('article_pages', 'ArticleController@pages');
 Route::get('infos', function(){
     return view('frontend.infos');
 });

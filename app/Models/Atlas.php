@@ -9,6 +9,16 @@ class Atlas extends Model
     // 不允许集体赋值的字段
     protected $guarded = [];
 
+    protected $appends = ["banner_url"];
+
+    /**
+     * @return string
+     */
+    public function getBannerUrlAttribute()
+    {
+        return config('frontend.storage_base_url') . $this->banner;
+    }
+
     public function getEditButtonAttribute()
     {
         return '<a href="' . route('admin.article_has_atlas.edit', $this) . '" class="btn btn-primary"><i class="fas fa-edit" data-toggle="tooltip" data-placement="top" title="' . __('buttons.general.crud.edit') . '"></i></a>';

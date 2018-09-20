@@ -271,4 +271,6 @@
 <script src="/front/info/jquery-1.12.4.min.js" type="text/javascript"></script>
 <script src="/vendor/ueditor/third-party/video-js/video.js" type="text/javascript"></script>
 <script type="application/javascript" src="/front/info/common.js"></script>
+
+@include('frontend.includes.stats')
 </html>
