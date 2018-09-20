@@ -41,7 +41,10 @@
                                 <a href="{{ route('mobile.gallery.detail') }}?articleId={{ $news->id }}" class="aui-news-item aui-news-list-two">
                                     <h2 class="aui-news-item-text-title aui-news-item-text-title-special">{{ $news->brief }}</h2>
                                     <div class="clearfix">
-                                        @foreach($news->atlas as $atlas)
+                                        @foreach($news->atlas as $idx => $atlas)
+                                            @if($idx > 2)
+                                                @break
+                                            @endif
                                             <div class="aui-news-item-img">
                                                 <img src="{{ $atlas->banner_url }}" alt="">
                                             </div>
