@@ -6,7 +6,7 @@ $(document).ready(function() {
     var totalPage = 1;
     var isLoading = false;
 
-    // init tag
+    // init selected tag
     initCurrentTag();
 
     // init
@@ -106,7 +106,10 @@ $(document).ready(function() {
             var href = $elemList[i].getAttribute('href');
             if (href.split('?')[1] == ('positionId=' + positionId)) {
                 $($elemList[i]).addClass('current');
-                $('.aui-nav-main').scrollLeft($elemList[i].offsetWidth * i);
+                var wrapper = $('.aui-nav-main');
+                wrapper.animate({
+                    scrollLeft: $($elemList[i]).offset().left - wrapper.offset().left + wrapper.scrollLeft()
+                }, 500);
             }
         }
     }
