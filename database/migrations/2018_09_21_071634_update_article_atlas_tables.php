@@ -14,7 +14,7 @@ class UpdateArticleAtlasTables extends Migration
     public function up()
     {
         Schema::table('articles', function (Blueprint $table) {
-            $table->unsignedTinyInteger('bot')
+            $table->unsignedInteger('bot')
                 ->default(0)
                 ->comment('爬虫机器人id；0=人工编辑； 大于0=爬虫抓取');
         });
